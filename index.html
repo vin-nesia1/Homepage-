@@ -20,34 +20,32 @@
     <meta property="og:url" content="https://vinnesia.my.id/">
     <meta property="og:type" content="website">
     <!-- Anda bisa menambahkan og:image jika ada logo atau gambar utama situs -->
-    <!-- <meta property="og:image" content="URL_LOGO_ATAU_GAMBAR_SITUS_ANDA.jpg"> -->
+    <!-- Contoh: <meta property="og:image" content="https://vinnesia.my.id/logo_vinnesia.jpg"> -->
 
     <!-- Twitter Card Tags untuk berbagi di Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Vinnesia - Kumpulan Tools Online Gratis & Bermanfaat">
     <meta name="twitter:description" content="Vinnesia menyediakan kumpulan tools online gratis dan bermanfaat seperti Konversi Mata Uang, Pembuat QR Code, dan banyak lagi. Cepat, ringan, dan mudah digunakan untuk kebutuhan digital Anda.">
-    <!-- <meta name="twitter:image" content="URL_LOGO_ATAU_GAMBAR_SITUS_ANDA.jpg"> -->
+    <!-- Contoh: <meta name="twitter:image" content="https://vinnesia.my.id/logo_vinnesia.jpg"> -->
 
     <!-- Memuat Tailwind CSS dari CDN untuk styling yang cepat dan responsif -->
-    <!-- Penggunaan CDN membantu mempercepat pemuatan karena browser mungkin sudah memiliki cache file ini -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Mengatur font Inter sebagai font utama untuk tampilan yang bersih -->
-    <!-- Preconnect ke Google Fonts untuk mempercepat pemuatan font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* Mengatur font Inter untuk seluruh halaman dan tema ungu kehitaman */
+        /* Mengatur font Inter untuk seluruh halaman dan tema elegan ungu kehitaman */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #1a202c; /* Latar belakang sangat gelap */
-            color: #e2e8f0; /* Warna teks terang untuk kontras */
+            background-color: #1E212B; /* Latar belakang sangat gelap, dengan hint biru/ungu */
+            color: #E0E6F0; /* Warna teks off-white yang lembut */
         }
         /* Styling tambahan untuk link agar terlihat seperti tombol */
         .btn-link {
             display: inline-block;
             padding: 0.75rem 1.5rem;
-            background-color: #7c3aed; /* Warna ungu yang lebih gelap untuk tombol */
+            background-color: #8B5CF6; /* Ungu yang lebih vibrant dan elegan */
             color: white;
             border-radius: 0.5rem; /* Sudut membulat */
             text-decoration: none;
@@ -55,11 +53,11 @@
             font-weight: 600;
         }
         .btn-link:hover {
-            background-color: #6d28d9; /* Warna ungu yang lebih gelap saat hover */
+            background-color: #7C3AED; /* Ungu yang sedikit lebih gelap saat hover */
         }
         /* Styling untuk kartu tools */
         .tool-card {
-            background-color: #2d3748; /* Latar belakang abu-abu gelap untuk kartu */
+            background-color: #2A2F3B; /* Latar belakang abu-abu gelap untuk kartu, sedikit lebih terang dari body */
             border-radius: 0.75rem; /* Sudut membulat lebih besar */
             padding: 1.5rem;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Bayangan yang lebih menonjol */
@@ -73,28 +71,29 @@
         .logo-text {
             font-family: 'Inter', sans-serif;
             font-weight: 800; /* Extra bold */
-            color: #c4b5fd; /* Ungu terang untuk teks logo */
+            color: #C4B5FD; /* Ungu terang untuk teks logo */
             font-size: 1.875rem; /* text-3xl */
             line-height: 2.25rem; /* leading-9 */
         }
-        .logo-icon {
-            font-size: 2.25rem; /* text-4xl */
-            line-height: 1;
-            color: #a78bfa; /* Ungu sedang untuk ikon logo */
-            margin-right: 0.5rem;
+        /* Styling untuk ikon/gambar logo */
+        .logo-img {
+            width: 40px; /* Lebar gambar logo */
+            height: 40px; /* Tinggi gambar logo */
+            margin-right: 0.75rem; /* Jarak antara logo dan teks */
+            border-radius: 0.375rem; /* Sedikit membulat pada logo gambar */
         }
         /* Styling untuk link navigasi di footer/informasi penting */
         .nav-link {
-            color: #a78bfa; /* Ungu sedang untuk link */
+            color: #A78BFA; /* Ungu sedang untuk link */
             transition: color 0.3s ease;
         }
         .nav-link:hover {
-            color: #c4b5fd; /* Ungu terang saat hover */
+            color: #C4B5FD; /* Ungu terang saat hover */
         }
         /* Styling untuk bagian konten yang bisa di-toggle */
         .content-section {
             display: none; /* Sembunyikan secara default */
-            background-color: #2d3748;
+            background-color: #2A2F3B; /* Sama dengan warna kartu */
             padding: 2rem;
             border-radius: 0.75rem;
             margin-top: 2rem;
@@ -123,7 +122,7 @@
         "url": "https://vinnesia.my.id/",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://vinnesia.my.id/logo.png" /* Ganti dengan URL logo asli Anda */
+          "url": "https://placehold.co/40x40/8B5CF6/ffffff?text=VN" /* URL logo gambar Anda */
         }
       }
     }
@@ -137,9 +136,10 @@
         <header class="flex items-center justify-start mb-8 md:mb-12">
             <!-- Logo dan Nama Situs di pojok kiri atas -->
             <a href="#" class="flex items-center hover:opacity-80 transition duration-300">
-                <!-- Representasi Logo (menggunakan karakter atau emoji sebagai placeholder) -->
-                <img src="images/logo.png" alt="Logo VIN NESIA" width="150">
+                <!-- Logo Gambar "VN" -->
+                <img src="https://placehold.co/40x40/8B5CF6/ffffff?text=VN" alt="Logo Vinnesia" class="logo-img">
                 <!-- Nama Situs -->
+                <span class="logo-text">Vinnesia</span>
             </a>
         </header>
 
@@ -164,7 +164,7 @@
 
         <!-- Bagian Tools Kami -->
         <section class="mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-purple-400 mb-8">Tools Kami</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-purple-400 mb-8">Tools Kami</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <!-- Kartu Tool: Konversi Mata Uang -->
                 <div class="tool-card">
