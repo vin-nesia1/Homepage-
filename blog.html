@@ -3,28 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog VIN NESIA - Artikel & Panduan Terbaru</title>
+    <title>Blog VIN NESIA - Artikel Terbaru & Panduan Tools</title>
 
     <!-- Meta Tags SEO -->
-    <meta name="description" content="Baca artikel dan panduan terbaru dari VIN NESIA tentang SEO, pengembangan web, tips produktivitas, dan banyak lagi.">
-    <meta name="keywords" content="blog VIN NESIA, artikel SEO, panduan web development, tips programmer, berita teknologi">
+    <meta name="description" content="Baca artikel terbaru dan panduan mendalam tentang optimasi SEO, pengembangan web, dan penggunaan tools VIN NESIA untuk meningkatkan produktivitas Anda.">
+    <meta name="keywords" content="blog VIN NESIA, artikel SEO, panduan web development, tips programmer, optimasi website, tutorial tools online">
     <meta name="author" content="VIN NESIA">
 
     <!-- Open Graph Meta Tags for Social Sharing -->
-    <meta property="og:title" content="Blog VIN NESIA - Artikel & Panduan Terbaru">
-    <meta property="og:description" content="Baca artikel dan panduan terbaru dari VIN NESIA tentang SEO, pengembangan web, tips produktivitas, dan banyak lagi.">
+    <meta property="og:title" content="Blog VIN NESIA - Artikel Terbaru & Panduan Tools">
+    <meta property="og:description" content="Baca artikel terbaru dan panduan mendalam tentang optimasi SEO, pengembangan web, dan penggunaan tools VIN NESIA untuk meningkatkan produktivitas Anda.">
     <meta property="og:image" content="https://www.vinnesia.my.id/logo.png">
     <meta property="og:url" content="https://www.vinnesia.my.id/blog.html">
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="blog">
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Blog VIN NESIA - Artikel & Panduan Terbaru">
-    <meta name="twitter:description" content="Baca artikel dan panduan terbaru dari VIN NESIA tentang SEO, pengembangan web, tips produktivitas, dan banyak lagi.">
+    <meta name="twitter:title" content="Blog VIN NESIA - Artikel Terbaru & Panduan Tools">
+    <meta name="twitter:description" content="Baca artikel terbaru dan panduan mendalam tentang optimasi SEO, pengembangan web, dan penggunaan tools VIN NESIA untuk meningkatkan produktivitas Anda.">
     <meta name="twitter:image" content="https://www.vinnesia.my.id/logo.png">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JXL70YP8XN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-JXL70YP8XN');
+    </script>
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -36,18 +45,47 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <style>
+        /* Custom CSS to override/enhance Tailwind for specific elements */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #1a001a;
-            color: #e0e0e0;
+            background-color: #1a001a; /* Fallback for browsers not supporting advanced backgrounds */
+            color: #e0e0e0; /* Light grey text for contrast */
+            position: relative; /* Needed for fixed background layers */
+            min-height: 100vh; /* Ensure body takes full height for background to cover */
+            display: flex;
+            flex-direction: column;
         }
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #2d002d; }
-        ::-webkit-scrollbar-thumb { background: #b366ff; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #cc99ff; }
-        .text-purple-accent { color: #b366ff; }
-        .bg-dark-purple { background-color: #2d002d; }
-        .bg-darker-purple { background-color: #1a001a; }
+
+        /* Custom scrollbar for a sleek look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #2d002d; /* Darker track */
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #b366ff; /* Purple thumb */
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #cc99ff; /* Lighter purple on hover */
+        }
+
+        .text-purple-accent {
+            color: #b366ff; /* Custom purple accent color */
+        }
+
+        /* Custom background colors for different sections */
+        .bg-dark-purple-section {
+            background-color: #2d002d; /* Existing dark purple */
+        }
+        .bg-medium-purple-section {
+            background-color: #3f003f; /* A slightly lighter, richer purple */
+        }
+        .bg-footer-black {
+            background-color: #0a0a0a; /* Very dark grey/black */
+        }
+
         /* Specific styling for the tools dropdown */
         .tools-dropdown {
             display: none;
@@ -79,17 +117,106 @@
         .tools-dropdown.active {
             display: block;
         }
+
+        /* Responsive adjustments for the tools grid */
+        @media (min-width: 640px) {
+            .blog-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .blog-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+        }
+
+        /* Custom styles for blog cards to ensure pointer cursor and interactive text */
+        .blog-card {
+            cursor: pointer; /* Ensure pointer cursor on hover */
+            display: flex; /* Use flexbox for layout */
+            flex-direction: column; /* Stack items vertically */
+            justify-content: space-between; /* Push 'Baca Selengkapnya' to bottom */
+        }
+        .blog-card .action-text {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end; /* Align to the right */
+            margin-top: auto; /* Push to the bottom of the flex container */
+            color: #b366ff; /* Accent color */
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+        .blog-card:hover .action-text {
+            color: #cc99ff; /* Lighter accent on hover */
+        }
+        .blog-card .action-text i {
+            margin-left: 0.5rem;
+            transition: transform 0.2s ease;
+        }
+        .blog-card:hover .action-text i {
+            transform: translateX(5px); /* Slight movement on hover */
+        }
+
+        /* Background Layers for Parallax Effect */
+        #background-layers {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Send behind content */
+            overflow: hidden; /* Hide overflow from blur */
+        }
+
+        #background-layers > div {
+            position: absolute;
+            inset: 0; /* Cover the entire parent */
+        }
+
+        /* Layer 1: Gradient */
+        .bg-gradient-layer {
+            background: linear-gradient(to bottom, #1a001a, #3f003f); /* Dark purple to slightly richer purple */
+        }
+
+        /* Layer 2: Blurred Abstract Code Image */
+        .bg-code-abstract-layer {
+            background-image: url('https://images.pexels.com/photos/5380642/pexels-photo-5380642.jpeg?auto=compress&cs=tinysrgb&w=1920'); /* Using the user's example style image */
+            background-size: cover;
+            background-position: center center;
+            filter: blur(5px); /* Apply blur */
+            opacity: 0.1; /* Low opacity */
+            mix-blend-mode: overlay; /* Blend mode */
+        }
+
+        /* Layer 3: Subtle Pattern (dots) */
+        .bg-pattern-layer {
+            background-image: url('data:image/svg+xml;utf8,<svg width="10" height="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg"><circle cx="1" cy="1" r="1" fill="%23ffffff" opacity="0.05"/></svg>');
+            background-size: 10px 10px; /* Size of the pattern unit */
+            background-repeat: repeat;
+            opacity: 0.1; /* Low opacity */
+        }
     </style>
 </head>
-<body class="antialiased flex flex-col min-h-screen">
+<body class="antialiased">
+
+    <!-- Background Layers for Parallax Effect -->
+    <div id="background-layers">
+        <div class="bg-gradient-layer"></div>
+        <div class="bg-code-abstract-layer"></div>
+        <div class="bg-pattern-layer"></div>
+    </div>
 
     <!-- Header Section -->
-    <header class="bg-dark-purple shadow-lg py-4 px-6 md:px-12 fixed top-0 left-0 w-full z-50 rounded-b-xl">
+    <header class="bg-dark-purple-section shadow-lg py-4 px-6 md:px-12 fixed top-0 left-0 w-full z-50 rounded-b-xl">
         <div class="container mx-auto flex justify-between items-center">
+            <!-- Logo and Site Name -->
             <div class="flex items-center space-x-3">
                 <img src="/logo.png" alt="VIN NESIA Logo" class="w-10 h-10 rounded-full shadow-md">
                 <span class="text-2xl font-bold text-white tracking-wide">VIN NESIA</span>
             </div>
+
+            <!-- Navigation Menu (Desktop) -->
             <nav class="hidden md:flex space-x-8">
                 <a href="index.html" class="text-white hover:text-purple-accent transition duration-300 font-medium">Home</a>
                 <div class="relative group">
@@ -118,10 +245,14 @@
                 <a href="panduan.html" class="text-white hover:text-purple-accent transition duration-300 font-medium">Panduan Pengguna</a>
                 <a href="blog.html" class="text-white hover:text-purple-accent transition duration-300 font-medium">Blog</a>
             </nav>
+
+            <!-- Hamburger Menu (Mobile) -->
             <button id="hamburgerBtn" class="md:hidden text-white text-2xl focus:outline-none">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
+
+        <!-- Mobile Navigation Overlay -->
         <div id="mobileMenu" class="md:hidden fixed inset-0 bg-darker-purple bg-opacity-95 z-40 transform -translate-x-full transition-transform duration-300 ease-in-out">
             <div class="flex justify-end p-6">
                 <button id="closeMenuBtn" class="text-white text-3xl focus:outline-none">
@@ -154,48 +285,105 @@
                 <a href="privacy.html" class="text-white hover:text-purple-accent transition duration-300">Privacy Policy</a>
                 <a href="contact.html" class="text-white hover:text-purple-accent transition duration-300">Contact</a>
                 <a href="panduan.html" class="text-white hover:text-purple-accent transition duration-300">Panduan Pengguna</a>
-                <a href="blog.html" class="text-white hover:text-purple-accent transition duration-300 font-medium">Blog</a>
+                <a href="blog.html" class="text-white hover:text-purple-accent transition duration-300">Blog</a>
             </nav>
         </div>
     </header>
 
-    <!-- Main Content - Adjusted padding-top -->
-    <main class="flex-grow pt-32 pb-12 px-4 md:px-8 lg:px-16">
-        <section class="bg-dark-purple rounded-xl shadow-xl p-8 md:p-12 mb-12">
-            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-6 text-center">Blog VIN NESIA</h1>
-            <p class="text-lg text-gray-300 mb-8 text-center max-w-3xl mx-auto">
-                Temukan artikel, panduan, dan tips terbaru seputar SEO, pengembangan web, dan teknologi untuk membantu Anda meningkatkan kehadiran online.
+    <!-- Main Content -->
+    <main class="pt-24 pb-12 px-4 md:px-8 lg:px-16 flex-grow">
+        <section class="text-center py-16 md:py-24 bg-dark-purple-section rounded-xl shadow-xl mb-12">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-4 leading-tight">
+                Blog <span class="text-purple-accent">VIN NESIA</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
+                Temukan artikel terbaru, panduan mendalam, dan tips praktis seputar SEO, pengembangan web, dan tools kami.
             </p>
+        </section>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Blog Post 1 -->
-                <a href="blog-post-1.html" class="block bg-darker-purple p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                    <img src="https://source.unsplash.com/featured/?seo,tips,beginner" alt="Ilustrasi 5 Tips SEO Penting untuk Pemula" class="w-full h-36 object-cover rounded-md mb-4">
-                    <h3 class="text-xl font-bold text-white mb-2">5 Tips SEO Penting untuk Pemula</h3>
-                    <p class="text-gray-400 text-sm mb-4">Pelajari dasar-dasar SEO yang harus diketahui setiap pemilik website atau blogger untuk meningkatkan peringkat di mesin pencari.</p>
-                    <span class="text-purple-accent font-semibold hover:underline">Baca Selengkapnya <i class="fas fa-arrow-right ml-1 text-sm"></i></span>
+        <!-- All Blog Posts Section -->
+        <section class="bg-dark-purple-section rounded-xl shadow-xl p-8 md:p-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-8 text-center">Semua Artikel Blog</h2>
+            <div class="blog-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Blog Post: Optimalisasi SEO dengan Meta Tag Generator VIN NESIA -->
+                <a href="blog-meta-tag-generator.html" class="blog-card bg-darker-purple p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 block">
+                    <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Ilustrasi Artikel Blog: Grafik SEO di layar komputer" class="w-full h-36 object-cover rounded-md mb-4">
+                    <h3 class="text-xl font-bold text-white mb-2">Optimalisasi SEO dengan Meta Tag Generator VIN NESIA</h3>
+                    <p class="text-gray-400 text-sm mb-4">Dalam dunia optimisasi mesin pencari (SEO), meta tag adalah salah satu elemen dasar namun krusial yang sering diabaikan...</p>
+                    <span class="action-text">Baca Selengkapnya <i class="fas fa-arrow-right ml-1 text-sm"></i></span>
                 </a>
-                <!-- Blog Post 2 -->
-                <a href="blog-post-2.html" class="block bg-darker-purple p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                    <img src="https://source.unsplash.com/featured/?code,clean,optimization" alt="Ilustrasi Mengoptimalkan Performa Website dengan Kode Bersih" class="w-full h-36 object-cover rounded-md mb-4">
-                    <h3 class="text-xl font-bold text-white mb-2">Mengoptimalkan Performa Website dengan Kode Bersih</h3>
-                    <p class="text-gray-400 text-sm mb-4">Temukan bagaimana penggunaan Beautifier kami dapat membantu Anda menjaga kode tetap rapi dan cepat.</p>
-                    <span class="text-purple-accent font-semibold hover:underline">Baca Selengkapnya <i class="fas fa-arrow-right ml-1 text-sm"></i></span>
+
+                <!-- Blog Post: Tingkatkan Visibilitas Sosial dengan OG (Open Graph) Tag Generator -->
+                <a href="blog-og-tag-generator.html" class="blog-card bg-darker-purple p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 block">
+                    <img src="https://images.pexels.com/photos/3183183/pexels-photo-3183183.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Ilustrasi Artikel Blog: Tampilan media sosial di layar laptop" class="w-full h-36 object-cover rounded-md mb-4">
+                    <h3 class="text-xl font-bold text-white mb-2">Tingkatkan Visibilitas Sosial dengan OG (Open Graph) Tag Generator</h3>
+                    <p class="text-gray-400 text-sm mb-4">Pernahkah Anda membagikan tautan di Facebook, LinkedIn, atau platform media sosial lainnya, dan melihat pratinjau yang rapi...</p>
+                    <span class="action-text">Baca Selengkapnya <i class="fas fa-arrow-right ml-1 text-sm"></i></span>
                 </a>
-                <!-- Blog Post 3 -->
-                <a href="blog-post-3.html" class="block bg-darker-purple p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                    <img src="https://source.unsplash.com/featured/?open-graph,social-media,sharing" alt="Ilustrasi Pentingnya Open Graph Tag untuk Media Sosial" class="w-full h-36 object-cover rounded-md mb-4">
-                    <h3 class="text-xl font-bold text-white mb-2">Pentingnya Open Graph Tag untuk Media Sosial</h3>
-                    <p class="text-gray-400 text-sm mb-4">Pelajari mengapa Open Graph tag sangat krusial untuk sharing konten yang efektif di platform sosial.</p>
-                    <span class="text-purple-accent font-semibold hover:underline">Baca Selengkapnya <i class="fas fa-arrow-right ml-1 text-sm"></i></span>
+
+                <!-- Blog Post: Maksimalkan Sharing di Twitter dengan Twitter Card Tag Generator -->
+                <a href="blog-twitter-card-generator.html" class="blog-card bg-darker-purple p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 block">
+                    <img src="https://images.pexels.com/photos/5380642/pexels-photo-5380642.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Ilustrasi Artikel Blog: Layar desktop dengan data abstrak" class="w-full h-36 object-cover rounded-md mb-4">
+                    <h3 class="text-xl font-bold text-white mb-2">Maksimalkan Sharing di Twitter dengan Twitter Card Tag Generator</h3>
+                    <p class="text-gray-400 text-sm mb-4">Jika Anda aktif di Twitter (sekarang X) dan ingin konten yang Anda bagikan terlihat profesional dan menarik...</p>
+                    <span class="action-text">Baca Selengkapnya <i class="fas fa-arrow-right ml-1 text-sm"></i></span>
                 </a>
-                <!-- Tambahkan lebih banyak artikel di sini -->
+
+                <!-- Blog Post: Hindari Duplikasi Konten dengan Canonical URL Tag Generator -->
+                <a href="blog-canonical-url-generator.html" class="blog-card bg-darker-purple p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 block">
+                    <img src="https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Ilustrasi Artikel Blog: Visualisasi jaringan atau tautan" class="w-full h-36 object-cover rounded-md mb-4">
+                    <h3 class="text-xl font-bold text-white mb-2">Hindari Duplikasi Konten dengan Canonical URL Tag Generator</h3>
+                    <p class="text-gray-400 text-sm mb-4">Dalam dunia SEO, duplikasi konten adalah masalah umum yang dapat merugikan peringkat situs Anda di mesin pencari...</p>
+                    <span class="action-text">Baca Selengkapnya <i class="fas fa-arrow-right ml-1 text-sm"></i></span>
+                </a>
+
+                <!-- Blog Post: Kontrol Indeksasi Mesin Pencari dengan Noindex/Nofollow Tool -->
+                <a href="blog-noindex-nofollow-tool.html" class="blog-card bg-darker-purple p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 block">
+                    <img src="https://images.pexels.com/photos/5380608/pexels-photo-5380608.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Ilustrasi Artikel Blog: Gembok digital di layar" class="w-full h-36 object-cover rounded-md mb-4">
+                    <h3 class="text-xl font-bold text-white mb-2">Kontrol Indeksasi Mesin Pencari dengan Noindex/Nofollow Tool</h3>
+                    <p class="text-gray-400 text-sm mb-4">Dalam strategi SEO, tidak semua halaman di situs Anda perlu atau ingin diindeks oleh mesin pencari...</p>
+                    <span class="action-text">Baca Selengkapnya <i class="fas fa-arrow-right ml-1 text-sm"></i></span>
+                </a>
+
+                <!-- Blog Post: Perkuat Branding Situs Anda dengan Favicon Tag Generator -->
+                <a href="blog-favicon-generator.html" class="blog-card bg-darker-purple p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 block">
+                    <img src="https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Ilustrasi Artikel Blog: Tampilan desain grafis abstrak" class="w-full h-36 object-cover rounded-md mb-4">
+                    <h3 class="text-xl font-bold text-white mb-2">Perkuat Branding Situs Anda dengan Favicon Tag Generator</h3>
+                    <p class="text-gray-400 text-sm mb-4">Meskipun ukurannya kecil, favicon adalah elemen branding yang sangat penting untuk situs web Anda...</p>
+                    <span class="action-text">Baca Selengkapnya <i class="fas fa-arrow-right ml-1 text-sm"></i></span>
+                </a>
+
+                <!-- Blog Post: Optimasi Kode HTML, CSS, JSON: Beautifier & Minifier VIN NESIA -->
+                <a href="blog-html-css-json-beautifier-minifier.html" class="blog-card bg-darker-purple p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 block">
+                    <img src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Ilustrasi Artikel Blog: Kode di layar komputer" class="w-full h-36 object-cover rounded-md mb-4">
+                    <h3 class="text-xl font-bold text-white mb-2">Optimasi Kode HTML, CSS, JSON: Beautifier & Minifier VIN NESIA</h3>
+                    <p class="text-gray-400 text-sm mb-4">Sebagai seorang pengembang web, Anda pasti tahu betapa pentingnya menjaga kode tetap rapi dan efisien...</p>
+                    <span class="action-text">Baca Selengkapnya <i class="fas fa-arrow-right ml-1 text-sm"></i></span>
+                </a>
+
+                <!-- Blog Post: Konversi Cepat Markdown ke HTML dengan Converter VIN NESIA -->
+                <a href="blog-markdown-to-html-converter.html" class="blog-card bg-darker-purple p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 block">
+                    <img src="https://images.pexels.com/photos/5380642/pexels-photo-5380642.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Ilustrasi Artikel Blog: Layar desktop dengan data abstrak" class="w-full h-36 object-cover rounded-md mb-4">
+                    <h3 class="text-xl font-bold text-white mb-2">Konversi Cepat Markdown ke HTML dengan Converter VIN NESIA</h3>
+                    <p class="text-gray-400 text-sm mb-4">Jika Anda seorang penulis konten, blogger, atau pengembang yang sering menulis dokumentasi...</p>
+                    <span class="action-text">Baca Selengkapnya <i class="fas fa-arrow-right ml-1 text-sm"></i></span>
+                </a>
+
+                <!-- Blog Post: Amankan & Dekode Karakter Khusus dengan HTML Entity Tool -->
+                <a href="blog-html-entity-encoder-decoder.html" class="blog-card bg-darker-purple p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 block">
+                    <img src="https://images.pexels.com/photos/5380589/pexels-photo-5380589.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Ilustrasi Artikel Blog: Layar desktop dengan simbol digital" class="w-full h-36 object-cover rounded-md mb-4">
+                    <h3 class="text-xl font-bold text-white mb-2">Amankan & Dekode Karakter Khusus dengan HTML Entity Tool</h3>
+                    <p class="text-gray-400 text-sm mb-4">Dalam pengembangan web, terkadang Anda perlu menampilkan karakter khusus yang memiliki makna tertentu dalam HTML...</p>
+                    <span class="action-text">Baca Selengkapnya <i class="fas fa-arrow-right ml-1 text-sm"></i></span>
+                </a>
+
             </div>
         </section>
     </main>
 
     <!-- Footer Section -->
-    <footer class="bg-dark-purple py-8 px-6 md:px-12 text-center text-gray-400 rounded-t-xl mt-auto">
+    <footer class="bg-footer-black py-8 px-6 md:px-12 text-center text-gray-400 rounded-t-xl mt-auto">
         <div class="container mx-auto">
             <p class="mb-4">&copy; 2025 VIN NESIA. All rights reserved.</p>
             <div class="flex justify-center space-x-6 mb-4">
@@ -224,14 +412,6 @@
             const mobileToolsMenuBtn = document.getElementById('mobileToolsMenuBtn');
             const mobileToolsDropdown = document.getElementById('mobileToolsDropdown');
 
-            // Function to close all dropdowns and mobile menu
-            function closeAllNavElements() {
-                const desktopDropdown = toolsMenuBtn.nextElementSibling;
-                desktopDropdown.classList.remove('active');
-                mobileToolsDropdown.classList.remove('active');
-                mobileMenu.classList.add('-translate-x-full'); // Close mobile nav
-            }
-
             // Toggle mobile menu
             hamburgerBtn.addEventListener('click', () => {
                 mobileMenu.classList.remove('-translate-x-full');
@@ -245,45 +425,24 @@
             toolsMenuBtn.addEventListener('click', (event) => {
                 event.stopPropagation(); // Prevent click from bubbling to document
                 const dropdown = toolsMenuBtn.nextElementSibling;
-                // Close other dropdowns before opening this one (if not already active)
-                if (!dropdown.classList.contains('active')) {
-                    closeAllNavElements(); // Close all before opening
-                }
                 dropdown.classList.toggle('active');
             });
 
             // Toggle mobile tools dropdown
             mobileToolsMenuBtn.addEventListener('click', (event) => {
                 event.stopPropagation(); // Prevent click from bubbling to document
-                // Close other dropdowns before opening this one (if not already active)
-                if (!mobileToolsDropdown.classList.contains('active')) {
-                    closeAllNavElements(); // Close all before opening
-                }
                 mobileToolsDropdown.classList.toggle('active');
             });
 
-            // Close dropdowns and mobile menu when clicking outside
+            // Close dropdowns when clicking outside
             document.addEventListener('click', (event) => {
                 const desktopDropdown = toolsMenuBtn.nextElementSibling;
-                const isClickInsideDesktopDropdownArea = toolsMenuBtn.contains(event.target) || desktopDropdown.contains(event.target);
-                
-                const isClickInsideMobileToolsDropdownArea = mobileToolsMenuBtn.contains(event.target) || mobileToolsDropdown.contains(event.target);
-                const isClickInsideMobileMenuArea = hamburgerBtn.contains(event.target) || mobileMenu.contains(event.target);
-
-                if (desktopDropdown.classList.contains('active') && !isClickInsideDesktopDropdownArea) {
+                if (desktopDropdown.classList.contains('active') && !toolsMenuBtn.contains(event.target) && !desktopDropdown.contains(event.target)) {
                     desktopDropdown.classList.remove('active');
                 }
-                if (mobileToolsDropdown.classList.contains('active') && !isClickInsideMobileToolsDropdownArea) {
+                if (mobileToolsDropdown.classList.contains('active') && !mobileToolsMenuBtn.contains(event.target) && !mobileToolsDropdown.contains(event.target)) {
                     mobileToolsDropdown.classList.remove('active');
                 }
-                if (!mobileMenu.classList.contains('-translate-x-full') && !isClickInsideMobileMenuArea) {
-                    mobileMenu.classList.add('-translate-x-full');
-                }
-            });
-
-            // Close dropdowns and mobile menu on scroll
-            window.addEventListener('scroll', () => {
-                closeAllNavElements();
             });
         });
     </script>
