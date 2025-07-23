@@ -6,25 +6,25 @@
     <title>Panduan Pengguna - VIN NESIA</title>
 
     <!-- Meta Tags SEO -->
-    <meta name="description" content="Pelajari cara menggunakan setiap tools di VIN NESIA dengan panduan lengkap dan contoh langkah demi langkah.">
-    <meta name="keywords" content="Panduan Pengguna, user guide, tutorial, cara menggunakan tools, VIN NESIA, SEO tools, development tools">
+    <meta name="description" content="Dapatkan panduan lengkap tentang cara menggunakan berbagai tools SEO dan pengembangan web gratis di VIN NESIA. Tingkatkan produktivitas Anda dengan mudah.">
+    <meta name="keywords" content="panduan pengguna, tutorial tools, cara menggunakan tools SEO, cara menggunakan tools web development, VIN NESIA, bantuan, dokumentasi">
     <meta name="author" content="VIN NESIA">
 
     <!-- Open Graph Meta Tags for Social Sharing -->
     <meta property="og:title" content="Panduan Pengguna - VIN NESIA">
-    <meta property="og:description" content="Pelajari cara menggunakan setiap tools di VIN NESIA dengan panduan lengkap dan contoh langkah demi langkah.">
-    <meta property="og:image" content="https://www.vinnesia.my.id/logo.png">
+    <meta property="og:description" content="Dapatkan panduan lengkap tentang cara menggunakan berbagai tools SEO dan pengembangan web gratis di VIN NESIA. Tingkatkan produktivitas Anda dengan mudah.">
+    <meta property="og:image" content="https://www.vinnesia.my.id/images/logo.png">
     <meta property="og:url" content="https://www.vinnesia.my.id/panduan.html">
     <meta property="og:type" content="website">
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Panduan Pengguna - VIN NESIA">
-    <meta name="twitter:description" content="Pelajari cara menggunakan setiap tools di VIN NESIA dengan panduan lengkap dan contoh langkah demi langkah.">
-    <meta name="twitter:image" content="https://www.vinnesia.my.id/logo.png">
+    <meta name="twitter:description" content="Dapatkan panduan lengkap tentang cara menggunakan berbagai tools SEO dan pengembangan web gratis di VIN NESIA. Tingkatkan produktivitas Anda dengan mudah.">
+    <meta name="twitter:image" content="https://www.vinnesia.my.id/images/logo.png">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JXL70YP8XN"></script>
@@ -45,85 +45,50 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <style>
-        /* Custom CSS to override/enhance Tailwind for specific elements */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #1a001a; /* Dark purple-black */
-            color: #e0e0e0; /* Light grey text for contrast */
-        }
-
-        /* Custom scrollbar for a sleek look */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #2d002d; /* Darker track */
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #b366ff; /* Purple thumb */
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #cc99ff; /* Lighter purple on hover */
-        }
-
-        .text-purple-accent {
-            color: #b366ff; /* Custom purple accent color */
-        }
-
-        .bg-dark-purple {
-            background-color: #2d002d; /* Slightly lighter dark purple for cards/sections */
-        }
-
-        .bg-darker-purple {
-            background-color: #1a001a; /* Main background */
-        }
-
-        /* Specific styling for the tools dropdown */
-        .tools-dropdown {
-            display: none;
-            position: absolute;
-            background-color: #2d002d;
-            min-width: 200px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
-            z-index: 100;
-            border-radius: 0.5rem;
-            padding: 0.5rem 0;
-            top: 100%; /* Position below the parent nav item */
-            left: 0;
-        }
-
-        .tools-dropdown a {
+            background-color: #1a001a;
             color: #e0e0e0;
-            padding: 0.75rem 1.25rem;
-            text-decoration: none;
-            display: block;
-            white-space: nowrap;
-            transition: background-color 0.2s ease;
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
-
-        .tools-dropdown a:hover {
-            background-color: #3f003f;
-            color: #cc99ff;
-        }
-
-        .tools-dropdown.active {
-            display: block;
-        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #2d002d; }
+        ::-webkit-scrollbar-thumb { background: #b366ff; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #cc99ff; }
+        .text-purple-accent { color: #b366ff; }
+        .bg-dark-purple-section { background-color: #2d002d; }
+        .bg-medium-purple-section { background-color: #3f003f; }
+        .bg-footer-black { background-color: #0a0a0a; }
+        .tools-dropdown { display: none; position: absolute; background-color: #2d002d; min-width: 200px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4); z-index: 100; border-radius: 0.5rem; padding: 0.5rem 0; top: 100%; left: 0; }
+        .tools-dropdown a { color: #e0e0e0; padding: 0.75rem 1.25rem; text-decoration: none; display: block; white-space: nowrap; transition: background-color 0.2s ease; }
+        .tools-dropdown a:hover { background-color: #3f003f; color: #cc99ff; }
+        .tools-dropdown.active { display: block; }
+        #background-layers { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; }
+        #background-layers > div { position: absolute; inset: 0; }
+        .bg-gradient-layer { background: linear-gradient(to bottom, #1a001a, #3f003f); }
+        .bg-code-abstract-layer { background-image: url('https://images.pexels.com/photos/5380642/pexels-photo-5380642.jpeg?auto=compress&cs=tinysrgb&w=1920'); background-size: cover; background-position: center center; filter: blur(5px); opacity: 0.1; mix-blend-mode: overlay; }
+        .bg-pattern-layer { background-image: url('data:image/svg+xml;utf8,<svg width="10" height="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg"><circle cx="1" cy="1" r="1" fill="%23ffffff" opacity="0.05"/></svg>'); background-size: 10px 10px; background-repeat: repeat; opacity: 0.1; }
     </style>
 </head>
 <body class="antialiased">
 
+    <!-- Background Layers -->
+    <div id="background-layers">
+        <div class="bg-gradient-layer"></div>
+        <div class="bg-code-abstract-layer"></div>
+        <div class="bg-pattern-layer"></div>
+    </div>
+
     <!-- Header Section -->
-    <header class="bg-dark-purple shadow-lg py-4 px-6 md:px-12 fixed top-0 left-0 w-full z-50 rounded-b-xl">
+    <header class="bg-dark-purple-section shadow-lg py-4 px-6 md:px-12 fixed top-0 left-0 w-full z-50 rounded-b-xl">
         <div class="container mx-auto flex justify-between items-center">
-            <!-- Logo and Site Name -->
             <div class="flex items-center space-x-3">
-                <img src="/logo.png" alt="VIN NESIA Logo" class="w-10 h-10 rounded-full shadow-md">
+                <img src="/images/logo.png" alt="VIN NESIA Logo" class="w-10 h-10 rounded-full shadow-md">
                 <span class="text-2xl font-bold text-white tracking-wide">VIN NESIA</span>
             </div>
-
-            <!-- Navigation Menu (Desktop) -->
             <nav class="hidden md:flex space-x-8">
                 <a href="index.html" class="text-white hover:text-purple-accent transition duration-300 font-medium">Home</a>
                 <div class="relative group">
@@ -152,14 +117,10 @@
                 <a href="panduan.html" class="text-white hover:text-purple-accent transition duration-300 font-medium">Panduan Pengguna</a>
                 <a href="blog.html" class="text-white hover:text-purple-accent transition duration-300 font-medium">Blog</a>
             </nav>
-
-            <!-- Hamburger Menu (Mobile) -->
             <button id="hamburgerBtn" class="md:hidden text-white text-2xl focus:outline-none">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
-
-        <!-- Mobile Navigation Overlay -->
         <div id="mobileMenu" class="md:hidden fixed inset-0 bg-darker-purple bg-opacity-95 z-40 transform -translate-x-full transition-transform duration-300 ease-in-out">
             <div class="flex justify-end p-6">
                 <button id="closeMenuBtn" class="text-white text-3xl focus:outline-none">
@@ -198,92 +159,185 @@
     </header>
 
     <!-- Main Content -->
-    <main class="pt-24 pb-12 px-4 md:px-8 lg:px-16">
-        <section class="bg-dark-purple rounded-xl shadow-xl p-8 md:p-12 mb-12">
-            <h1 class="text-3xl md:text-4xl font-bold text-white mb-6 text-center">Panduan Pengguna</h1>
+    <main class="pt-24 pb-12 px-4 md:px-8 lg:px-16 flex-grow">
+        <section class="text-center py-16 md:py-24 bg-dark-purple-section rounded-xl shadow-xl mb-12">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-4 leading-tight">
+                Panduan <span class="text-purple-accent">Pengguna</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
+                Pelajari cara menggunakan setiap tools VIN NESIA dengan panduan langkah demi langkah.
+            </p>
+        </section>
+
+        <section class="bg-dark-purple-section rounded-xl shadow-xl p-8 md:p-12 mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 text-center">Bagaimana Menggunakan Tools Kami</h2>
             <div class="text-gray-300 leading-relaxed text-justify">
                 <p class="mb-4">
-                    Selamat datang di Panduan Pengguna VIN NESIA! Halaman ini akan membantu Anda memahami cara kerja setiap tools yang kami sediakan dan bagaimana Anda dapat memanfaatkannya secara maksimal. Semua tools kami dirancang untuk mudah digunakan, namun panduan ini akan memberikan detail langkah demi langkah dan tips berguna.
-                </p>
-
-                <h2 class="text-2xl md:text-3xl font-semibold text-purple-accent mb-4 mt-8">Cara Menggunakan Tools SEO</h2>
-
-                <h3 class="text-xl font-semibold text-white mb-2 mt-4">1. Meta Tag Generator</h3>
-                <p class="mb-2">
-                    <strong>Tujuan:</strong> Membuat meta tag dasar (judul, deskripsi, kata kunci) untuk optimasi SEO.
+                    Selamat datang di halaman panduan pengguna VIN NESIA! Kami telah merancang setiap tools kami agar mudah digunakan, bahkan untuk pemula. Namun, untuk membantu Anda memaksimalkan potensi setiap alat, kami menyediakan panduan singkat ini.
                 </p>
                 <p class="mb-4">
-                    <strong>Langkah-langkah:</strong>
-                    <ol class="list-decimal list-inside ml-4 space-y-1">
-                        <li>Kunjungi halaman <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer" class="text-purple-accent hover:underline">Meta Tag Generator</a>.</li>
-                        <li>Masukkan Judul Halaman (Page Title) yang diinginkan.</li>
-                        <li>Tulis Deskripsi Halaman (Page Description) yang ringkas dan menarik.</li>
-                        <li>Tambahkan Kata Kunci (Keywords) yang relevan, dipisahkan dengan koma.</li>
-                        <li>Klik tombol "Generate Meta Tags".</li>
-                        <li>Kode meta tag akan muncul di area output, siap untuk Anda salin dan tempel ke bagian `<head>` situs web Anda.</li>
-                    </ol>
+                    Secara umum, alur penggunaan tools kami sangat intuitif:
                 </p>
-
-                <h3 class="text-xl font-semibold text-white mb-2 mt-4">2. OG (Open Graph) Tag Generator</h3>
-                <p class="mb-2">
-                    <strong>Tujuan:</strong> Membuat tag Open Graph untuk kontrol tampilan konten saat dibagikan di media sosial.
-                </p>
+                <ol class="list-decimal list-inside mb-6 pl-5">
+                    <li class="mb-2"><strong>Pilih Tools:</strong> Navigasikan ke bagian "Tools" di menu utama atau jelajahi daftar tools di beranda. Klik pada tools yang ingin Anda gunakan.</li>
+                    <li class="mb-2"><strong>Masukkan Input:</strong> Setiap tools akan memiliki area input (biasanya kotak teks) di mana Anda dapat menempelkan atau mengetikkan data yang ingin Anda proses. Pastikan format input sesuai dengan yang diminta oleh tools (misalnya, kode HTML, teks Markdown, atau URL).</li>
+                    <li class="mb-2"><strong>Proses Data:</strong> Setelah memasukkan input, klik tombol yang relevan (misalnya, "Generate", "Beautify", "Minify", "Convert", "Encode", "Decode"). Tools akan segera memproses data Anda.</li>
+                    <li class="mb-2"><strong>Dapatkan Output:</strong> Hasil dari pemrosesan akan ditampilkan di area output (biasanya kotak teks terpisah). Anda dapat dengan mudah menyalin output ini untuk digunakan di proyek Anda.</li>
+                </ol>
                 <p class="mb-4">
-                    <strong>Langkah-langkah:</strong>
-                    <ol class="list-decimal list-inside ml-4 space-y-1">
-                        <li>Kunjungi halaman <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer" class="text-purple-accent hover:underline">OG Tag Generator</a>.</li>
-                        <li>Isi informasi seperti Judul, Deskripsi, URL Halaman, dan URL Gambar yang akan muncul saat dibagikan.</li>
-                        <li>Pilih jenis konten (misalnya, artikel, website).</li>
-                        <li>Klik tombol "Generate OG Tags".</li>
-                        <li>Salin kode yang dihasilkan dan tempel di bagian `<head>` situs Anda.</li>
-                    </ol>
-                </p>
-
-                <h3 class="text-xl font-semibold text-white mb-2 mt-4">3. HTML, CSS, JSON Beautifier/Minifier</h3>
-                <p class="mb-2">
-                    <strong>Tujuan:</strong> Merapikan atau mengkompres kode HTML, CSS, atau JSON.
-                </p>
-                <p class="mb-4">
-                    <strong>Langkah-langkah:</strong>
-                    <ol class="list-decimal list-inside ml-4 space-y-1">
-                        <li>Kunjungi halaman <a href="https://toolsvin.vinnesia.my.id" target="_blank" rel="noopener noreferrer" class="text-purple-accent hover:underline">Beautifier/Minifier</a>.</li>
-                        <li>Pilih jenis kode yang ingin Anda proses (HTML, CSS, atau JSON).</li>
-                        <li>Tempel kode Anda ke dalam area input.</li>
-                        <li>Pilih "Beautify" untuk merapikan atau "Minify" untuk mengkompres.</li>
-                        <li>Hasil akan ditampilkan di area output, siap untuk disalin.</li>
-                    </ol>
-                </p>
-
-                <h3 class="text-xl font-semibold text-white mb-2 mt-4">4. Markdown to HTML Converter</h3>
-                <p class="mb-2">
-                    <strong>Tujuan:</strong> Mengkonversi teks yang ditulis dalam format Markdown ke HTML.
-                </p>
-                <p class="mb-4">
-                    <strong>Langkah-langkah:</strong>
-                    <ol class="list-decimal list-inside ml-4 space-y-1">
-                        <li>Kunjungi halaman <a href="https://toolsvin.vinnesia.my.id" target="_blank" rel="noopener noreferrer" class="text-purple-accent hover:underline">Markdown to HTML Converter</a>.</li>
-                        <li>Tempel teks Markdown Anda ke dalam area input.</li>
-                        <li>Klik tombol "Convert to HTML".</li>
-                        <li>Output HTML akan muncul, siap untuk disalin dan digunakan di situs web Anda.</li>
-                    </ol>
-                </p>
-
-                <h2 class="text-2xl md:text-3xl font-semibold text-purple-accent mb-4 mt-8">Tips Umum Penggunaan Tools</h2>
-                <ul class="list-disc list-inside mb-4 space-y-2">
-                    <li><strong>Salin & Tempel:</strong> Hampir semua tools kami bekerja dengan metode salin (copy) input Anda dan tempel (paste) hasilnya.</li>
-                    <li><strong>Verifikasi:</strong> Meskipun tools kami akurat, selalu disarankan untuk memverifikasi output, terutama untuk kode kritis.</li>
-                    <li><strong>Gunakan Panduan Ini:</strong> Jika Anda bingung tentang cara menggunakan tool tertentu, halaman ini adalah sumber daya utama Anda.</li>
-                    <li><strong>Laporkan Masalah:</strong> Jika Anda menemukan masalah atau memiliki saran untuk perbaikan, jangan ragu untuk menghubungi kami melalui halaman <a href="contact.html" class="text-purple-accent hover:underline">Kontak</a>.</li>
-                </ul>
-                <p>
-                    Kami berharap panduan ini membantu Anda memanfaatkan VIN NESIA sepenuhnya. Selamat menggunakan tools kami!
+                    Ingat, semua pemrosesan data di VIN NESIA terjadi secara **client-side** (di browser Anda), yang berarti data Anda tidak pernah dikirim atau disimpan di server kami. Ini menjamin privasi dan keamanan Anda.
                 </p>
             </div>
+        </section>
+
+        <section class="bg-medium-purple-section rounded-xl shadow-xl p-8 md:p-12 mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-8 text-center">Panduan Spesifik Tools</h2>
+            <div class="space-y-8">
+                <!-- Panduan Meta Tag Generator -->
+                <div class="bg-darker-purple p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl md:text-2xl font-semibold text-purple-accent mb-3">Meta Tag Generator</h3>
+                    <p class="text-gray-300 mb-2">
+                        Alat ini membantu Anda membuat meta tag HTML untuk SEO.
+                    </p>
+                    <p class="text-gray-300 mb-2"><strong>Cara Penggunaan:</strong></p>
+                    <ul class="list-disc list-inside pl-5 text-gray-400">
+                        <li class="mb-1">Masukkan Judul Halaman (Title), Deskripsi Halaman (Description), dan Kata Kunci (Keywords) yang relevan.</li>
+                        <li class="mb-1">Pilih opsi Robot Meta (index/noindex, follow/nofollow) sesuai kebutuhan Anda.</li>
+                        <li class="mb-1">Klik "Generate Meta Tags".</li>
+                        <li class="mb-1">Salin kode yang dihasilkan dan tempelkan di bagian `&lt;head&gt;` situs web Anda.</li>
+                    </ul>
+                </div>
+
+                <!-- Panduan OG (Open Graph) Tag Generator -->
+                <div class="bg-darker-purple p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl md:text-2xl font-semibold text-purple-accent mb-3">OG (Open Graph) Tag Generator</h3>
+                    <p class="text-gray-300 mb-2">
+                        Alat ini membantu Anda membuat tag Open Graph untuk pratinjau media sosial yang menarik.
+                    </p>
+                    <p class="text-gray-300 mb-2"><strong>Cara Penggunaan:</strong></p>
+                    <ul class="list-disc list-inside pl-5 text-gray-400">
+                        <li class="mb-1">Isi Judul, Deskripsi, URL Gambar, URL Halaman, dan Tipe Konten.</li>
+                        <li class="mb-1">Klik "Generate OG Tags".</li>
+                        <li class="mb-1">Salin kode yang dihasilkan dan tempelkan di bagian `&lt;head&gt;` situs web Anda.</li>
+                    </ul>
+                </div>
+
+                <!-- Panduan Twitter Card Tag Generator -->
+                <div class="bg-darker-purple p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl md:text-2xl font-semibold text-purple-accent mb-3">Twitter Card Tag Generator</h3>
+                    <p class="text-gray-300 mb-2">
+                        Alat ini membantu Anda membuat tag Twitter Card untuk tampilan tautan yang kaya di Twitter.
+                    </p>
+                    <p class="text-gray-300 mb-2"><strong>Cara Penggunaan:</strong></p>
+                    <ul class="list-disc list-inside pl-5 text-gray-400">
+                        <li class="mb-1">Pilih jenis Twitter Card (Summary Card atau Summary Card with Large Image).</li>
+                        <li class="mb-1">Masukkan URL Twitter Anda (misalnya, `@username`), Judul, Deskripsi, dan URL Gambar.</li>
+                        <li class="mb-1">Klik "Generate Twitter Card".</li>
+                        <li class="mb-1">Salin kode yang dihasilkan dan tempelkan di bagian `&lt;head&gt;` situs web Anda.</li>
+                    </ul>
+                </div>
+
+                <!-- Panduan Canonical URL Tag Generator -->
+                <div class="bg-darker-purple p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl md:text-2xl font-semibold text-purple-accent mb-3">Canonical URL Tag Generator</h3>
+                    <p class="text-gray-300 mb-2">
+                        Alat ini membantu Anda mengatasi masalah duplikasi konten dengan membuat tag URL kanonik.
+                    </p>
+                    <p class="text-gray-300 mb-2"><strong>Cara Penggunaan:</strong></p>
+                    <ul class="list-disc list-inside pl-5 text-gray-400">
+                        <li class="mb-1">Masukkan URL lengkap dari halaman yang Anda ingin jadikan versi kanonik.</li>
+                        <li class="mb-1">Klik "Generate Canonical Tag".</li>
+                        <li class="mb-1">Salin kode yang dihasilkan dan tempelkan di bagian `&lt;head&gt;` dari semua halaman duplikat.</li>
+                    </ul>
+                </div>
+
+                <!-- Panduan Noindex/Nofollow Meta Tag Tool -->
+                <div class="bg-darker-purple p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl md:text-2xl font-semibold text-purple-accent mb-3">Noindex/Nofollow Meta Tag Tool</h3>
+                    <p class="text-gray-300 mb-2">
+                        Alat ini membantu Anda mengontrol indeksasi halaman dan mengikuti tautan oleh mesin pencari.
+                    </p>
+                    <p class="text-gray-300 mb-2"><strong>Cara Penggunaan:</strong></p>
+                    <ul class="list-disc list-inside pl-5 text-gray-400">
+                        <li class="mb-1">Pilih apakah Anda ingin halaman diindeks (index/noindex) dan apakah tautan diikuti (follow/nofollow).</li>
+                        <li class="mb-1">Klik "Generate Meta Tag".</li>
+                        <li class="mb-1">Salin kode yang dihasilkan dan tempelkan di bagian `&lt;head&gt;` halaman web Anda.</li>
+                    </ul>
+                </div>
+
+                <!-- Panduan Favicon Tag Generator -->
+                <div class="bg-darker-purple p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl md:text-2xl font-semibold text-purple-accent mb-3">Favicon Tag Generator</h3>
+                    <p class="text-gray-300 mb-2">
+                        Alat ini membantu Anda membuat tag HTML untuk favicon situs Anda.
+                    </p>
+                    <p class="text-gray-300 mb-2"><strong>Cara Penggunaan:</strong></p>
+                    <ul class="list-disc list-inside pl-5 text-gray-400">
+                        <li class="mb-1">Masukkan URL dasar favicon Anda (misalnya, `/images/favicon.ico`).</li>
+                        <li class="mb-1">Pilih ukuran dan tipe file yang ingin Anda dukung.</li>
+                        <li class="mb-1">Klik "Generate Favicon Tags".</li>
+                        <li class="mb-1">Salin kode yang dihasilkan dan tempelkan di bagian `&lt;head&gt;` situs web Anda.</li>
+                    </ul>
+                </div>
+
+                <!-- Panduan HTML, CSS, JSON Beautifier/Minifier -->
+                <div class="bg-darker-purple p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl md:text-2xl font-semibold text-purple-accent mb-3">HTML, CSS, JSON Beautifier/Minifier</h3>
+                    <p class="text-gray-300 mb-2">
+                        Alat ini merapikan atau mengompres kode HTML, CSS, atau JSON.
+                    </p>
+                    <p class="text-gray-300 mb-2"><strong>Cara Penggunaan:</strong></p>
+                    <ul class="list-disc list-inside pl-5 text-gray-400">
+                        <li class="mb-1">Pilih jenis kode (HTML, CSS, atau JSON).</li>
+                        <li class="mb-1">Tempelkan kode Anda ke dalam area input.</li>
+                        <li class="mb-1">Klik "Beautify" untuk merapikan atau "Minify" untuk mengompres.</li>
+                        <li class="mb-1">Salin kode output yang sudah diproses.</li>
+                    </ul>
+                </div>
+
+                <!-- Panduan Markdown to HTML Converter -->
+                <div class="bg-darker-purple p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl md:text-2xl font-semibold text-purple-accent mb-3">Markdown to HTML Converter</h3>
+                    <p class="text-gray-300 mb-2">
+                        Alat ini mengubah teks Markdown menjadi kode HTML.
+                    </p>
+                    <p class="text-gray-300 mb-2"><strong>Cara Penggunaan:</strong></p>
+                    <ul class="list-disc list-inside pl-5 text-gray-400">
+                        <li class="mb-1">Tempelkan teks Markdown Anda ke dalam area input.</li>
+                        <li class="mb-1">Klik "Convert to HTML".</li>
+                        <li class="mb-1">Salin kode HTML yang dihasilkan.</li>
+                    </ul>
+                </div>
+
+                <!-- Panduan HTML Entity Encoder/Decoder -->
+                <div class="bg-darker-purple p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl md:text-2xl font-semibold text-purple-accent mb-3">HTML Entity Encoder/Decoder</h3>
+                    <p class="text-gray-300 mb-2">
+                        Alat ini mengamankan karakter khusus atau mengembalikannya ke bentuk asli.
+                    </p>
+                    <p class="text-gray-300 mb-2"><strong>Cara Penggunaan:</strong></p>
+                    <ul class="list-disc list-inside pl-5 text-gray-400">
+                        <li class="mb-1">Tempelkan teks atau entitas HTML ke dalam area input.</li>
+                        <li class="mb-1">Klik "Encode" untuk mengubah teks menjadi entitas, atau "Decode" untuk mengembalikan entitas menjadi teks.</li>
+                        <li class="mb-1">Salin hasilnya.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-dark-purple-section rounded-xl shadow-xl p-8 md:p-12 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Masih Butuh Bantuan?</h2>
+            <p class="text-lg text-gray-300 mb-8">
+                Jika Anda memiliki pertanyaan lebih lanjut atau mengalami kesulitan, jangan ragu untuk menghubungi tim dukungan kami.
+            </p>
+            <a href="contact.html" class="inline-block bg-purple-accent text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-white hover:text-purple-accent transition-all duration-300 shadow-lg">
+                Hubungi Kami <i class="fas fa-envelope ml-2"></i>
+            </a>
         </section>
     </main>
 
     <!-- Footer Section -->
-    <footer class="bg-dark-purple py-8 px-6 md:px-12 text-center text-gray-400 rounded-t-xl">
+    <footer class="bg-footer-black py-8 px-6 md:px-12 text-center text-gray-400 rounded-t-xl mt-auto">
         <div class="container mx-auto">
             <p class="mb-4">&copy; 2025 VIN NESIA. All rights reserved.</p>
             <div class="flex justify-center space-x-6 mb-4">
@@ -297,7 +351,7 @@
                 <a href="privacy.html" class="hover:text-purple-accent transition duration-300">Privacy Policy</a>
                 <a href="contact.html" class="hover:text-purple-accent transition duration-300">Contact</a>
                 <a href="panduan.html" class="hover:text-purple-accent transition duration-300">Panduan Pengguna</a>
-                <a href="blog.html" class="hover:text-purple-accent transition duration-300">Blog</a>
+                <a href="blog.html" class="text-white hover:text-purple-accent transition duration-300 font-medium">Blog</a>
             </div>
         </div>
     </footer>
