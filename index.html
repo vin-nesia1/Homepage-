@@ -128,6 +128,31 @@
                 grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             }
         }
+
+        /* Styles for testimonial card */
+        .testimonial-card {
+            background-color: #2d002d; /* Darker purple */
+            border-radius: 0.75rem; /* Rounded corners */
+            padding: 1.5rem; /* Padding inside the card */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+            transition: transform 0.2s ease-in-out;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-5px); /* Slight lift on hover */
+        }
+        .testimonial-card p {
+            font-style: italic;
+            color: #ccc;
+            margin-bottom: 1rem;
+        }
+        .testimonial-card .author {
+            font-weight: 600;
+            color: #b366ff; /* Accent color */
+        }
+        .testimonial-card .role {
+            font-size: 0.875rem; /* Smaller text */
+            color: #888;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -227,7 +252,18 @@
             </p>
         </section>
 
-        <!-- Introductory Section -->
+        <!-- Section: Mulai Sekarang -->
+        <section class="bg-purple-accent text-darker-purple p-8 md:p-12 rounded-xl shadow-xl text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">Mulai Sekarang & Tingkatkan Produktivitas Anda!</h2>
+            <p class="text-lg md:text-xl text-white mb-8 max-w-2xl mx-auto">
+                Temukan berbagai tools SEO dan pengembangan web gratis yang akan memudahkan pekerjaan Anda.
+            </p>
+            <a href="#tools-section" class="inline-block bg-white text-purple-accent font-bold py-3 px-8 rounded-full text-lg hover:bg-gray-100 hover:scale-105 transition-all duration-300 shadow-lg">
+                Jelajahi Semua Tools <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </section>
+
+        <!-- Introductory Section (existing content) -->
         <section class="bg-dark-purple rounded-xl shadow-xl p-8 md:p-12 mb-12">
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 text-center">Selamat Datang di VIN NESIA</h2>
             <div class="intro-text text-gray-300 leading-relaxed text-justify">
@@ -237,29 +273,38 @@
                 <p class="mb-4">
                     Filosofi di balik VIN NESIA adalah **demokratisasi alat digital**. Kami percaya bahwa setiap individu, terlepas dari tingkat keahlian teknisnya, berhak memiliki akses ke alat-alat canggih yang dapat memberdayakan mereka dalam menciptakan, mengelola, dan mengoptimalkan kehadiran digitalnya. Dengan antarmuka yang intuitif dan fungsionalitas yang kuat, VIN NESIA dirancang untuk menjadi teman setia Anda dalam setiap langkah perjalanan digital. Kami memahami bahwa waktu adalah aset berharga, dan itulah mengapa setiap tool di platform kami dibangun dengan fokus pada kecepatan dan kemudahan penggunaan. Anda tidak perlu mengunduh atau menginstal perangkat lunak apa pun; cukup buka browser Anda, kunjungi VIN NESIA, dan mulai bekerja.
                 </p>
-                <p class="mb-4">
-                    Manfaat utama menggunakan tools yang disediakan oleh VIN NESIA sangatlah beragam dan langsung terasa:
-                    <ul>
-                        <li class="mb-2"><strong class="text-purple-accent">Efisiensi Waktu</strong>: Tools kami dirancang untuk mengotomatiskan tugas-tugas yang repetitif dan memakan waktu, memungkinkan Anda fokus pada aspek-aspek yang lebih kreatif dan strategis dari pekerjaan Anda. Dari pembuatan meta tag yang sempurna hingga pemformatan kode yang rapi, semuanya dapat dilakukan dalam hitungan detik. Ini berarti lebih banyak waktu untuk inovasi dan lebih sedikit waktu untuk pekerjaan manual yang membosankan.</li>
-                        <li class="mb-2"><strong class="text-purple-accent">Peningkatan Kualitas</strong>: Dengan generator tag SEO yang akurat dan alat pemformatan kode yang rapi, Anda dapat memastikan bahwa output kerja Anda selalu memenuhi standar tertinggi. Kode yang rapi lebih mudah dibaca, dipelihara, dan diskalakan, meminimalkan potensi kesalahan dan mempercepat proses debugging. Meta tag yang optimal tidak hanya meningkatkan visibilitas di mesin pencari tetapi juga memastikan pesan merek Anda tersampaikan dengan jelas.</li>
-                        <li class="mb-2"><strong class="text-purple-accent">Aksesibilitas Global</strong>: Semua tools kami bersifat client-side, artinya mereka berjalan langsung di browser Anda tanpa memerlukan pemrosesan di server. Ini menjamin kecepatan, keamanan, dan kemampuan untuk diakses dari mana saja di dunia, kapan saja, hanya dengan koneksi internet. Privasi data Anda juga terjaga karena informasi tidak dikirim ke server kami.</li>
-                        <li class="mb-2"><strong class="text-purple-accent">Ramah Pengguna</strong>: Meskipun tools kami kuat, kami memastikan bahwa antarmukanya tetap sederhana dan mudah dipahami, bahkan bagi mereka yang baru memulai di dunia digital. Panduan pengguna yang jelas dan deskripsi singkat untuk setiap tool akan membantu Anda memaksimalkan potensi VIN NESIA tanpa kurva pembelajaran yang curam.</li>
-                        <li class="mb-2"><strong class="text-purple-accent">Optimalisasi SEO yang Mendalam</strong>: Tools SEO kami adalah aset tak ternilai bagi siapa saja yang ingin meningkatkan peringkat situs web mereka di mesin pencari. Dengan kemampuan untuk menghasilkan meta tag yang relevan, mengelola open graph, mengonfigurasi canonical URL, dan mengontrol indeksasi halaman, Anda akan memiliki kontrol penuh atas bagaimana situs Anda ditampilkan dan ditemukan secara online. Ini krusial untuk menarik lebih banyak lalu lintas organik.</li>
-                        <li class="mb-2"><strong class="text-purple-accent">Penyederhanaan Pengembangan Web</strong>: Bagi para pengembang, tools seperti beautifier/minifier HTML, CSS, JSON, serta converter Markdown ke HTML akan menjadi penyelamat waktu. Mereka membantu menjaga kebersihan kode, mengurangi ukuran file untuk performa yang lebih baik, dan memfasilitasi konversi format dokumen, yang semuanya berkontribusi pada proses pengembangan yang lebih lancar dan efisien.</li>
-                        <li class="mb-2"><strong class="text-purple-accent">Meningkatkan Pengalaman Pengguna</strong>: Dengan tools seperti Favicon Tag Generator, Anda dapat mempercantik tampilan situs Anda di tab browser, memberikan sentuhan profesional yang seringkali diabaikan namun penting bagi pengalaman pengguna. Detail kecil seperti ini dapat membuat perbedaan besar dalam persepsi merek Anda.</li>
-                    </ul>
-                </p>
-                <p class="mb-4">
-                    VIN NESIA adalah lebih dari sekadar kumpulan alat; ini adalah komitmen kami untuk mendukung komunitas digital dengan sumber daya yang memberdayakan. Kami terus berupaya untuk memperluas koleksi tools kami, memastikan bahwa Anda selalu memiliki akses ke inovasi terbaru dan fungsionalitas yang relevan. Kami mendengarkan masukan dari pengguna kami dan beradaptasi dengan tren teknologi terbaru untuk memastikan VIN NESIA tetap menjadi sumber daya yang relevan dan tak tergantikan.
-                </p>
-                <p>
-                    Kami mengundang Anda untuk menjelajahi berbagai tools yang kami tawarkan dan merasakan sendiri bagaimana VIN NESIA dapat menyederhanakan tugas-tugas digital Anda. Mari bersama-sama membangun web yang lebih baik, lebih efisien, dan lebih terhubung. Kami bersemangat untuk menjadi bagian dari perjalanan digital Anda dan membantu Anda mencapai tujuan online Anda.
-                </p>
             </div>
         </section>
 
-        <!-- Tools Section -->
-        <section class="tools-section mb-12">
+        <!-- Section: Mengapa Memilih VIN NESIA? -->
+        <section class="bg-dark-purple rounded-xl shadow-xl p-8 md:p-12 mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-8 text-center">Mengapa Memilih VIN NESIA?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center p-6 bg-darker-purple rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <i class="fas fa-dollar-sign text-5xl text-purple-accent mb-4"></i>
+                    <h3 class="text-xl font-semibold text-white mb-2">Gratis Sepenuhnya</h3>
+                    <p class="text-gray-400 text-sm">Akses semua tools tanpa biaya tersembunyi atau langganan.</p>
+                </div>
+                <div class="text-center p-6 bg-darker-purple rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <i class="fas fa-lock text-5xl text-purple-accent mb-4"></i>
+                    <h3 class="text-xl font-semibold text-white mb-2">Aman & Privasi Terjaga</h3>
+                    <p class="text-gray-400 text-sm">Pemrosesan data 100% di browser Anda, tanpa dikirim ke server kami.</p>
+                </div>
+                <div class="text-center p-6 bg-darker-purple rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <i class="fas fa-magic text-5xl text-purple-accent mb-4"></i>
+                    <h3 class="text-xl font-semibold text-white mb-2">Mudah Digunakan</h3>
+                    <p class="text-gray-400 text-sm">Antarmuka intuitif untuk efisiensi maksimal, bahkan bagi pemula.</p>
+                </div>
+                <div class="text-center p-6 bg-darker-purple rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <i class="fas fa-tools text-5xl text-purple-accent mb-4"></i>
+                    <h3 class="text-xl font-semibold text-white mb-2">Beragam Tools Inovatif</h3>
+                    <p class="text-gray-400 text-sm">Koleksi tools SEO dan pengembangan web yang terus bertambah.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tools Section (existing content, added id) -->
+        <section id="tools-section" class="tools-section mb-12">
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-8 text-center">Daftar Tools Kami</h2>
 
             <!-- SEO Tools Category -->
@@ -331,7 +376,71 @@
             </div>
         </section>
 
-        <!-- FAQ Section -->
+        <!-- Section: Apa Kata Pengguna Kami -->
+        <section class="bg-dark-purple rounded-xl shadow-xl p-8 md:p-12 mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-8 text-center">Apa Kata Pengguna Kami</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <p>"VIN NESIA adalah penyelamat! Tools SEO-nya sangat membantu untuk mengoptimalkan website saya tanpa perlu pengetahuan teknis mendalam. Sangat direkomendasikan!"</p>
+                    <div class="author-info text-right">
+                        <div class="author">Budi Santoso</div>
+                        <div class="role">Blogger & Content Creator</div>
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <p>"Saya sering menggunakan Beautifier HTML, CSS, JSON. Kode jadi rapi dan debugging lebih mudah. VIN NESIA sangat membantu pekerjaan saya sebagai developer."</p>
+                    <div class="author-info text-right">
+                        <div class="author">Citra Dewi</div>
+                        <div class="role">Web Developer</div>
+                    </div>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <p>"Awalnya ragu, tapi ternyata tools favicon generator sangat praktis. Situs saya sekarang terlihat lebih profesional di browser. Terima kasih VIN NESIA!"</p>
+                    <div class="author-info text-right">
+                        <div class="author">Denny Pratama</div>
+                        <div class="role">Pemilik Usaha Online</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Artikel Terbaru dari Blog -->
+        <section class="bg-dark-purple rounded-xl shadow-xl p-8 md:p-12 mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-8 text-center">Artikel Terbaru dari Blog</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Blog Post 1 (Placeholder) -->
+                <a href="blog.html#post1" class="block bg-darker-purple p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <img src="https://source.unsplash.com/featured/?blog,seo-tips" alt="Ilustrasi Artikel Blog SEO" class="w-full h-36 object-cover rounded-md mb-4">
+                    <h3 class="text-xl font-bold text-white mb-2">5 Tips SEO Penting untuk Pemula</h3>
+                    <p class="text-gray-400 text-sm mb-4">Pelajari dasar-dasar SEO yang harus diketahui setiap pemilik website atau blogger untuk meningkatkan peringkat di mesin pencari.</p>
+                    <span class="text-purple-accent font-semibold hover:underline">Baca Selengkapnya <i class="fas fa-arrow-right ml-1 text-sm"></i></span>
+                </a>
+                <!-- Blog Post 2 (Placeholder) -->
+                <a href="blog.html#post2" class="block bg-darker-purple p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <img src="https://source.unsplash.com/featured/?blog,web-development" alt="Ilustrasi Artikel Blog Web Dev" class="w-full h-36 object-cover rounded-md mb-4">
+                    <h3 class="text-xl font-bold text-white mb-2">Mengoptimalkan Performa Website dengan Kode Bersih</h3>
+                    <p class="text-gray-400 text-sm mb-4">Temukan bagaimana penggunaan Beautifier kami dapat membantu Anda menjaga kode tetap rapi dan cepat.</p>
+                    <span class="text-purple-accent font-semibold hover:underline">Baca Selengkapnya <i class="fas fa-arrow-right ml-1 text-sm"></i></span>
+                </a>
+                <!-- Blog Post 3 (Placeholder) -->
+                <a href="blog.html#post3" class="block bg-darker-purple p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <img src="https://source.unsplash.com/featured/?blog,digital-marketing" alt="Ilustrasi Artikel Blog Digital Marketing" class="w-full h-36 object-cover rounded-md mb-4">
+                    <h3 class="text-xl font-bold text-white mb-2">Pentingnya Open Graph Tag untuk Media Sosial</h3>
+                    <p class="text-gray-400 text-sm mb-4">Pelajari mengapa Open Graph tag sangat krusial untuk sharing konten yang efektif di platform sosial.</p>
+                    <span class="text-purple-accent font-semibold hover:underline">Baca Selengkapnya <i class="fas fa-arrow-right ml-1 text-sm"></i></span>
+                </a>
+            </div>
+            <div class="text-center mt-10">
+                <a href="blog.html" class="inline-block bg-purple-accent text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-white hover:text-purple-accent transition-all duration-300 shadow-lg">
+                    Lihat Semua Artikel <i class="fas fa-chevron-right ml-2"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- FAQ Section (existing content) -->
         <section class="faq-section bg-dark-purple rounded-xl shadow-xl p-8 md:p-12 mb-12">
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-8 text-center">Pertanyaan Umum (FAQ)</h2>
             <div class="space-y-6">
