@@ -3,37 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - VIN NESIA</title>
+    <title>Blog VIN NESIA - Artikel & Panduan Terbaru</title>
 
     <!-- Meta Tags SEO -->
-    <meta name="description" content="Baca artikel terbaru dari blog VIN NESIA tentang SEO, pengembangan web, tips tools, dan berita teknologi.">
-    <meta name="keywords" content="Blog VIN NESIA, artikel, berita teknologi, tips SEO, tutorial pengembangan web, informasi tools">
+    <meta name="description" content="Baca artikel dan panduan terbaru dari VIN NESIA tentang SEO, pengembangan web, tips produktivitas, dan banyak lagi.">
+    <meta name="keywords" content="blog VIN NESIA, artikel SEO, panduan web development, tips programmer, berita teknologi">
     <meta name="author" content="VIN NESIA">
 
     <!-- Open Graph Meta Tags for Social Sharing -->
-    <meta property="og:title" content="Blog - VIN NESIA">
-    <meta property="og:description" content="Baca artikel terbaru dari blog VIN NESIA tentang SEO, pengembangan web, tips tools, dan berita teknologi.">
+    <meta property="og:title" content="Blog VIN NESIA - Artikel & Panduan Terbaru">
+    <meta property="og:description" content="Baca artikel dan panduan terbaru dari VIN NESIA tentang SEO, pengembangan web, tips produktivitas, dan banyak lagi.">
     <meta property="og:image" content="https://www.vinnesia.my.id/logo.png">
     <meta property="og:url" content="https://www.vinnesia.my.id/blog.html">
     <meta property="og:type" content="website">
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Blog - VIN NESIA">
-    <meta name="twitter:description" content="Baca artikel terbaru dari blog VIN NESIA tentang SEO, pengembangan web, tips tools, dan berita teknologi.">
+    <meta name="twitter:title" content="Blog VIN NESIA - Artikel & Panduan Terbaru">
+    <meta name="twitter:description" content="Baca artikel dan panduan terbaru dari VIN NESIA tentang SEO, pengembangan web, tips produktivitas, dan banyak lagi.">
     <meta name="twitter:image" content="https://www.vinnesia.my.id/logo.png">
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JXL70YP8XN"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-JXL70YP8XN');
-    </script>
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -45,85 +36,29 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <style>
-        /* Custom CSS to override/enhance Tailwind for specific elements */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #1a001a; /* Dark purple-black */
-            color: #e0e0e0; /* Light grey text for contrast */
-        }
-
-        /* Custom scrollbar for a sleek look */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #2d002d; /* Darker track */
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #b366ff; /* Purple thumb */
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #cc99ff; /* Lighter purple on hover */
-        }
-
-        .text-purple-accent {
-            color: #b366ff; /* Custom purple accent color */
-        }
-
-        .bg-dark-purple {
-            background-color: #2d002d; /* Slightly lighter dark purple for cards/sections */
-        }
-
-        .bg-darker-purple {
-            background-color: #1a001a; /* Main background */
-        }
-
-        /* Specific styling for the tools dropdown */
-        .tools-dropdown {
-            display: none;
-            position: absolute;
-            background-color: #2d002d;
-            min-width: 200px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
-            z-index: 100;
-            border-radius: 0.5rem;
-            padding: 0.5rem 0;
-            top: 100%; /* Position below the parent nav item */
-            left: 0;
-        }
-
-        .tools-dropdown a {
+            background-color: #1a001a;
             color: #e0e0e0;
-            padding: 0.75rem 1.25rem;
-            text-decoration: none;
-            display: block;
-            white-space: nowrap;
-            transition: background-color 0.2s ease;
         }
-
-        .tools-dropdown a:hover {
-            background-color: #3f003f;
-            color: #cc99ff;
-        }
-
-        .tools-dropdown.active {
-            display: block;
-        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #2d002d; }
+        ::-webkit-scrollbar-thumb { background: #b366ff; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #cc99ff; }
+        .text-purple-accent { color: #b366ff; }
+        .bg-dark-purple { background-color: #2d002d; }
+        .bg-darker-purple { background-color: #1a001a; }
     </style>
 </head>
-<body class="antialiased">
+<body class="antialiased flex flex-col min-h-screen">
 
     <!-- Header Section -->
     <header class="bg-dark-purple shadow-lg py-4 px-6 md:px-12 fixed top-0 left-0 w-full z-50 rounded-b-xl">
         <div class="container mx-auto flex justify-between items-center">
-            <!-- Logo and Site Name -->
             <div class="flex items-center space-x-3">
                 <img src="/logo.png" alt="VIN NESIA Logo" class="w-10 h-10 rounded-full shadow-md">
                 <span class="text-2xl font-bold text-white tracking-wide">VIN NESIA</span>
             </div>
-
-            <!-- Navigation Menu (Desktop) -->
             <nav class="hidden md:flex space-x-8">
                 <a href="index.html" class="text-white hover:text-purple-accent transition duration-300 font-medium">Home</a>
                 <div class="relative group">
@@ -152,14 +87,10 @@
                 <a href="panduan.html" class="text-white hover:text-purple-accent transition duration-300 font-medium">Panduan Pengguna</a>
                 <a href="blog.html" class="text-white hover:text-purple-accent transition duration-300 font-medium">Blog</a>
             </nav>
-
-            <!-- Hamburger Menu (Mobile) -->
             <button id="hamburgerBtn" class="md:hidden text-white text-2xl focus:outline-none">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
-
-        <!-- Mobile Navigation Overlay -->
         <div id="mobileMenu" class="md:hidden fixed inset-0 bg-darker-purple bg-opacity-95 z-40 transform -translate-x-full transition-transform duration-300 ease-in-out">
             <div class="flex justify-end p-6">
                 <button id="closeMenuBtn" class="text-white text-3xl focus:outline-none">
@@ -197,64 +128,43 @@
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="pt-24 pb-12 px-4 md:px-8 lg:px-16">
+    <!-- Main Content - Adjusted padding-top -->
+    <main class="flex-grow pt-32 pb-12 px-4 md:px-8 lg:px-16">
         <section class="bg-dark-purple rounded-xl shadow-xl p-8 md:p-12 mb-12">
-            <h1 class="text-3xl md:text-4xl font-bold text-white mb-6 text-center">Blog Kami</h1>
-            <div class="text-gray-300 leading-relaxed text-justify">
-                <p class="mb-4">
-                    Selamat datang di Blog VIN NESIA! Di sini Anda akan menemukan artikel-artikel terbaru, tips & trik, panduan mendalam, dan berita seputar dunia SEO, pengembangan web, dan teknologi. Kami berkomitmen untuk menyediakan konten berkualitas yang relevan dan bermanfaat bagi programmer, pengembang web, dan siapa pun yang tertarik untuk meningkatkan kehadiran digital mereka.
-                </p>
-                <p class="mb-8">
-                    Jelajahi berbagai topik kami dan temukan inspirasi serta solusi untuk proyek-proyek Anda.
-                </p>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-6 text-center">Blog VIN NESIA</h1>
+            <p class="text-lg text-gray-300 mb-8 text-center max-w-3xl mx-auto">
+                Temukan artikel, panduan, dan tips terbaru seputar SEO, pengembangan web, dan teknologi untuk membantu Anda meningkatkan kehadiran online.
+            </p>
 
-                <!-- Blog Post Grid (Placeholder) -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Example Blog Post 1 -->
-                    <div class="bg-darker-purple rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                        <img src="https://placehold.co/600x400/3f003f/ffffff?text=Artikel+Blog+1" alt="Gambar Artikel Blog 1" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-white mb-2">Mengoptimalkan Meta Tag untuk Peringkat SEO Lebih Baik</h3>
-                            <p class="text-gray-400 text-sm mb-4">Pelajari strategi terbaik dalam membuat meta tag yang efektif menggunakan Meta Tag Generator VIN NESIA untuk meningkatkan visibilitas situs Anda di mesin pencari.</p>
-                            <a href="#" class="text-purple-accent hover:underline font-medium">Baca Selengkapnya <i class="fas fa-arrow-right ml-1 text-xs"></i></a>
-                        </div>
-                    </div>
-
-                    <!-- Example Blog Post 2 -->
-                    <div class="bg-darker-purple rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                        <img src="https://placehold.co/600x400/3f003f/ffffff?text=Artikel+Blog+2" alt="Gambar Artikel Blog 2" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-white mb-2">Rahasia Kode Bersih: Menggunakan Beautifier HTML, CSS, JSON</h3>
-                            <p class="text-gray-400 text-sm mb-4">Temukan bagaimana tools beautifier kami dapat membantu Anda menjaga kode tetap rapi, mudah dibaca, dan bebas dari kesalahan, mempercepat proses pengembangan.</p>
-                            <a href="#" class="text-purple-accent hover:underline font-medium">Baca Selengkapnya <i class="fas fa-arrow-right ml-1 text-xs"></i></a>
-                        </div>
-                    </div>
-
-                    <!-- Example Blog Post 3 -->
-                    <div class="bg-darker-purple rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                        <img src="https://placehold.co/600x400/3f003f/ffffff?text=Artikel+Blog+3" alt="Gambar Artikel Blog 3" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-white mb-2">Membuat Konten Menarik dengan Markdown to HTML Converter</h3>
-                            <p class="text-gray-400 text-sm mb-4">Bagi para blogger dan penulis, Markdown adalah pilihan tepat. Pelajari cara cepat mengubah Markdown ke HTML siap publikasi dengan tool kami.</p>
-                            <a href="#" class="text-purple-accent hover:underline font-medium">Baca Selengkapnya <i class="fas fa-arrow-right ml-1 text-xs"></i></a>
-                        </div>
-                    </div>
-
-                    <!-- Add more blog posts here following the same structure -->
-                </div>
-
-                <div class="text-center mt-12">
-                    <p class="text-gray-400">
-                        Nantikan artikel-artikel baru setiap minggu!
-                    </p>
-                </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Blog Post 1 -->
+                <a href="blog-post-1.html" class="block bg-darker-purple p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <img src="https://source.unsplash.com/featured/?seo,tips,beginner" alt="Ilustrasi 5 Tips SEO Penting untuk Pemula" class="w-full h-36 object-cover rounded-md mb-4">
+                    <h3 class="text-xl font-bold text-white mb-2">5 Tips SEO Penting untuk Pemula</h3>
+                    <p class="text-gray-400 text-sm mb-4">Pelajari dasar-dasar SEO yang harus diketahui setiap pemilik website atau blogger untuk meningkatkan peringkat di mesin pencari.</p>
+                    <span class="text-purple-accent font-semibold hover:underline">Baca Selengkapnya <i class="fas fa-arrow-right ml-1 text-sm"></i></span>
+                </a>
+                <!-- Blog Post 2 -->
+                <a href="blog-post-2.html" class="block bg-darker-purple p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <img src="https://source.unsplash.com/featured/?code,clean,optimization" alt="Ilustrasi Mengoptimalkan Performa Website dengan Kode Bersih" class="w-full h-36 object-cover rounded-md mb-4">
+                    <h3 class="text-xl font-bold text-white mb-2">Mengoptimalkan Performa Website dengan Kode Bersih</h3>
+                    <p class="text-gray-400 text-sm mb-4">Temukan bagaimana penggunaan Beautifier kami dapat membantu Anda menjaga kode tetap rapi dan cepat.</p>
+                    <span class="text-purple-accent font-semibold hover:underline">Baca Selengkapnya <i class="fas fa-arrow-right ml-1 text-sm"></i></span>
+                </a>
+                <!-- Blog Post 3 -->
+                <a href="blog-post-3.html" class="block bg-darker-purple p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <img src="https://source.unsplash.com/featured/?open-graph,social-media,sharing" alt="Ilustrasi Pentingnya Open Graph Tag untuk Media Sosial" class="w-full h-36 object-cover rounded-md mb-4">
+                    <h3 class="text-xl font-bold text-white mb-2">Pentingnya Open Graph Tag untuk Media Sosial</h3>
+                    <p class="text-gray-400 text-sm mb-4">Pelajari mengapa Open Graph tag sangat krusial untuk sharing konten yang efektif di platform sosial.</p>
+                    <span class="text-purple-accent font-semibold hover:underline">Baca Selengkapnya <i class="fas fa-arrow-right ml-1 text-sm"></i></span>
+                </a>
+                <!-- Tambahkan lebih banyak artikel di sini -->
             </div>
         </section>
     </main>
 
     <!-- Footer Section -->
-    <footer class="bg-dark-purple py-8 px-6 md:px-12 text-center text-gray-400 rounded-t-xl">
+    <footer class="bg-dark-purple py-8 px-6 md:px-12 text-center text-gray-400 rounded-t-xl mt-auto">
         <div class="container mx-auto">
             <p class="mb-4">&copy; 2025 VIN NESIA. All rights reserved.</p>
             <div class="flex justify-center space-x-6 mb-4">
