@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimasi Kode HTML, CSS, JSON: Beautifier & Minifier VIN NESIA</title>
+
+    <!-- Meta Tags SEO -->
+    <meta name="description" content="Pelajari bagaimana Beautifier & Minifier HTML, CSS, JSON VIN NESIA dapat membantu Anda merapikan kode untuk keterbacaan atau mengompresnya untuk performa website yang lebih cepat.">
+    <meta name="keywords" content="HTML beautifier, CSS beautifier, JSON beautifier, HTML minifier, CSS minifier, JSON minifier, code formatter, web development tools, kode bersih, optimasi website, VIN NESIA tools">
+    <meta name="author" content="VIN NESIA">
+
+    <!-- Open Graph Meta Tags for Social Sharing -->
+    <meta property="og:title" content="Optimasi Kode HTML, CSS, JSON: Beautifier & Minifier VIN NESIA">
+    <meta property="og:description" content="Pelajari bagaimana Beautifier & Minifier HTML, CSS, JSON VIN NESIA dapat membantu Anda merapikan kode untuk keterbacaan atau mengompresnya untuk performa website yang lebih cepat.">
+    <meta property="og:image" content="https://www.vinnesia.my.id/images/logo.png">
+    <meta property="og:url" content="https://www.vinnesia.my.id/blog-html-css-json-beautifier-minifier.html">
+    <meta property="og:type" content="article">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Optimasi Kode HTML, CSS, JSON: Beautifier & Minifier VIN NESIA">
+    <meta name="twitter:description" content="Pelajari bagaimana Beautifier & Minifier HTML, CSS, JSON VIN NESIA dapat membantu Anda merapikan kode untuk keterbacaan atau mengompresnya untuk performa website yang lebih cepat.">
+    <meta name="twitter:image" content="https://www.vinnesia.my.id/images/logo.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JXL70YP8XN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-JXL70YP8XN');
+    </script>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a001a;
+            color: #e0e0e0;
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #2d002d; }
+        ::-webkit-scrollbar-thumb { background: #b366ff; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #cc99ff; }
+        .text-purple-accent { color: #b366ff; }
+        .bg-dark-purple-section { background-color: #2d002d; }
+        .bg-medium-purple-section { background-color: #3f003f; }
+        .bg-footer-black { background-color: #0a0a0a; }
+        .tools-dropdown { display: none; position: absolute; background-color: #2d002d; min-width: 200px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4); z-index: 100; border-radius: 0.5rem; padding: 0.5rem 0; top: 100%; left: 0; }
+        .tools-dropdown a { color: #e0e0e0; padding: 0.75rem 1.25rem; text-decoration: none; display: block; white-space: nowrap; transition: background-color 0.2s ease; }
+        .tools-dropdown a:hover { background-color: #3f003f; color: #cc99ff; }
+        .tools-dropdown.active { display: block; }
+        #background-layers { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; }
+        #background-layers > div { position: absolute; inset: 0; }
+        .bg-gradient-layer { background: linear-gradient(to bottom, #1a001a, #3f003f); }
+        .bg-code-abstract-layer { background-image: url('https://images.pexels.com/photos/5380642/pexels-photo-5380642.jpeg?auto=compress&cs=tinysrgb&w=1920'); background-size: cover; background-position: center center; filter: blur(5px); opacity: 0.1; mix-blend-mode: overlay; }
+        .bg-pattern-layer { background-image: url('data:image/svg+xml;utf8,<svg width="10" height="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg"><circle cx="1" cy="1" r="1" fill="%23ffffff" opacity="0.05"/></svg>'); background-size: 10px 10px; background-repeat: repeat; opacity: 0.1; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Background Layers -->
+    <div id="background-layers">
+        <div class="bg-gradient-layer"></div>
+        <div class="bg-code-abstract-layer"></div>
+        <div class="bg-pattern-layer"></div>
+    </div>
+
+    <!-- Header Section -->
+    <header class="bg-dark-purple-section shadow-lg py-4 px-6 md:px-12 fixed top-0 left-0 w-full z-50 rounded-b-xl">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <img src="/images/logo.png" alt="VIN NESIA Logo" class="w-10 h-10 rounded-full shadow-md">
+                <span class="text-2xl font-bold text-white tracking-wide">VIN NESIA</span>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-white hover:text-purple-accent transition duration-300 font-medium">Home</a>
+                <div class="relative group">
+                    <button class="text-white hover:text-purple-accent transition duration-300 font-medium focus:outline-none flex items-center" id="toolsMenuBtn">
+                        Tools <i class="fas fa-chevron-down ml-2 text-xs"></i>
+                    </button>
+                    <div class="tools-dropdown group-hover:block transition-all duration-300 ease-in-out">
+                        <div class="px-4 py-2 text-sm text-gray-400">Tools SEO</div>
+                        <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer">Meta Tag Generator</a>
+                        <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer">OG (Open Graph) Tag Generator</a>
+                        <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer">Twitter Card Tag Generator</a>
+                        <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer">Canonical URL Tag Generator</a>
+                        <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer">Noindex/Nofollow Meta Tag Tool</a>
+                        <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer">Favicon Tag Generator</a>
+                        <div class="border-t border-gray-700 my-2"></div>
+                        <div class="px-4 py-2 text-sm text-gray-400">Tools Pengembangan Web</div>
+                        <a href="https://toolsvin.vinnesia.my.id" target="_blank" rel="noopener noreferrer">HTML, CSS, JSON Beautifier/Minifier</a>
+                        <a href="https://toolsvin.vinnesia.my.id" target="_blank" rel="noopener noreferrer">Markdown to HTML Converter</a>
+                        <a href="https://toolsvin.vinnesia.my.id" target="_blank" rel="noopener noreferrer">HTML Entity Encoder/Decoder</a>
+                    </div>
+                </div>
+                <a href="about.html" class="text-white hover:text-purple-accent transition duration-300 font-medium">About</a>
+                <a href="terms.html" class="text-white hover:text-purple-accent transition duration-300 font-medium">Terms of Service</a>
+                <a href="privacy.html" class="text-white hover:text-purple-accent transition duration-300 font-medium">Privacy Policy</a>
+                <a href="contact.html" class="text-white hover:text-purple-accent transition duration-300 font-medium">Contact</a>
+                <a href="panduan.html" class="text-white hover:text-purple-accent transition duration-300 font-medium">Panduan Pengguna</a>
+                <a href="blog.html" class="text-white hover:text-purple-accent transition duration-300 font-medium">Blog</a>
+            </nav>
+            <button id="hamburgerBtn" class="md:hidden text-white text-2xl focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <div id="mobileMenu" class="md:hidden fixed inset-0 bg-darker-purple bg-opacity-95 z-40 transform -translate-x-full transition-transform duration-300 ease-in-out">
+            <div class="flex justify-end p-6">
+                <button id="closeMenuBtn" class="text-white text-3xl focus:outline-none">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <nav class="flex flex-col items-center space-y-6 text-xl mt-8">
+                <a href="index.html" class="text-white hover:text-purple-accent transition duration-300">Home</a>
+                <div class="relative w-full text-center">
+                    <button class="text-white hover:text-purple-accent transition duration-300 focus:outline-none flex items-center justify-center w-full" id="mobileToolsMenuBtn">
+                        Tools <i class="fas fa-chevron-down ml-2 text-sm"></i>
+                    </button>
+                    <div class="tools-dropdown w-full text-base mt-2" id="mobileToolsDropdown">
+                        <div class="px-4 py-2 text-sm text-gray-400">Tools SEO</div>
+                        <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer">Meta Tag Generator</a>
+                        <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer">OG (Open Graph) Tag Generator</a>
+                        <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer">Twitter Card Tag Generator</a>
+                        <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer">Canonical URL Tag Generator</a>
+                        <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer">Noindex/Nofollow Meta Tag Tool</a>
+                        <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer">Favicon Tag Generator</a>
+                        <div class="border-t border-gray-700 my-2"></div>
+                        <div class="px-4 py-2 text-sm text-gray-400">Tools Pengembangan Web</div>
+                        <a href="https://toolsvin.vinnesia.my.id" target="_blank" rel="noopener noreferrer">HTML, CSS, JSON Beautifier/Minifier</a>
+                        <a href="https://toolsvin.vinnesia.my.id" target="_blank" rel="noopener noreferrer">Markdown to HTML Converter</a>
+                        <a href="https://toolsvin.vinnesia.my.id" target="_blank" rel="noopener noreferrer">HTML Entity Encoder/Decoder</a>
+                    </div>
+                </div>
+                <a href="about.html" class="text-white hover:text-purple-accent transition duration-300">About</a>
+                <a href="terms.html" class="text-white hover:text-purple-accent transition duration-300">Terms of Service</a>
+                <a href="privacy.html" class="text-white hover:text-purple-accent transition duration-300">Privacy Policy</a>
+                <a href="contact.html" class="text-white hover:text-purple-accent transition duration-300">Contact</a>
+                <a href="panduan.html" class="text-white hover:text-purple-accent transition duration-300">Panduan Pengguna</a>
+                <a href="blog.html" class="text-white hover:text-purple-accent transition duration-300">Blog</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-24 pb-12 px-4 md:px-8 lg:px-16 flex-grow">
+        <article class="bg-dark-purple-section rounded-xl shadow-xl p-8 md:p-12 mb-12 max-w-4xl mx-auto">
+            <div class="mb-8 text-left">
+                <a href="blog.html" class="text-purple-accent hover:underline flex items-center">
+                    <i class="fas fa-arrow-left mr-2"></i> Kembali ke Blog
+                </a>
+            </div>
+
+            <h1 class="text-3xl md:text-4xl font-bold text-white mb-6 text-center">Optimasi Kode HTML, CSS, JSON: Beautifier & Minifier VIN NESIA</h1>
+            <img src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Ilustrasi Artikel Blog: Kode di layar komputer, melambangkan beautifier dan minifier kode." class="w-full h-80 object-cover rounded-lg mb-8 shadow-md">
+
+            <div class="text-gray-300 leading-relaxed text-justify blog-content">
+                <p class="mb-4">
+                    Sebagai seorang pengembang web, Anda pasti tahu betapa pentingnya menjaga kode tetap rapi dan efisien. Kode yang berantakan dapat memperlambat proses pengembangan dan debugging, sementara ukuran file yang besar dapat memengaruhi kecepatan muat situs Anda. Di sinilah peran **Beautifier dan Minifier untuk HTML, CSS, dan JSON** menjadi sangat krusial. VIN NESIA menyediakan tools yang akan membantu Anda mengoptimalkan kode dengan mudah.
+                </p>
+
+                <h2 class="text-2xl md:text-3xl font-semibold text-purple-accent mt-8 mb-4">Apa Itu Beautifier?</h2>
+                <p class="mb-4">
+                    Beautifier, atau dikenal juga sebagai code formatter, adalah tool yang mengubah kode yang tidak terformat (misalnya, satu baris panjang atau tanpa indentasi) menjadi kode yang rapi, mudah dibaca, dan terstruktur dengan baik. Ini dilakukan dengan menambahkan indentasi yang konsisten, spasi, dan baris baru.
+                </p>
+
+                <h3 class="text-xl md:text-2xl font-semibold text-white mt-6 mb-3">Manfaat Menggunakan Beautifier:</h3>
+                <ul class="list-disc list-inside mb-4 pl-5">
+                    <li class="mb-2"><strong>Keterbacaan Kode:</strong> Kode yang rapi lebih mudah dibaca dan dipahami, baik oleh Anda sendiri maupun oleh rekan tim.</li>
+                    <li class="mb-2"><strong>Debugging Lebih Mudah:</strong> Struktur yang jelas membantu dalam mengidentifikasi kesalahan dan bug lebih cepat.</li>
+                    <li class="mb-2"><strong>Kerja Tim yang Efisien:</strong> Memastikan konsistensi gaya coding di antara anggota tim.</li>
+                </ul>
+
+                <h2 class="text-2xl md:text-3xl font-semibold text-purple-accent mt-8 mb-4">Apa Itu Minifier?</h2>
+                <p class="mb-4">
+                    Minifier, di sisi lain, melakukan kebalikan dari beautifier. Ia menghilangkan semua karakter yang tidak perlu dari kode sumber (seperti spasi kosong, baris baru, komentar, dan blok kode yang tidak terpakai) tanpa mengubah fungsionalitasnya. Tujuannya adalah untuk mengurangi ukuran file kode sekecil mungkin.
+                </p>
+
+                <h3 class="text-xl md:text-2xl font-semibold text-white mt-6 mb-3">Manfaat Menggunakan Minifier:</h3>
+                <ul class="list-disc list-inside mb-4 pl-5">
+                    <li class="mb-2"><strong>Peningkatan Kecepatan Muat Situs:</strong> File kode yang lebih kecil akan dimuat lebih cepat oleh browser, yang sangat penting untuk pengalaman pengguna dan SEO.</li>
+                    <li class="mb-2"><strong>Penghematan Bandwidth:</strong> Mengurangi jumlah data yang perlu ditransfer dari server ke klien.</li>
+                    <li class="mb-2"><strong>Peringkat SEO yang Lebih Baik:</strong> Kecepatan situs adalah faktor penting dalam peringkat mesin pencari.</li>
+                </ul>
+
+                <h2 class="text-2xl md:text-3xl font-semibold text-purple-accent mt-8 mb-4">Beautifier & Minifier HTML, CSS, JSON VIN NESIA</h2>
+                <p class="mb-4">
+                    VIN NESIA menyediakan alat multifungsi yang dapat berfungsi sebagai beautifier dan minifier untuk tiga format kode paling umum dalam pengembangan web: HTML, CSS, dan JSON.
+                </p>
+
+                <h3 class="text-xl md:text-2xl font-semibold text-white mt-6 mb-3">Bagaimana Cara Kerjanya?</h3>
+                <p class="mb-4">
+                    Cukup tempelkan kode HTML, CSS, atau JSON Anda ke dalam kotak input tool kami. Kemudian, pilih opsi yang Anda inginkan:
+                </p>
+                <ul class="list-disc list-inside mb-4 pl-5">
+                    <li class="mb-2"><strong>Beautify:</strong> Untuk merapikan dan memformat kode agar lebih mudah dibaca.</li>
+                    <li class="mb-2"><strong>Minify:</strong> Untuk mengompres kode menjadi ukuran terkecil.</li>
+                </ul>
+                <p class="mb-4">
+                    Tool akan segera menampilkan output yang sudah diproses, yang bisa Anda salin dan gunakan.
+                </p>
+
+                <h3 class="text-xl md:text-2xl font-semibold text-white mt-6 mb-3">Keuntungan Menggunakan Tools Ini:</h3>
+                <ul class="list-disc list-inside mb-4 pl-5">
+                    <li class="mb-2"><strong>Dukungan Multi-Format:</strong> Satu tool untuk tiga bahasa utama pengembangan web.</li>
+                    <li class="mb-2"><strong>Efisiensi Ganda:</strong> Dapatkan kode yang rapi untuk pengembangan dan kode yang kecil untuk produksi.</li>
+                    <li class="mb-2"><strong>Aman & Gratis:</strong> Proses sepenuhnya di sisi klien (browser Anda), menjaga privasi data Anda, dan tentu saja, gratis tanpa batasan.</li>
+                    <li class="mb-2"><strong>Mudah Digunakan:</strong> Antarmuka yang intuitif memungkinkan Anda mengoptimalkan kode tanpa perlu konfigurasi yang rumit.</li>
+                </ul>
+
+                <p class="mb-4">
+                    Dengan Beautifier & Minifier HTML, CSS, JSON dari VIN NESIA, Anda dapat meningkatkan kualitas kode Anda dan mempercepat situs web Anda secara bersamaan. Ini adalah alat penting dalam toolkit setiap pengembang web. Mulailah mengoptimalkan kode Anda hari ini!
+                </p>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-footer-black py-8 px-6 md:px-12 text-center text-gray-400 rounded-t-xl mt-auto">
+        <div class="container mx-auto">
+            <p class="mb-4">&copy; 2025 VIN NESIA. All rights reserved.</p>
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="https://www.instagram.com/Vin.nesia.id" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-purple-accent transition duration-300">
+                    <i class="fab fa-instagram text-2xl"></i>
+                </a>
+            </div>
+            <div class="flex flex-wrap justify-center space-x-4 md:space-x-8 text-sm">
+                <a href="about.html" class="hover:text-purple-accent transition duration-300">About</a>
+                <a href="terms.html" class="hover:text-purple-accent transition duration-300">Terms of Service</a>
+                <a href="privacy.html" class="hover:text-purple-accent transition duration-300">Privacy Policy</a>
+                <a href="contact.html" class="hover:text-purple-accent transition duration-300">Contact</a>
+                <a href="panduan.html" class="hover:text-purple-accent transition duration-300">Panduan Pengguna</a>
+                <a href="blog.html" class="text-white hover:text-purple-accent transition duration-300 font-medium">Blog</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu and Tools Dropdown -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburgerBtn = document.getElementById('hamburgerBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const closeMenuBtn = document.getElementById('closeMenuBtn');
+            const toolsMenuBtn = document.getElementById('toolsMenuBtn');
+            const mobileToolsMenuBtn = document.getElementById('mobileToolsMenuBtn');
+            const mobileToolsDropdown = document.getElementById('mobileToolsDropdown');
+
+            // Toggle mobile menu
+            hamburgerBtn.addEventListener('click', () => {
+                mobileMenu.classList.remove('-translate-x-full');
+            });
+
+            closeMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.add('-translate-x-full');
+            });
+
+            // Toggle desktop tools dropdown
+            toolsMenuBtn.addEventListener('click', (event) => {
+                event.stopPropagation(); // Prevent click from bubbling to document
+                const dropdown = toolsMenuBtn.nextElementSibling;
+                dropdown.classList.toggle('active');
+            });
+
+            // Toggle mobile tools dropdown
+            mobileToolsMenuBtn.addEventListener('click', (event) => {
+                event.stopPropagation(); // Prevent click from bubbling to document
+                mobileToolsDropdown.classList.toggle('active');
+            });
+
+            // Close dropdowns when clicking outside
+            document.addEventListener('click', (event) => {
+                const desktopDropdown = toolsMenuBtn.nextElementSibling;
+                if (desktopDropdown.classList.contains('active') && !toolsMenuBtn.contains(event.target) && !desktopDropdown.contains(event.target)) {
+                    desktopDropdown.classList.remove('active');
+                }
+                if (mobileToolsDropdown.classList.contains('active') && !mobileToolsMenuBtn.contains(event.target) && !mobileToolsDropdown.contains(event.target)) {
+                    mobileToolsDropdown.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
