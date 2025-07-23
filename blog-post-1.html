@@ -71,6 +71,37 @@
         .blog-content li {
             margin-bottom: 0.5rem;
         }
+        /* Specific styling for the tools dropdown */
+        .tools-dropdown {
+            display: none;
+            position: absolute;
+            background-color: #2d002d;
+            min-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
+            z-index: 100;
+            border-radius: 0.5rem;
+            padding: 0.5rem 0;
+            top: 100%; /* Position below the parent nav item */
+            left: 0;
+        }
+
+        .tools-dropdown a {
+            color: #e0e0e0;
+            padding: 0.75rem 1.25rem;
+            text-decoration: none;
+            display: block;
+            white-space: nowrap;
+            transition: background-color 0.2s ease;
+        }
+
+        .tools-dropdown a:hover {
+            background-color: #3f003f;
+            color: #cc99ff;
+        }
+
+        .tools-dropdown.active {
+            display: block;
+        }
     </style>
 </head>
 <body class="antialiased flex flex-col min-h-screen">
@@ -253,7 +284,7 @@
                 <a href="privacy.html" class="hover:text-purple-accent transition duration-300">Privacy Policy</a>
                 <a href="contact.html" class="hover:text-purple-accent transition duration-300">Contact</a>
                 <a href="panduan.html" class="hover:text-purple-accent transition duration-300">Panduan Pengguna</a>
-                <a href="blog.html" class="hover:text-purple-accent transition duration-300">Blog</a>
+                <a href="blog.html" class="text-white hover:text-purple-accent transition duration-300 font-medium">Blog</a>
             </div>
         </div>
     </footer>
@@ -268,6 +299,14 @@
             const mobileToolsMenuBtn = document.getElementById('mobileToolsMenuBtn');
             const mobileToolsDropdown = document.getElementById('mobileToolsDropdown');
 
+            // Function to close all dropdowns and mobile menu
+            function closeAllNavElements() {
+                const desktopDropdown = toolsMenuBtn.nextElementSibling;
+                desktopDropdown.classList.remove('active');
+                mobileToolsDropdown.classList.remove('active');
+                mobileMenu.classList.add('-translate-x-full'); // Close mobile nav
+            }
+
             // Toggle mobile menu
             hamburgerBtn.addEventListener('click', () => {
                 mobileMenu.classList.remove('-translate-x-full');
@@ -281,24 +320,45 @@
             toolsMenuBtn.addEventListener('click', (event) => {
                 event.stopPropagation(); // Prevent click from bubbling to document
                 const dropdown = toolsMenuBtn.nextElementSibling;
+                // Close other dropdowns before opening this one (if not already active)
+                if (!dropdown.classList.contains('active')) {
+                    closeAllNavElements(); // Close all before opening
+                }
                 dropdown.classList.toggle('active');
             });
 
             // Toggle mobile tools dropdown
             mobileToolsMenuBtn.addEventListener('click', (event) => {
                 event.stopPropagation(); // Prevent click from bubbling to document
+                // Close other dropdowns before opening this one (if not already active)
+                if (!mobileToolsDropdown.classList.contains('active')) {
+                    closeAllNavElements(); // Close all before opening
+                }
                 mobileToolsDropdown.classList.toggle('active');
             });
 
-            // Close dropdowns when clicking outside
+            // Close dropdowns and mobile menu when clicking outside
             document.addEventListener('click', (event) => {
                 const desktopDropdown = toolsMenuBtn.nextElementSibling;
-                if (desktopDropdown.classList.contains('active') && !toolsMenuBtn.contains(event.target) && !desktopDropdown.contains(event.target)) {
+                const isClickInsideDesktopDropdownArea = toolsMenuBtn.contains(event.target) || desktopDropdown.contains(event.target);
+                
+                const isClickInsideMobileToolsDropdownArea = mobileToolsMenuBtn.contains(event.target) || mobileToolsDropdown.contains(event.target);
+                const isClickInsideMobileMenuArea = hamburgerBtn.contains(event.target) || mobileMenu.contains(event.target);
+
+                if (desktopDropdown.classList.contains('active') && !isClickInsideDesktopDropdownArea) {
                     desktopDropdown.classList.remove('active');
                 }
-                if (mobileToolsDropdown.classList.contains('active') && !mobileToolsMenuBtn.contains(event.target) && !mobileToolsDropdown.contains(event.target)) {
+                if (mobileToolsDropdown.classList.contains('active') && !isClickInsideMobileToolsDropdownArea) {
                     mobileToolsDropdown.classList.remove('active');
                 }
+                if (!mobileMenu.classList.contains('-translate-x-full') && !isClickInsideMobileMenuArea) {
+                    mobileMenu.classList.add('-translate-x-full');
+                }
+            });
+
+            // Close dropdowns and mobile menu on scroll
+            window.addEventListener('scroll', () => {
+                closeAllNavElements();
             });
         });
     </script>
