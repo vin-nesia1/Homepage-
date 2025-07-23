@@ -48,8 +48,10 @@
         /* Custom CSS to override/enhance Tailwind for specific elements */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #1a001a; /* Dark purple-black */
+            background-color: #1a001a; /* Fallback for browsers not supporting advanced backgrounds */
             color: #e0e0e0; /* Light grey text for contrast */
+            position: relative; /* Needed for fixed background layers */
+            min-height: 100vh; /* Ensure body takes full height for background to cover */
         }
 
         /* Custom scrollbar for a sleek look */
@@ -71,17 +73,15 @@
             color: #b366ff; /* Custom purple accent color */
         }
 
-        .bg-dark-purple {
-            background-color: #2d002d; /* Slightly lighter dark purple for cards/sections */
+        /* Custom background colors for different sections */
+        .bg-dark-purple-section {
+            background-color: #2d002d; /* Existing dark purple */
         }
-
-        .bg-darker-purple {
-            background-color: #1a001a; /* Main background */
+        .bg-medium-purple-section {
+            background-color: #3f003f; /* A slightly lighter, richer purple */
         }
-
-        .border-purple-gradient {
-            border-image: linear-gradient(to right, #b366ff, #cc99ff);
-            border-image-slice: 1;
+        .bg-footer-black {
+            background-color: #0a0a0a; /* Very dark grey/black */
         }
 
         /* Specific styling for the tools dropdown */
@@ -180,12 +180,58 @@
         .tool-card:hover .action-text i {
             transform: translateX(5px); /* Slight movement on hover */
         }
+
+        /* Background Layers for Parallax Effect */
+        #background-layers {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Send behind content */
+            overflow: hidden; /* Hide overflow from blur */
+        }
+
+        #background-layers > div {
+            position: absolute;
+            inset: 0; /* Cover the entire parent */
+        }
+
+        /* Layer 1: Gradient */
+        .bg-gradient-layer {
+            background: linear-gradient(to bottom, #1a001a, #3f003f); /* Dark purple to slightly richer purple */
+        }
+
+        /* Layer 2: Blurred Abstract Code Image */
+        .bg-code-abstract-layer {
+            background-image: url('https://images.pexels.com/photos/5380642/pexels-photo-5380642.jpeg?auto=compress&cs=tinysrgb&w=1920'); /* Using the user's example style image */
+            background-size: cover;
+            background-position: center center;
+            filter: blur(5px); /* Apply blur */
+            opacity: 0.1; /* Low opacity */
+            mix-blend-mode: overlay; /* Blend mode */
+        }
+
+        /* Layer 3: Subtle Pattern (dots) */
+        .bg-pattern-layer {
+            background-image: url('data:image/svg+xml;utf8,<svg width="10" height="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg"><circle cx="1" cy="1" r="1" fill="%23ffffff" opacity="0.05"/></svg>');
+            background-size: 10px 10px; /* Size of the pattern unit */
+            background-repeat: repeat;
+            opacity: 0.1; /* Low opacity */
+        }
     </style>
 </head>
-<body class="antialiased">
+<body class="antialiased flex flex-col">
+
+    <!-- Background Layers for Parallax Effect -->
+    <div id="background-layers">
+        <div class="bg-gradient-layer"></div>
+        <div class="bg-code-abstract-layer"></div>
+        <div class="bg-pattern-layer"></div>
+    </div>
 
     <!-- Header Section -->
-    <header class="bg-dark-purple shadow-lg py-4 px-6 md:px-12 fixed top-0 left-0 w-full z-50 rounded-b-xl">
+    <header class="bg-dark-purple-section shadow-lg py-4 px-6 md:px-12 fixed top-0 left-0 w-full z-50 rounded-b-xl">
         <div class="container mx-auto flex justify-between items-center">
             <!-- Logo and Site Name -->
             <div class="flex items-center space-x-3">
@@ -270,7 +316,7 @@
     <!-- Main Content -->
     <main class="pt-24 pb-12 px-4 md:px-8 lg:px-16">
         <!-- Hero Section -->
-        <section class="text-center py-16 md:py-24 bg-dark-purple rounded-xl shadow-xl mb-12">
+        <section class="text-center py-16 md:py-24 bg-dark-purple-section rounded-xl shadow-xl mb-12">
             <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-4 leading-tight">
                 VIN NESIA: <span class="text-purple-accent">Pusat Tools Online Gratis</span>
             </h1>
@@ -291,7 +337,7 @@
         </section>
 
         <!-- Introductory Section (existing content) -->
-        <section class="bg-dark-purple rounded-xl shadow-xl p-8 md:p-12 mb-12">
+        <section class="bg-dark-purple-section rounded-xl shadow-xl p-8 md:p-12 mb-12">
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 text-center">Selamat Datang di VIN NESIA</h2>
             <div class="intro-text text-gray-300 leading-relaxed text-justify">
                 <p class="mb-4">
@@ -304,7 +350,7 @@
         </section>
 
         <!-- Section: Mengapa Memilih VIN NESIA? -->
-        <section class="bg-dark-purple rounded-xl shadow-xl p-8 md:p-12 mb-12">
+        <section class="bg-medium-purple-section rounded-xl shadow-xl p-8 md:p-12 mb-12" id="why-choose-us">
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-8 text-center">Mengapa Memilih VIN NESIA?</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="text-center p-6 bg-darker-purple rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
@@ -335,47 +381,47 @@
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-8 text-center">Daftar Tools Kami</h2>
 
             <!-- SEO Tools Category -->
-            <div class="tool-category bg-dark-purple rounded-xl shadow-xl p-8 md:p-10 mb-8">
+            <div class="tool-category bg-dark-purple-section rounded-xl shadow-xl p-8 md:p-10 mb-8">
                 <h3 class="text-2xl md:text-3xl font-semibold text-purple-accent mb-6 text-center">Tools SEO</h3>
                 <div class="tool-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     <!-- Meta Tag Generator -->
                     <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer" class="tool-card bg-darker-purple p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 block border border-transparent hover:border-purple-accent">
-                        <img src="https://source.unsplash.com/featured/?seo,meta" alt="Ilustrasi Meta Tag Generator" class="w-full h-32 object-cover rounded-md mb-4">
+                        <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Ilustrasi Meta Tag Generator" class="w-full h-36 object-cover rounded-md mb-4">
                         <h4 class="text-xl font-bold text-white mb-2">Meta Tag Generator</h4>
                         <p class="text-gray-400 text-sm">Ciptakan meta tag yang optimal untuk meningkatkan visibilitas situs Anda di hasil pencarian. Alat ini membantu Anda membuat judul, deskripsi, dan kata kunci yang relevan secara instan.</p>
                         <span class="action-text">Coba Sekarang <i class="fas fa-arrow-right"></i></span>
                     </a>
                     <!-- OG (Open Graph) Tag Generator -->
                     <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer" class="tool-card bg-darker-purple p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 block border border-transparent hover:border-purple-accent">
-                        <img src="https://source.unsplash.com/featured/?open-graph,social" alt="Ilustrasi OG (Open Graph) Tag Generator" class="w-full h-32 object-cover rounded-md mb-4">
+                        <img src="https://images.pexels.com/photos/3183183/pexels-photo-3183183.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Ilustrasi OG (Open Graph) Tag Generator" class="w-full h-36 object-cover rounded-md mb-4">
                         <h4 class="text-xl font-bold text-white mb-2">OG (Open Graph) Tag Generator</h4>
                         <p class="text-gray-400 text-sm">Pastikan konten Anda tampil menarik saat dibagikan di media sosial seperti Facebook dan LinkedIn. Generator ini membantu Anda membuat tag Open Graph yang mengontrol pratinjau konten.</p>
                         <span class="action-text">Coba Sekarang <i class="fas fa-arrow-right"></i></span>
                     </a>
                     <!-- Twitter Card Tag Generator -->
                     <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer" class="tool-card bg-darker-purple p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 block border border-transparent hover:border-purple-accent">
-                        <img src="https://source.unsplash.com/featured/?twitter,social" alt="Ilustrasi Twitter Card Tag Generator" class="w-full h-32 object-cover rounded-md mb-4">
+                        <img src="https://images.pexels.com/photos/5380642/pexels-photo-5380642.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Ilustrasi Twitter Card Tag Generator" class="w-full h-36 object-cover rounded-md mb-4">
                         <h4 class="text-xl font-bold text-white mb-2">Twitter Card Tag Generator</h4>
                         <p class="text-gray-400 text-sm">Optimalkan tampilan tautan Anda di Twitter dengan Twitter Card. Hasilkan tag yang tepat untuk menampilkan gambar, judul, dan deskripsi yang kaya saat tweet Anda dibagikan.</p>
                         <span class="action-text">Coba Sekarang <i class="fas fa-arrow-right"></i></span>
                     </a>
                     <!-- Canonical URL Tag Generator -->
                     <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer" class="tool-card bg-darker-purple p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 block border border-transparent hover:border-purple-accent">
-                        <img src="https://source.unsplash.com/featured/?url,web" alt="Ilustrasi Canonical URL Tag Generator" class="w-full h-32 object-cover rounded-md mb-4">
+                        <img src="https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Ilustrasi Canonical URL Tag Generator" class="w-full h-36 object-cover rounded-md mb-4">
                         <h4 class="text-xl font-bold text-white mb-2">Canonical URL Tag Generator</h4>
                         <p class="text-gray-400 text-sm">Hindari masalah konten duplikat yang dapat merugikan SEO Anda. Gunakan alat ini untuk menghasilkan tag URL kanonik yang tepat, mengarahkan mesin pencari ke sumber asli konten Anda.</p>
                         <span class="action-text">Coba Sekarang <i class="fas fa-arrow-right"></i></span>
                     </a>
                     <!-- Noindex/Nofollow Meta Tag Tool -->
                     <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer" class="tool-card bg-darker-purple p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 block border border-transparent hover:border-purple-accent">
-                        <img src="https://source.unsplash.com/featured/?seo,robot" alt="Ilustrasi Noindex/Nofollow Meta Tag Tool" class="w-full h-32 object-cover rounded-md mb-4">
+                        <img src="https://images.pexels.com/photos/5380608/pexels-photo-5380608.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Ilustrasi Noindex/Nofollow Meta Tag Tool" class="w-full h-36 object-cover rounded-md mb-4">
                         <h4 class="text-xl font-bold text-white mb-2">Noindex/Nofollow Meta Tag Tool</h4>
                         <p class="text-gray-400 text-sm">Kontrol bagaimana mesin pencari mengindeks atau mengikuti tautan di situs Anda. Alat ini memudahkan Anda membuat tag `noindex` dan `nofollow` untuk halaman atau tautan tertentu.</p>
                         <span class="action-text">Coba Sekarang <i class="fas fa-arrow-right"></i></span>
                     </a>
                     <!-- Favicon Tag Generator -->
                     <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer" class="tool-card bg-darker-purple p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 block border border-transparent hover:border-purple-accent">
-                        <img src="https://source.unsplash.com/featured/?favicon,icon" alt="Ilustrasi Favicon Tag Generator" class="w-full h-32 object-cover rounded-md mb-4">
+                        <img src="https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Ilustrasi Favicon Tag Generator" class="w-full h-36 object-cover rounded-md mb-4">
                         <h4 class="text-xl font-bold text-white mb-2">Favicon Tag Generator</h4>
                         <p class="text-gray-400 text-sm">Buat ikon favorit (favicon) yang menarik untuk situs Anda. Generator ini membantu Anda membuat tag yang benar agar favicon tampil di tab browser pengguna.</p>
                         <span class="action-text">Coba Sekarang <i class="fas fa-arrow-right"></i></span>
@@ -384,26 +430,26 @@
             </div>
 
             <!-- Development Tools Category -->
-            <div class="tool-category bg-dark-purple rounded-xl shadow-xl p-8 md:p-10">
+            <div class="tool-category bg-dark-purple-section rounded-xl shadow-xl p-8 md:p-10">
                 <h3 class="text-2xl md:text-3xl font-semibold text-purple-accent mb-6 text-center">Tools Pengembangan Web</h3>
                 <div class="tool-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     <!-- HTML, CSS, JSON Beautifier/Minifier -->
                     <a href="https://toolsvin.vinnesia.my.id" target="_blank" rel="noopener noreferrer" class="tool-card bg-darker-purple p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 block border border-transparent hover:border-purple-accent">
-                        <img src="https://source.unsplash.com/featured/?code,editor" alt="Ilustrasi HTML, CSS, JSON Beautifier/Minifier" class="w-full h-32 object-cover rounded-md mb-4">
+                        <img src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Ilustrasi HTML, CSS, JSON Beautifier/Minifier" class="w-full h-36 object-cover rounded-md mb-4">
                         <h4 class="text-xl font-bold text-white mb-2">HTML, CSS, JSON Beautifier/Minifier</h4>
                         <p class="text-gray-400 text-sm">Rapikan kode HTML, CSS, dan JSON Anda agar mudah dibaca atau kompres menjadi ukuran minimal untuk mempercepat waktu muat halaman. Alat multifungsi ini adalah sahabat para pengembang.</p>
                         <span class="action-text">Coba Sekarang <i class="fas fa-arrow-right"></i></span>
                     </a>
                     <!-- Markdown to HTML Converter -->
                     <a href="https://toolsvin.vinnesia.my.id" target="_blank" rel="noopener noreferrer" class="tool-card bg-darker-purple p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 block border border-transparent hover:border-purple-accent">
-                        <img src="https://source.unsplash.com/featured/?markdown,html" alt="Ilustrasi Markdown to HTML Converter" class="w-full h-32 object-cover rounded-md mb-4">
+                        <img src="https://images.pexels.com/photos/5380642/pexels-photo-5380642.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Ilustrasi Markdown to HTML Converter" class="w-full h-36 object-cover rounded-md mb-4">
                         <h4 class="text-xl font-bold text-white mb-2">Markdown to HTML Converter</h4>
                         <p class="text-gray-400 text-sm">Konversi teks format Markdown Anda ke dalam kode HTML yang siap digunakan. Cocok untuk blogger dan penulis konten yang ingin mempublikasikan tulisan dengan cepat.</p>
                         <span class="action-text">Coba Sekarang <i class="fas fa-arrow-right"></i></span>
                     </a>
                     <!-- HTML Entity Encoder/Decoder -->
                     <a href="https://toolsvin.vinnesia.my.id" target="_blank" rel="noopener noreferrer" class="tool-card bg-darker-purple p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 block border border-transparent hover:border-purple-accent">
-                        <img src="https://source.unsplash.com/featured/?html,characters" alt="Ilustrasi HTML Entity Encoder/Decoder" class="w-full h-32 object-cover rounded-md mb-4">
+                        <img src="https://images.pexels.com/photos/5380589/pexels-photo-5380589.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Ilustrasi HTML Entity Encoder/Decoder" class="w-full h-36 object-cover rounded-md mb-4">
                         <h4 class="text-xl font-bold text-white mb-2">HTML Entity Encoder/Decoder</h4>
                         <p class="text-gray-400 text-sm">Amankan karakter khusus dalam HTML atau kembalikan ke bentuk aslinya. Alat ini sangat berguna untuk mengelola dan memecahkan masalah tampilan teks di web.</p>
                         <span class="action-text">Coba Sekarang <i class="fas fa-arrow-right"></i></span>
@@ -413,7 +459,7 @@
         </section>
 
         <!-- Section: Apa Kata Pengguna Kami -->
-        <section class="bg-dark-purple rounded-xl shadow-xl p-8 md:p-12 mb-12">
+        <section class="bg-dark-purple-section rounded-xl shadow-xl p-8 md:p-12 mb-12">
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-8 text-center">Apa Kata Pengguna Kami</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Testimonial 1 -->
@@ -444,7 +490,7 @@
         </section>
 
         <!-- Section: Artikel Terbaru dari Blog -->
-        <section class="bg-dark-purple rounded-xl shadow-xl p-8 md:p-12 mb-12">
+        <section class="bg-dark-purple-section rounded-xl shadow-xl p-8 md:p-12 mb-12">
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-8 text-center">Artikel Terbaru dari Blog</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Blog Post 1 (Placeholder) -->
@@ -452,21 +498,21 @@
                     <img src="https://source.unsplash.com/featured/?blog,seo-tips" alt="Ilustrasi Artikel Blog SEO" class="w-full h-36 object-cover rounded-md mb-4">
                     <h3 class="text-xl font-bold text-white mb-2">5 Tips SEO Penting untuk Pemula</h3>
                     <p class="text-gray-400 text-sm mb-4">Pelajari dasar-dasar SEO yang harus diketahui setiap pemilik website atau blogger untuk meningkatkan peringkat di mesin pencari.</p>
-                    <span class="text-purple-accent font-semibold hover:underline">Baca Selengkapnya <i class="fas fa-arrow-right ml-1 text-sm"></i></span>
+                    <span class="action-text">Baca Selengkapnya <i class="fas fa-arrow-right ml-1 text-sm"></i></span>
                 </a>
                 <!-- Blog Post 2 (Placeholder) -->
                 <a href="blog-post-2.html" class="block bg-darker-purple p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                     <img src="https://source.unsplash.com/featured/?blog,web-development" alt="Ilustrasi Artikel Blog Web Dev" class="w-full h-36 object-cover rounded-md mb-4">
                     <h3 class="text-xl font-bold text-white mb-2">Mengoptimalkan Performa Website dengan Kode Bersih</h3>
                     <p class="text-gray-400 text-sm mb-4">Temukan bagaimana penggunaan Beautifier kami dapat membantu Anda menjaga kode tetap rapi dan cepat.</p>
-                    <span class="text-purple-accent font-semibold hover:underline">Baca Selengkapnya <i class="fas fa-arrow-right ml-1 text-sm"></i></span>
+                    <span class="action-text">Baca Selengkapnya <i class="fas fa-arrow-right ml-1 text-sm"></i></span>
                 </a>
                 <!-- Blog Post 3 (Placeholder) -->
                 <a href="blog-post-3.html" class="block bg-darker-purple p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                     <img src="https://source.unsplash.com/featured/?blog,digital-marketing" alt="Ilustrasi Artikel Blog Digital Marketing" class="w-full h-36 object-cover rounded-md mb-4">
                     <h3 class="text-xl font-bold text-white mb-2">Pentingnya Open Graph Tag untuk Media Sosial</h3>
                     <p class="text-gray-400 text-sm mb-4">Pelajari mengapa Open Graph tag sangat krusial untuk sharing konten yang efektif di platform sosial.</p>
-                    <span class="text-purple-accent font-semibold hover:underline">Baca Selengkapnya <i class="fas fa-arrow-right ml-1 text-sm"></i></span>
+                    <span class="action-text">Baca Selengkapnya <i class="fas fa-arrow-right ml-1 text-sm"></i></span>
                 </a>
             </div>
             <div class="text-center mt-10">
@@ -477,7 +523,7 @@
         </section>
 
         <!-- FAQ Section (existing content) -->
-        <section class="faq-section bg-dark-purple rounded-xl shadow-xl p-8 md:p-12 mb-12">
+        <section class="faq-section bg-dark-purple-section rounded-xl shadow-xl p-8 md:p-12 mb-12">
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-8 text-center">Pertanyaan Umum (FAQ)</h2>
             <div class="space-y-6">
                 <div class="faq-item">
@@ -526,7 +572,7 @@
     </main>
 
     <!-- Footer Section -->
-    <footer class="bg-dark-purple py-8 px-6 md:px-12 text-center text-gray-400 rounded-t-xl">
+    <footer class="bg-footer-black py-8 px-6 md:px-12 text-center text-gray-400 rounded-t-xl mt-auto">
         <div class="container mx-auto">
             <p class="mb-4">&copy; 2025 VIN NESIA. All rights reserved.</p>
             <div class="flex justify-center space-x-6 mb-4">
