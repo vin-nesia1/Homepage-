@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panduan Pengguna - VIN NESIA</title>
+
+    <!-- Meta Tags SEO -->
+    <meta name="description" content="Pelajari cara menggunakan setiap tools di VIN NESIA dengan panduan lengkap dan contoh langkah demi langkah.">
+    <meta name="keywords" content="Panduan Pengguna, user guide, tutorial, cara menggunakan tools, VIN NESIA, SEO tools, development tools">
+    <meta name="author" content="VIN NESIA">
+
+    <!-- Open Graph Meta Tags for Social Sharing -->
+    <meta property="og:title" content="Panduan Pengguna - VIN NESIA">
+    <meta property="og:description" content="Pelajari cara menggunakan setiap tools di VIN NESIA dengan panduan lengkap dan contoh langkah demi langkah.">
+    <meta property="og:image" content="https://www.vinnesia.my.id/logo.png">
+    <meta property="og:url" content="https://www.vinnesia.my.id/panduan.html">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Panduan Pengguna - VIN NESIA">
+    <meta name="twitter:description" content="Pelajari cara menggunakan setiap tools di VIN NESIA dengan panduan lengkap dan contoh langkah demi langkah.">
+    <meta name="twitter:image" content="https://www.vinnesia.my.id/logo.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JXL70YP8XN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-JXL70YP8XN');
+    </script>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        /* Custom CSS to override/enhance Tailwind for specific elements */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a001a; /* Dark purple-black */
+            color: #e0e0e0; /* Light grey text for contrast */
+        }
+
+        /* Custom scrollbar for a sleek look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #2d002d; /* Darker track */
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #b366ff; /* Purple thumb */
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #cc99ff; /* Lighter purple on hover */
+        }
+
+        .text-purple-accent {
+            color: #b366ff; /* Custom purple accent color */
+        }
+
+        .bg-dark-purple {
+            background-color: #2d002d; /* Slightly lighter dark purple for cards/sections */
+        }
+
+        .bg-darker-purple {
+            background-color: #1a001a; /* Main background */
+        }
+
+        /* Specific styling for the tools dropdown */
+        .tools-dropdown {
+            display: none;
+            position: absolute;
+            background-color: #2d002d;
+            min-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
+            z-index: 100;
+            border-radius: 0.5rem;
+            padding: 0.5rem 0;
+            top: 100%; /* Position below the parent nav item */
+            left: 0;
+        }
+
+        .tools-dropdown a {
+            color: #e0e0e0;
+            padding: 0.75rem 1.25rem;
+            text-decoration: none;
+            display: block;
+            white-space: nowrap;
+            transition: background-color 0.2s ease;
+        }
+
+        .tools-dropdown a:hover {
+            background-color: #3f003f;
+            color: #cc99ff;
+        }
+
+        .tools-dropdown.active {
+            display: block;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header Section -->
+    <header class="bg-dark-purple shadow-lg py-4 px-6 md:px-12 fixed top-0 left-0 w-full z-50 rounded-b-xl">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Logo and Site Name -->
+            <div class="flex items-center space-x-3">
+                <img src="/logo.png" alt="VIN NESIA Logo" class="w-10 h-10 rounded-full shadow-md">
+                <span class="text-2xl font-bold text-white tracking-wide">VIN NESIA</span>
+            </div>
+
+            <!-- Navigation Menu (Desktop) -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-white hover:text-purple-accent transition duration-300 font-medium">Home</a>
+                <div class="relative group">
+                    <button class="text-white hover:text-purple-accent transition duration-300 font-medium focus:outline-none flex items-center" id="toolsMenuBtn">
+                        Tools <i class="fas fa-chevron-down ml-2 text-xs"></i>
+                    </button>
+                    <div class="tools-dropdown group-hover:block transition-all duration-300 ease-in-out">
+                        <div class="px-4 py-2 text-sm text-gray-400">Tools SEO</div>
+                        <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer">Meta Tag Generator</a>
+                        <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer">OG (Open Graph) Tag Generator</a>
+                        <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer">Twitter Card Tag Generator</a>
+                        <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer">Canonical URL Tag Generator</a>
+                        <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer">Noindex/Nofollow Meta Tag Tool</a>
+                        <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer">Favicon Tag Generator</a>
+                        <div class="border-t border-gray-700 my-2"></div>
+                        <div class="px-4 py-2 text-sm text-gray-400">Tools Pengembangan Web</div>
+                        <a href="https://toolsvin.vinnesia.my.id" target="_blank" rel="noopener noreferrer">HTML, CSS, JSON Beautifier/Minifier</a>
+                        <a href="https://toolsvin.vinnesia.my.id" target="_blank" rel="noopener noreferrer">Markdown to HTML Converter</a>
+                        <a href="https://toolsvin.vinnesia.my.id" target="_blank" rel="noopener noreferrer">HTML Entity Encoder/Decoder</a>
+                    </div>
+                </div>
+                <a href="about.html" class="text-white hover:text-purple-accent transition duration-300 font-medium">About</a>
+                <a href="terms.html" class="text-white hover:text-purple-accent transition duration-300 font-medium">Terms of Service</a>
+                <a href="privacy.html" class="text-white hover:text-purple-accent transition duration-300 font-medium">Privacy Policy</a>
+                <a href="contact.html" class="text-white hover:text-purple-accent transition duration-300 font-medium">Contact</a>
+                <a href="panduan.html" class="text-white hover:text-purple-accent transition duration-300 font-medium">Panduan Pengguna</a>
+                <a href="blog.html" class="text-white hover:text-purple-accent transition duration-300 font-medium">Blog</a>
+            </nav>
+
+            <!-- Hamburger Menu (Mobile) -->
+            <button id="hamburgerBtn" class="md:hidden text-white text-2xl focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Overlay -->
+        <div id="mobileMenu" class="md:hidden fixed inset-0 bg-darker-purple bg-opacity-95 z-40 transform -translate-x-full transition-transform duration-300 ease-in-out">
+            <div class="flex justify-end p-6">
+                <button id="closeMenuBtn" class="text-white text-3xl focus:outline-none">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <nav class="flex flex-col items-center space-y-6 text-xl mt-8">
+                <a href="index.html" class="text-white hover:text-purple-accent transition duration-300">Home</a>
+                <div class="relative w-full text-center">
+                    <button class="text-white hover:text-purple-accent transition duration-300 focus:outline-none flex items-center justify-center w-full" id="mobileToolsMenuBtn">
+                        Tools <i class="fas fa-chevron-down ml-2 text-sm"></i>
+                    </button>
+                    <div class="tools-dropdown w-full text-base mt-2" id="mobileToolsDropdown">
+                        <div class="px-4 py-2 text-sm text-gray-400">Tools SEO</div>
+                        <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer">Meta Tag Generator</a>
+                        <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer">OG (Open Graph) Tag Generator</a>
+                        <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer">Twitter Card Tag Generator</a>
+                        <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer">Canonical URL Tag Generator</a>
+                        <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer">Noindex/Nofollow Meta Tag Tool</a>
+                        <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer">Favicon Tag Generator</a>
+                        <div class="border-t border-gray-700 my-2"></div>
+                        <div class="px-4 py-2 text-sm text-gray-400">Tools Pengembangan Web</div>
+                        <a href="https://toolsvin.vinnesia.my.id" target="_blank" rel="noopener noreferrer">HTML, CSS, JSON Beautifier/Minifier</a>
+                        <a href="https://toolsvin.vinnesia.my.id" target="_blank" rel="noopener noreferrer">Markdown to HTML Converter</a>
+                        <a href="https://toolsvin.vinnesia.my.id" target="_blank" rel="noopener noreferrer">HTML Entity Encoder/Decoder</a>
+                    </div>
+                </div>
+                <a href="about.html" class="text-white hover:text-purple-accent transition duration-300">About</a>
+                <a href="terms.html" class="text-white hover:text-purple-accent transition duration-300">Terms of Service</a>
+                <a href="privacy.html" class="text-white hover:text-purple-accent transition duration-300">Privacy Policy</a>
+                <a href="contact.html" class="text-white hover:text-purple-accent transition duration-300">Contact</a>
+                <a href="panduan.html" class="text-white hover:text-purple-accent transition duration-300">Panduan Pengguna</a>
+                <a href="blog.html" class="text-white hover:text-purple-accent transition duration-300">Blog</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-24 pb-12 px-4 md:px-8 lg:px-16">
+        <section class="bg-dark-purple rounded-xl shadow-xl p-8 md:p-12 mb-12">
+            <h1 class="text-3xl md:text-4xl font-bold text-white mb-6 text-center">Panduan Pengguna</h1>
+            <div class="text-gray-300 leading-relaxed text-justify">
+                <p class="mb-4">
+                    Selamat datang di Panduan Pengguna VIN NESIA! Halaman ini akan membantu Anda memahami cara kerja setiap tools yang kami sediakan dan bagaimana Anda dapat memanfaatkannya secara maksimal. Semua tools kami dirancang untuk mudah digunakan, namun panduan ini akan memberikan detail langkah demi langkah dan tips berguna.
+                </p>
+
+                <h2 class="text-2xl md:text-3xl font-semibold text-purple-accent mb-4 mt-8">Cara Menggunakan Tools SEO</h2>
+
+                <h3 class="text-xl font-semibold text-white mb-2 mt-4">1. Meta Tag Generator</h3>
+                <p class="mb-2">
+                    <strong>Tujuan:</strong> Membuat meta tag dasar (judul, deskripsi, kata kunci) untuk optimasi SEO.
+                </p>
+                <p class="mb-4">
+                    <strong>Langkah-langkah:</strong>
+                    <ol class="list-decimal list-inside ml-4 space-y-1">
+                        <li>Kunjungi halaman <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer" class="text-purple-accent hover:underline">Meta Tag Generator</a>.</li>
+                        <li>Masukkan Judul Halaman (Page Title) yang diinginkan.</li>
+                        <li>Tulis Deskripsi Halaman (Page Description) yang ringkas dan menarik.</li>
+                        <li>Tambahkan Kata Kunci (Keywords) yang relevan, dipisahkan dengan koma.</li>
+                        <li>Klik tombol "Generate Meta Tags".</li>
+                        <li>Kode meta tag akan muncul di area output, siap untuk Anda salin dan tempel ke bagian `<head>` situs web Anda.</li>
+                    </ol>
+                </p>
+
+                <h3 class="text-xl font-semibold text-white mb-2 mt-4">2. OG (Open Graph) Tag Generator</h3>
+                <p class="mb-2">
+                    <strong>Tujuan:</strong> Membuat tag Open Graph untuk kontrol tampilan konten saat dibagikan di media sosial.
+                </p>
+                <p class="mb-4">
+                    <strong>Langkah-langkah:</strong>
+                    <ol class="list-decimal list-inside ml-4 space-y-1">
+                        <li>Kunjungi halaman <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer" class="text-purple-accent hover:underline">OG Tag Generator</a>.</li>
+                        <li>Isi informasi seperti Judul, Deskripsi, URL Halaman, dan URL Gambar yang akan muncul saat dibagikan.</li>
+                        <li>Pilih jenis konten (misalnya, artikel, website).</li>
+                        <li>Klik tombol "Generate OG Tags".</li>
+                        <li>Salin kode yang dihasilkan dan tempel di bagian `<head>` situs Anda.</li>
+                    </ol>
+                </p>
+
+                <h3 class="text-xl font-semibold text-white mb-2 mt-4">3. HTML, CSS, JSON Beautifier/Minifier</h3>
+                <p class="mb-2">
+                    <strong>Tujuan:</strong> Merapikan atau mengkompres kode HTML, CSS, atau JSON.
+                </p>
+                <p class="mb-4">
+                    <strong>Langkah-langkah:</strong>
+                    <ol class="list-decimal list-inside ml-4 space-y-1">
+                        <li>Kunjungi halaman <a href="https://toolsvin.vinnesia.my.id" target="_blank" rel="noopener noreferrer" class="text-purple-accent hover:underline">Beautifier/Minifier</a>.</li>
+                        <li>Pilih jenis kode yang ingin Anda proses (HTML, CSS, atau JSON).</li>
+                        <li>Tempel kode Anda ke dalam area input.</li>
+                        <li>Pilih "Beautify" untuk merapikan atau "Minify" untuk mengkompres.</li>
+                        <li>Hasil akan ditampilkan di area output, siap untuk disalin.</li>
+                    </ol>
+                </p>
+
+                <h3 class="text-xl font-semibold text-white mb-2 mt-4">4. Markdown to HTML Converter</h3>
+                <p class="mb-2">
+                    <strong>Tujuan:</strong> Mengkonversi teks yang ditulis dalam format Markdown ke HTML.
+                </p>
+                <p class="mb-4">
+                    <strong>Langkah-langkah:</strong>
+                    <ol class="list-decimal list-inside ml-4 space-y-1">
+                        <li>Kunjungi halaman <a href="https://toolsvin.vinnesia.my.id" target="_blank" rel="noopener noreferrer" class="text-purple-accent hover:underline">Markdown to HTML Converter</a>.</li>
+                        <li>Tempel teks Markdown Anda ke dalam area input.</li>
+                        <li>Klik tombol "Convert to HTML".</li>
+                        <li>Output HTML akan muncul, siap untuk disalin dan digunakan di situs web Anda.</li>
+                    </ol>
+                </p>
+
+                <h2 class="text-2xl md:text-3xl font-semibold text-purple-accent mb-4 mt-8">Tips Umum Penggunaan Tools</h2>
+                <ul class="list-disc list-inside mb-4 space-y-2">
+                    <li><strong>Salin & Tempel:</strong> Hampir semua tools kami bekerja dengan metode salin (copy) input Anda dan tempel (paste) hasilnya.</li>
+                    <li><strong>Verifikasi:</strong> Meskipun tools kami akurat, selalu disarankan untuk memverifikasi output, terutama untuk kode kritis.</li>
+                    <li><strong>Gunakan Panduan Ini:</strong> Jika Anda bingung tentang cara menggunakan tool tertentu, halaman ini adalah sumber daya utama Anda.</li>
+                    <li><strong>Laporkan Masalah:</strong> Jika Anda menemukan masalah atau memiliki saran untuk perbaikan, jangan ragu untuk menghubungi kami melalui halaman <a href="contact.html" class="text-purple-accent hover:underline">Kontak</a>.</li>
+                </ul>
+                <p>
+                    Kami berharap panduan ini membantu Anda memanfaatkan VIN NESIA sepenuhnya. Selamat menggunakan tools kami!
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-dark-purple py-8 px-6 md:px-12 text-center text-gray-400 rounded-t-xl">
+        <div class="container mx-auto">
+            <p class="mb-4">&copy; 2025 VIN NESIA. All rights reserved.</p>
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="https://www.instagram.com/Vin.nesia.id" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-purple-accent transition duration-300">
+                    <i class="fab fa-instagram text-2xl"></i>
+                </a>
+            </div>
+            <div class="flex flex-wrap justify-center space-x-4 md:space-x-8 text-sm">
+                <a href="about.html" class="hover:text-purple-accent transition duration-300">About</a>
+                <a href="terms.html" class="hover:text-purple-accent transition duration-300">Terms of Service</a>
+                <a href="privacy.html" class="hover:text-purple-accent transition duration-300">Privacy Policy</a>
+                <a href="contact.html" class="hover:text-purple-accent transition duration-300">Contact</a>
+                <a href="panduan.html" class="hover:text-purple-accent transition duration-300">Panduan Pengguna</a>
+                <a href="blog.html" class="hover:text-purple-accent transition duration-300">Blog</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu and Tools Dropdown -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburgerBtn = document.getElementById('hamburgerBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const closeMenuBtn = document.getElementById('closeMenuBtn');
+            const toolsMenuBtn = document.getElementById('toolsMenuBtn');
+            const mobileToolsMenuBtn = document.getElementById('mobileToolsMenuBtn');
+            const mobileToolsDropdown = document.getElementById('mobileToolsDropdown');
+
+            // Toggle mobile menu
+            hamburgerBtn.addEventListener('click', () => {
+                mobileMenu.classList.remove('-translate-x-full');
+            });
+
+            closeMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.add('-translate-x-full');
+            });
+
+            // Toggle desktop tools dropdown
+            toolsMenuBtn.addEventListener('click', (event) => {
+                event.stopPropagation(); // Prevent click from bubbling to document
+                const dropdown = toolsMenuBtn.nextElementSibling;
+                dropdown.classList.toggle('active');
+            });
+
+            // Toggle mobile tools dropdown
+            mobileToolsMenuBtn.addEventListener('click', (event) => {
+                event.stopPropagation(); // Prevent click from bubbling to document
+                mobileToolsDropdown.classList.toggle('active');
+            });
+
+            // Close dropdowns when clicking outside
+            document.addEventListener('click', (event) => {
+                const desktopDropdown = toolsMenuBtn.nextElementSibling;
+                if (desktopDropdown.classList.contains('active') && !toolsMenuBtn.contains(event.target) && !desktopDropdown.contains(event.target)) {
+                    desktopDropdown.classList.remove('active');
+                }
+                if (mobileToolsDropdown.classList.contains('active') && !mobileToolsMenuBtn.contains(event.target) && !mobileToolsDropdown.contains(event.target)) {
+                    mobileToolsDropdown.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
