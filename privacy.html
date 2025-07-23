@@ -6,25 +6,25 @@
     <title>Kebijakan Privasi - VIN NESIA</title>
 
     <!-- Meta Tags SEO -->
-    <meta name="description" content="Baca Kebijakan Privasi VIN NESIA. Kami menjelaskan bagaimana kami mengumpulkan, menggunakan, dan melindungi informasi pribadi Anda.">
-    <meta name="keywords" content="Kebijakan Privasi, Privacy Policy, data pribadi, keamanan data, perlindungan data, VIN NESIA">
+    <meta name="description" content="Baca Kebijakan Privasi VIN NESIA untuk memahami bagaimana kami melindungi data Anda dan komitmen kami terhadap privasi pengguna.">
+    <meta name="keywords" content="kebijakan privasi, privacy policy, perlindungan data, keamanan data, VIN NESIA, data pengguna">
     <meta name="author" content="VIN NESIA">
 
     <!-- Open Graph Meta Tags for Social Sharing -->
     <meta property="og:title" content="Kebijakan Privasi - VIN NESIA">
-    <meta property="og:description" content="Baca Kebijakan Privasi VIN NESIA. Kami menjelaskan bagaimana kami mengumpulkan, menggunakan, dan melindungi informasi pribadi Anda.">
-    <meta property="og:image" content="https://www.vinnesia.my.id/logo.png">
+    <meta property="og:description" content="Baca Kebijakan Privasi VIN NESIA untuk memahami bagaimana kami melindungi data Anda dan komitmen kami terhadap privasi pengguna.">
+    <meta property="og:image" content="https://www.vinnesia.my.id/images/logo.png">
     <meta property="og:url" content="https://www.vinnesia.my.id/privacy.html">
     <meta property="og:type" content="website">
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Kebijakan Privasi - VIN NESIA">
-    <meta name="twitter:description" content="Baca Kebijakan Privasi VIN NESIA. Kami menjelaskan bagaimana kami mengumpulkan, menggunakan, dan melindungi informasi pribadi Anda.">
-    <meta name="twitter:image" content="https://www.vinnesia.my.id/logo.png">
+    <meta name="twitter:description" content="Baca Kebijakan Privasi VIN NESIA untuk memahami bagaimana kami melindungi data Anda dan komitmen kami terhadap privasi pengguna.">
+    <meta name="twitter:image" content="https://www.vinnesia.my.id/images/logo.png">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JXL70YP8XN"></script>
@@ -45,85 +45,50 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <style>
-        /* Custom CSS to override/enhance Tailwind for specific elements */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #1a001a; /* Dark purple-black */
-            color: #e0e0e0; /* Light grey text for contrast */
-        }
-
-        /* Custom scrollbar for a sleek look */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #2d002d; /* Darker track */
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #b366ff; /* Purple thumb */
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #cc99ff; /* Lighter purple on hover */
-        }
-
-        .text-purple-accent {
-            color: #b366ff; /* Custom purple accent color */
-        }
-
-        .bg-dark-purple {
-            background-color: #2d002d; /* Slightly lighter dark purple for cards/sections */
-        }
-
-        .bg-darker-purple {
-            background-color: #1a001a; /* Main background */
-        }
-
-        /* Specific styling for the tools dropdown */
-        .tools-dropdown {
-            display: none;
-            position: absolute;
-            background-color: #2d002d;
-            min-width: 200px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
-            z-index: 100;
-            border-radius: 0.5rem;
-            padding: 0.5rem 0;
-            top: 100%; /* Position below the parent nav item */
-            left: 0;
-        }
-
-        .tools-dropdown a {
+            background-color: #1a001a;
             color: #e0e0e0;
-            padding: 0.75rem 1.25rem;
-            text-decoration: none;
-            display: block;
-            white-space: nowrap;
-            transition: background-color 0.2s ease;
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
-
-        .tools-dropdown a:hover {
-            background-color: #3f003f;
-            color: #cc99ff;
-        }
-
-        .tools-dropdown.active {
-            display: block;
-        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #2d002d; }
+        ::-webkit-scrollbar-thumb { background: #b366ff; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #cc99ff; }
+        .text-purple-accent { color: #b366ff; }
+        .bg-dark-purple-section { background-color: #2d002d; }
+        .bg-medium-purple-section { background-color: #3f003f; }
+        .bg-footer-black { background-color: #0a0a0a; }
+        .tools-dropdown { display: none; position: absolute; background-color: #2d002d; min-width: 200px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4); z-index: 100; border-radius: 0.5rem; padding: 0.5rem 0; top: 100%; left: 0; }
+        .tools-dropdown a { color: #e0e0e0; padding: 0.75rem 1.25rem; text-decoration: none; display: block; white-space: nowrap; transition: background-color 0.2s ease; }
+        .tools-dropdown a:hover { background-color: #3f003f; color: #cc99ff; }
+        .tools-dropdown.active { display: block; }
+        #background-layers { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; }
+        #background-layers > div { position: absolute; inset: 0; }
+        .bg-gradient-layer { background: linear-gradient(to bottom, #1a001a, #3f003f); }
+        .bg-code-abstract-layer { background-image: url('https://images.pexels.com/photos/5380642/pexels-photo-5380642.jpeg?auto=compress&cs=tinysrgb&w=1920'); background-size: cover; background-position: center center; filter: blur(5px); opacity: 0.1; mix-blend-mode: overlay; }
+        .bg-pattern-layer { background-image: url('data:image/svg+xml;utf8,<svg width="10" height="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg"><circle cx="1" cy="1" r="1" fill="%23ffffff" opacity="0.05"/></svg>'); background-size: 10px 10px; background-repeat: repeat; opacity: 0.1; }
     </style>
 </head>
 <body class="antialiased">
 
+    <!-- Background Layers -->
+    <div id="background-layers">
+        <div class="bg-gradient-layer"></div>
+        <div class="bg-code-abstract-layer"></div>
+        <div class="bg-pattern-layer"></div>
+    </div>
+
     <!-- Header Section -->
-    <header class="bg-dark-purple shadow-lg py-4 px-6 md:px-12 fixed top-0 left-0 w-full z-50 rounded-b-xl">
+    <header class="bg-dark-purple-section shadow-lg py-4 px-6 md:px-12 fixed top-0 left-0 w-full z-50 rounded-b-xl">
         <div class="container mx-auto flex justify-between items-center">
-            <!-- Logo and Site Name -->
             <div class="flex items-center space-x-3">
-                <img src="/logo.png" alt="VIN NESIA Logo" class="w-10 h-10 rounded-full shadow-md">
+                <img src="/images/logo.png" alt="VIN NESIA Logo" class="w-10 h-10 rounded-full shadow-md">
                 <span class="text-2xl font-bold text-white tracking-wide">VIN NESIA</span>
             </div>
-
-            <!-- Navigation Menu (Desktop) -->
             <nav class="hidden md:flex space-x-8">
                 <a href="index.html" class="text-white hover:text-purple-accent transition duration-300 font-medium">Home</a>
                 <div class="relative group">
@@ -152,14 +117,10 @@
                 <a href="panduan.html" class="text-white hover:text-purple-accent transition duration-300 font-medium">Panduan Pengguna</a>
                 <a href="blog.html" class="text-white hover:text-purple-accent transition duration-300 font-medium">Blog</a>
             </nav>
-
-            <!-- Hamburger Menu (Mobile) -->
             <button id="hamburgerBtn" class="md:hidden text-white text-2xl focus:outline-none">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
-
-        <!-- Mobile Navigation Overlay -->
         <div id="mobileMenu" class="md:hidden fixed inset-0 bg-darker-purple bg-opacity-95 z-40 transform -translate-x-full transition-transform duration-300 ease-in-out">
             <div class="flex justify-end p-6">
                 <button id="closeMenuBtn" class="text-white text-3xl focus:outline-none">
@@ -198,77 +159,96 @@
     </header>
 
     <!-- Main Content -->
-    <main class="pt-24 pb-12 px-4 md:px-8 lg:px-16">
-        <section class="bg-dark-purple rounded-xl shadow-xl p-8 md:p-12 mb-12">
-            <h1 class="text-3xl md:text-4xl font-bold text-white mb-6 text-center">Kebijakan Privasi</h1>
+    <main class="pt-24 pb-12 px-4 md:px-8 lg:px-16 flex-grow">
+        <section class="text-center py-16 md:py-24 bg-dark-purple-section rounded-xl shadow-xl mb-12">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-4 leading-tight">
+                Kebijakan <span class="text-purple-accent">Privasi</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
+                Komitmen kami untuk melindungi data Anda dan menjaga privasi Anda.
+            </p>
+        </section>
+
+        <section class="bg-dark-purple-section rounded-xl shadow-xl p-8 md:p-12 mb-12">
             <div class="text-gray-300 leading-relaxed text-justify">
                 <p class="mb-4">
-                    Kebijakan Privasi ini menjelaskan bagaimana VIN NESIA mengumpulkan, menggunakan, dan melindungi informasi Anda saat Anda menggunakan situs web dan tools kami. Kami sangat menghargai privasi Anda.
+                    Di VIN NESIA, privasi pengunjung dan pengguna kami adalah prioritas utama. Kebijakan Privasi ini menjelaskan bagaimana kami mengumpulkan, menggunakan, dan melindungi informasi Anda saat Anda menggunakan situs web kami (<a href="https://www.vinnesia.my.id" class="text-purple-accent hover:underline">www.vinnesia.my.id</a>) dan semua tools serta layanan yang disediakan di dalamnya.
                 </p>
 
-                <h2 class="text-2xl md:text-3xl font-semibold text-purple-accent mb-4 mt-8">1. Informasi yang Kami Kumpulkan</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-white mt-8 mb-4">1. Informasi yang Kami Kumpulkan</h2>
                 <p class="mb-4">
-                    VIN NESIA tidak mengumpulkan informasi pribadi yang dapat diidentifikasi secara langsung (seperti nama, alamat email, atau nomor telepon) dari pengguna tools kami. Tools kami beroperasi sepenuhnya di sisi klien (browser Anda), yang berarti data yang Anda masukkan untuk diproses tidak pernah dikirim atau disimpan di server kami.
+                    <strong>Kami tidak mengumpulkan informasi pribadi yang dapat diidentifikasi secara langsung dari pengguna kami.</strong>
+                </p>
+                <ul class="list-disc list-inside mb-4 pl-5">
+                    <li class="mb-2"><strong>Data Penggunaan Tools:</strong> Sebagian besar tools di VIN NESIA beroperasi secara **client-side**. Ini berarti semua pemrosesan data (misalnya, konversi Markdown ke HTML, beautifikasi kode, atau pembuatan meta tag) terjadi langsung di browser web Anda. Data yang Anda masukkan ke dalam tools ini **tidak pernah dikirimkan, disimpan, atau diproses di server kami**. Ini memastikan privasi dan keamanan data Anda sepenuhnya terjaga.</li>
+                    <li class="mb-2"><strong>Data Non-Pribadi (Analytics):</strong> Kami menggunakan Google Analytics untuk memahami bagaimana pengguna berinteraksi dengan situs kami. Data ini bersifat anonim dan tidak dapat digunakan untuk mengidentifikasi Anda secara pribadi. Informasi yang dikumpulkan meliputi:
+                        <ul class="list-circle list-inside ml-5 mt-2">
+                            <li class="mb-1">Jenis browser dan perangkat yang digunakan.</li>
+                            <li class="mb-1">Halaman yang dikunjungi dan waktu yang dihabiskan di setiap halaman.</li>
+                            <li class="mb-1">Sumber lalu lintas (misalnya, dari mesin pencari atau situs web lain).</li>
+                            <li class="mb-1">Informasi geografis umum (negara/kota), tanpa mengidentifikasi lokasi spesifik Anda.</li>
+                        </ul>
+                        Data ini digunakan semata-mata untuk tujuan analisis internal guna meningkatkan fungsionalitas dan pengalaman pengguna Situs kami.</li>
+                </ul>
+
+                <h2 class="text-2xl md:text-3xl font-bold text-white mt-8 mb-4">2. Bagaimana Informasi Digunakan</h2>
+                <p class="mb-4">
+                    Karena kami tidak mengumpulkan informasi pribadi, tidak ada informasi pribadi yang digunakan. Data non-pribadi yang dikumpulkan melalui Google Analytics digunakan untuk:
+                </p>
+                <ul class="list-disc list-inside mb-4 pl-5">
+                    <li class="mb-2">Menganalisis tren penggunaan situs.</li>
+                    <li class="mb-2">Memantau dan meningkatkan kinerja situs.</li>
+                    <li class="mb-2">Memahami preferensi pengguna untuk mengembangkan tools dan fitur baru yang relevan.</li>
+                </ul>
+
+                <h2 class="text-2xl md:text-3xl font-bold text-white mt-8 mb-4">3. Perlindungan Informasi Anda</h2>
+                <p class="mb-4">
+                    Kami mengambil langkah-langkah keamanan yang wajar untuk melindungi informasi non-pribadi yang kami kumpulkan dari akses, penggunaan, atau pengungkapan yang tidak sah. Mengingat sebagian besar operasi tools kami bersifat client-side, risiko kebocoran data pribadi dari pihak kami sangat minim.
                 </p>
                 <p class="mb-4">
-                    Kami mungkin mengumpulkan informasi non-pribadi secara otomatis melalui Google Analytics (ID Pelacakan: G-JXL70YP8XN) untuk tujuan analisis lalu lintas situs web. Informasi ini dapat mencakup:
-                    <ul class="list-disc list-inside ml-4 mt-2 space-y-1">
-                        <li>Jenis browser dan perangkat yang Anda gunakan.</li>
-                        <li>Halaman yang Anda kunjungi di situs kami.</li>
-                        <li>Waktu yang dihabiskan di setiap halaman.</li>
-                        <li>URL rujukan (dari mana Anda datang ke situs kami).</li>
-                        <li>Informasi geografis umum (negara atau kota, bukan lokasi spesifik).</li>
-                    </ul>
-                    Data ini digunakan untuk memahami bagaimana pengguna berinteraksi dengan situs kami, sehingga kami dapat meningkatkan pengalaman pengguna dan fungsionalitas tools. Data ini dianonimkan dan tidak dapat digunakan untuk mengidentifikasi Anda secara pribadi.
+                    Situs kami menggunakan protokol HTTPS untuk memastikan komunikasi yang aman antara browser Anda dan server kami.
                 </p>
 
-                <h2 class="text-2xl md:text-3xl font-semibold text-purple-accent mb-4 mt-8">2. Penggunaan Informasi</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-white mt-8 mb-4">4. Cookie</h2>
                 <p class="mb-4">
-                    Informasi non-pribadi yang kami kumpulkan digunakan semata-mata untuk:
-                    <ul class="list-disc list-inside ml-4 mt-2 space-y-1">
-                        <li>Menganalisis tren penggunaan situs.</li>
-                        <li>Meningkatkan desain dan fungsionalitas situs.</li>
-                        <li>Memahami preferensi pengguna untuk pengembangan tools di masa mendatang.</li>
-                    </ul>
-                    Kami tidak akan menjual, menyewakan, atau membagikan informasi non-pribadi ini kepada pihak ketiga untuk tujuan pemasaran.
+                    VIN NESIA menggunakan "cookies" untuk meningkatkan pengalaman pengguna. Cookies adalah file kecil yang ditempatkan di perangkat Anda oleh situs web yang Anda kunjungi. Cookies ini digunakan untuk:
+                </p>
+                <ul class="list-disc list-inside mb-4 pl-5">
+                    <li class="mb-2">Menganalisis lalu lintas situs (melalui Google Analytics).</li>
+                    <li class="mb-2">Mengingat preferensi Anda untuk kunjungan di masa mendatang (misalnya, pengaturan bahasa).</li>
+                </ul>
+                <p class="mb-4">
+                    Anda dapat memilih untuk menonaktifkan cookies melalui pengaturan browser Anda. Namun, perlu diketahui bahwa menonaktifkan cookies dapat memengaruhi fungsionalitas beberapa bagian dari Situs kami.
                 </p>
 
-                <h2 class="text-2xl md:text-3xl font-semibold text-purple-accent mb-4 mt-8">3. Keamanan Data</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-white mt-8 mb-4">5. Tautan Pihak Ketiga</h2>
                 <p class="mb-4">
-                    Karena tools kami beroperasi di sisi klien, data yang Anda masukkan tidak pernah meninggalkan browser Anda dan tidak disimpan di server kami. Ini secara inheren meningkatkan keamanan data Anda. Kami juga menggunakan protokol HTTPS untuk memastikan komunikasi yang aman antara browser Anda dan situs web kami.
+                    Situs kami mungkin berisi tautan ke situs web pihak ketiga. Kami tidak bertanggung jawab atas praktik privasi atau konten situs web pihak ketiga ini. Kami mendorong Anda untuk membaca kebijakan privasi setiap situs web yang Anda kunjungi.
                 </p>
 
-                <h2 class="text-2xl md:text-3xl font-semibold text-purple-accent mb-4 mt-8">4. Tautan ke Situs Pihak Ketiga</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-white mt-8 mb-4">6. Perubahan Kebijakan Privasi</h2>
                 <p class="mb-4">
-                    Situs web kami mungkin berisi tautan ke situs web pihak ketiga. Kebijakan Privasi ini hanya berlaku untuk VIN NESIA. Kami tidak bertanggung jawab atas praktik privasi atau konten situs web pihak ketiga tersebut. Kami mendorong Anda untuk membaca kebijakan privasi setiap situs web yang Anda kunjungi.
+                    Kami dapat memperbarui Kebijakan Privasi ini dari waktu ke waktu. Setiap perubahan akan diposting di halaman ini. Kami mendorong Anda untuk meninjau Kebijakan Privasi ini secara berkala untuk tetap mendapatkan informasi terbaru tentang praktik privasi kami.
                 </p>
 
-                <h2 class="text-2xl md:text-3xl font-semibold text-purple-accent mb-4 mt-8">5. Perubahan Kebijakan Privasi</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-white mt-8 mb-4">7. Persetujuan Anda</h2>
                 <p class="mb-4">
-                    Kami dapat memperbarui Kebijakan Privasi ini dari waktu ke waktu. Perubahan akan diposting di halaman ini dengan tanggal "Pembaruan Terakhir" yang direvisi. Anda disarankan untuk meninjau Kebijakan Privasi ini secara berkala untuk setiap perubahan.
+                    Dengan menggunakan Situs kami, Anda dengan ini menyetujui Kebijakan Privasi kami dan menyetujui Syarat & Ketentuan Layanan kami.
                 </p>
 
-                <h2 class="text-2xl md:text-3xl font-semibold text-purple-accent mb-4 mt-8">6. Persetujuan</h2>
+                <h2 class="text-2xl md:text-3xl font-bold text-white mt-8 mb-4">8. Kontak Kami</h2>
                 <p class="mb-4">
-                    Dengan menggunakan situs web kami, Anda dengan ini menyetujui Kebijakan Privasi kami dan menyetujui persyaratannya.
+                    Jika Anda memiliki pertanyaan atau kekhawatiran mengenai Kebijakan Privasi ini, silakan hubungi kami melalui halaman <a href="contact.html" class="text-purple-accent hover:underline">Kontak</a> kami.
                 </p>
-
-                <h2 class="text-2xl md:text-3xl font-semibold text-purple-accent mb-4 mt-8">7. Kontak</h2>
                 <p class="mb-4">
-                    Jika Anda memiliki pertanyaan mengenai Kebijakan Privasi ini, silakan hubungi kami di: <a href="mailto:vin.nesiaa.id@gmail.com" class="text-purple-accent hover:underline">vin.nesiaa.id@gmail.com</a>.
-                </p>
-                <p class="text-sm text-gray-500 italic">
-                    Pembaruan Terakhir: 23 Juli 2025
-                </p>
-                <p class="text-red-400 mt-6 font-semibold">
-                    *Penting: Konten ini adalah placeholder dan bukan nasihat hukum. Harap konsultasikan dengan profesional hukum untuk menyusun Kebijakan Privasi yang sesuai dan mengikat secara hukum untuk situs Anda, terutama terkait regulasi privasi data di Indonesia.*
+                    Terakhir diperbarui: 24 Juli 2025
                 </p>
             </div>
         </section>
     </main>
 
     <!-- Footer Section -->
-    <footer class="bg-dark-purple py-8 px-6 md:px-12 text-center text-gray-400 rounded-t-xl">
+    <footer class="bg-footer-black py-8 px-6 md:px-12 text-center text-gray-400 rounded-t-xl mt-auto">
         <div class="container mx-auto">
             <p class="mb-4">&copy; 2025 VIN NESIA. All rights reserved.</p>
             <div class="flex justify-center space-x-6 mb-4">
@@ -282,7 +262,7 @@
                 <a href="privacy.html" class="hover:text-purple-accent transition duration-300">Privacy Policy</a>
                 <a href="contact.html" class="hover:text-purple-accent transition duration-300">Contact</a>
                 <a href="panduan.html" class="hover:text-purple-accent transition duration-300">Panduan Pengguna</a>
-                <a href="blog.html" class="hover:text-purple-accent transition duration-300">Blog</a>
+                <a href="blog.html" class="text-white hover:text-purple-accent transition duration-300 font-medium">Blog</a>
             </div>
         </div>
     </footer>
