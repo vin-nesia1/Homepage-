@@ -49,12 +49,12 @@
             font-family: 'Inter', sans-serif;
             background-color: #1a001a;
             color: #e0e0e0;
-            position: relative;
+            margin: 0;
+            padding: 0;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            margin: 0; /* Hapus margin default browser */
-            padding: 0; /* Hapus padding default browser */
+            overflow-x: hidden; /* Mencegah scroll horizontal */
         }
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #2d002d; }
@@ -78,25 +78,26 @@
         main {
             padding: 0;
             width: 100%;
+            flex-grow: 1;
         }
 
         article {
             padding: 0;
-            margin: 0;
             width: 100%;
+            margin: 0;
         }
 
         .blog-content {
             font-size: 1rem;
             line-height: 1.75;
-            padding: 0 0.5rem; /* Padding kecil di dalam artikel */
+            padding: 0;
         }
 
         img {
             max-width: 100%;
             height: auto;
             display: block;
-            margin: 0; /* Hapus margin default */
+            margin: 0;
         }
 
         /* Ensure text contrast */
@@ -115,11 +116,11 @@
                 padding: 0 0.5rem;
             }
             article {
-                padding: 1rem;
+                padding: 0.5rem;
             }
             .blog-content {
                 font-size: 1.1rem;
-                padding: 0 1rem;
+                padding: 0 0.5rem;
             }
             h1 {
                 font-size: 1.875rem;
@@ -128,11 +129,11 @@
 
         @media (min-width: 768px) { /* md: */
             main {
-                padding: 0 2rem;
+                padding: 0 1rem;
             }
             article {
-                padding: 2rem;
-                max-width: 64rem; /* max-w-4xl */
+                padding: 1rem;
+                max-width: 64rem;
                 margin: 0 auto;
             }
             .blog-content {
@@ -146,16 +147,17 @@
 
         @media (min-width: 1024px) { /* lg: */
             main {
-                padding: 0 4rem;
+                padding: 0 2rem;
             }
         }
 
-        /* Adjust header height impact */
+        /* Header adjustments */
         header {
-            height: auto; /* Biarkan header menyesuaikan isi */
+            padding: 0.5rem 0;
+            height: auto;
         }
         main {
-            padding-top: 4rem; /* Sesuaikan dengan tinggi header, sebelumnya pt-24 (6rem) */
+            padding-top: 2.5rem; /* Sesuaikan dengan tinggi header (~2.5rem) */
         }
     </style>
 </head>
@@ -169,66 +171,66 @@
     </div>
 
     <!-- Header Section -->
-    <header class="bg-dark-purple-section shadow-lg py-2 px-4 md:px-8 fixed top-0 left-0 w-full z-50 rounded-b-xl">
-        <div class="container mx-auto flex justify-between items-center">
-            <div class="flex items-center space-x-2">
-                <img src="/images/logo.png" alt="VIN NESIA Logo" class="w-8 h-8 rounded-full shadow-md">
-                <span class="text-xl font-bold text-white tracking-wide">VIN NESIA</span>
+    <header class="bg-dark-purple-section shadow-lg p-1 fixed top-0 left-0 w-full z-50 rounded-b-xl">
+        <div class="container mx-auto flex justify-between items-center px-2">
+            <div class="flex items-center space-x-1">
+                <img src="/images/logo.png" alt="VIN NESIA Logo" class="w-6 h-6 rounded-full shadow-md">
+                <span class="text-lg font-bold text-white tracking-wide">VIN NESIA</span>
             </div>
-            <nav class="hidden md:flex space-x-6">
-                <a href="index.html" class="text-white hover:text-purple-accent transition duration-300 font-medium">Home</a>
+            <nav class="hidden md:flex space-x-4">
+                <a href="index.html" class="text-white hover:text-purple-accent transition duration-300 font-medium text-sm">Home</a>
                 <div class="relative group">
-                    <button class="text-white hover:text-purple-accent transition duration-300 font-medium focus:outline-none flex items-center" id="toolsMenuBtn">
-                        Tools <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    <button class="text-white hover:text-purple-accent transition duration-300 font-medium focus:outline-none flex items-center text-sm" id="toolsMenuBtn">
+                        Tools <i class="fas fa-chevron-down ml-0.5 text-xs"></i>
                     </button>
                     <div class="tools-dropdown group-hover:block transition-all duration-300 ease-in-out">
-                        <div class="px-3 py-1 text-sm text-gray-400">Tools SEO</div>
-                        <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer">Meta Tag Generator</a>
-                        <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer">OG (Open Graph) Tag Generator</a>
-                        <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer">Twitter Card Tag Generator</a>
-                        <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer">Canonical URL Tag Generator</a>
-                        <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer">Noindex/Nofollow Meta Tag Tool</a>
-                        <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer">Favicon Tag Generator</a>
-                        <div class="border-t border-gray-700 my-1"></div>
-                        <div class="px-3 py-1 text-sm text-gray-400">Tools Pengembangan Web</div>
-                        <a href="https://toolsvin.vinnesia.my.id" target="_blank" rel="noopener noreferrer">HTML, CSS, JSON Beautifier/Minifier</a>
-                        <a href="https://toolsvin.vinnesia.my.id" target="_blank" rel="noopener noreferrer">Markdown to HTML Converter</a>
-                        <a href="https://toolsvin.vinnesia.my.id" target="_blank" rel="noopener noreferrer">HTML Entity Encoder/Decoder</a>
+                        <div class="px-2 py-0.5 text-xs text-gray-400">Tools SEO</div>
+                        <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer" class="text-sm">Meta Tag Generator</a>
+                        <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer" class="text-sm">OG (Open Graph) Tag Generator</a>
+                        <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer" class="text-sm">Twitter Card Tag Generator</a>
+                        <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer" class="text-sm">Canonical URL Tag Generator</a>
+                        <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer" class="text-sm">Noindex/Nofollow Meta Tag Tool</a>
+                        <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer" class="text-sm">Favicon Tag Generator</a>
+                        <div class="border-t border-gray-700 my-0.5"></div>
+                        <div class="px-2 py-0.5 text-xs text-gray-400">Tools Pengembangan Web</div>
+                        <a href="https://toolsvin.vinnesia.my.id" target="_blank" rel="noopener noreferrer" class="text-sm">HTML, CSS, JSON Beautifier/Minifier</a>
+                        <a href="https://toolsvin.vinnesia.my.id" target="_blank" rel="noopener noreferrer" class="text-sm">Markdown to HTML Converter</a>
+                        <a href="https://toolsvin.vinnesia.my.id" target="_blank" rel="noopener noreferrer" class="text-sm">HTML Entity Encoder/Decoder</a>
                     </div>
                 </div>
-                <a href="about.html" class="text-white hover:text-purple-accent transition duration-300 font-medium">About</a>
-                <a href="terms.html" class="text-white hover:text-purple-accent transition duration-300 font-medium">Terms of Service</a>
-                <a href="privacy.html" class="text-white hover:text-purple-accent transition duration-300 font-medium">Privacy Policy</a>
-                <a href="contact.html" class="text-white hover:text-purple-accent transition duration-300 font-medium">Contact</a>
-                <a href="panduan.html" class="text-white hover:text-purple-accent transition duration-300 font-medium">Panduan Pengguna</a>
-                <a href="blog.html" class="text-white hover:text-purple-accent transition duration-300 font-medium">Blog</a>
+                <a href="about.html" class="text-white hover:text-purple-accent transition duration-300 font-medium text-sm">About</a>
+                <a href="terms.html" class="text-white hover:text-purple-accent transition duration-300 font-medium text-sm">Terms of Service</a>
+                <a href="privacy.html" class="text-white hover:text-purple-accent transition duration-300 font-medium text-sm">Privacy Policy</a>
+                <a href="contact.html" class="text-white hover:text-purple-accent transition duration-300 font-medium text-sm">Contact</a>
+                <a href="panduan.html" class="text-white hover:text-purple-accent transition duration-300 font-medium text-sm">Panduan Pengguna</a>
+                <a href="blog.html" class="text-white hover:text-purple-accent transition duration-300 font-medium text-sm">Blog</a>
             </nav>
-            <button id="hamburgerBtn" class="md:hidden text-white text-xl focus:outline-none">
+            <button id="hamburgerBtn" class="md:hidden text-white text-lg focus:outline-none">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
         <div id="mobileMenu" class="md:hidden fixed inset-0 bg-darker-purple bg-opacity-95 z-40 transform -translate-x-full transition-transform duration-300 ease-in-out">
-            <div class="flex justify-end p-4">
-                <button id="closeMenuBtn" class="text-white text-2xl focus:outline-none">
+            <div class="flex justify-end p-2">
+                <button id="closeMenuBtn" class="text-white text-xl focus:outline-none">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
-            <nav class="flex flex-col items-center space-y-4 text-lg mt-6">
+            <nav class="flex flex-col items-center space-y-3 text-base mt-4">
                 <a href="index.html" class="text-white hover:text-purple-accent transition duration-300">Home</a>
                 <div class="relative w-full text-center">
                     <button class="text-white hover:text-purple-accent transition duration-300 focus:outline-none flex items-center justify-center w-full" id="mobileToolsMenuBtn">
-                        Tools <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        Tools <i class="fas fa-chevron-down ml-0.5 text-xs"></i>
                     </button>
-                    <div class="tools-dropdown w-full text-sm mt-1" id="mobileToolsDropdown">
-                        <div class="px-3 py-1 text-xs text-gray-400">Tools SEO</div>
+                    <div class="tools-dropdown w-full text-xs mt-0.5" id="mobileToolsDropdown">
+                        <div class="px-2 py-0.5 text-xs text-gray-400">Tools SEO</div>
                         <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer">Meta Tag Generator</a>
                         <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer">OG (Open Graph) Tag Generator</a>
                         <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer">Twitter Card Tag Generator</a>
                         <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer">Canonical URL Tag Generator</a>
                         <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer">Noindex/Nofollow Meta Tag Tool</a>
                         <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer">Favicon Tag Generator</a>
-                        <div class="border-t border-gray-700 my-1"></div>
-                        <div class="px-3 py-1 text-xs text-gray-400">Tools Pengembangan Web</div>
+                        <div class="border-t border-gray-700 my-0.5"></div>
+                        <div class="px-2 py-0.5 text-xs text-gray-400">Tools Pengembangan Web</div>
                         <a href="https://toolsvin.vinnesia.my.id" target="_blank" rel="noopener noreferrer">HTML, CSS, JSON Beautifier/Minifier</a>
                         <a href="https://toolsvin.vinnesia.my.id" target="_blank" rel="noopener noreferrer">Markdown to HTML Converter</a>
                         <a href="https://toolsvin.vinnesia.my.id" target="_blank" rel="noopener noreferrer">HTML Entity Encoder/Decoder</a>
@@ -245,29 +247,29 @@
     </header>
 
     <!-- Main Content -->
-    <main class="pt-4 pb-12 w-full">
-        <article class="bg-dark-purple-section rounded-xl shadow-xl p-0 w-full">
-            <div class="mb-4 text-left px-2">
+    <main class="pt-2.5 pb-8 w-full">
+        <article class="bg-dark-purple-section p-0 w-full">
+            <div class="mb-2 text-left px-1">
                 <a href="blog.html" class="text-purple-accent hover:underline flex items-center" aria-label="Kembali ke halaman blog">
                     <i class="fas fa-arrow-left mr-1"></i> Kembali ke Blog
                 </a>
             </div>
 
-            <h1 class="text-xl sm:text-2xl md:text-4xl font-bold text-white mb-4 text-center px-2">Konversi Cepat Markdown ke HTML dengan Converter VIN NESIA</h1>
-            <img src="https://images.pexels.com/photos/5380642/pexels-photo-5380642.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Ilustrasi Artikel Blog: Layar desktop dengan data abstrak" class="w-full h-auto object-cover rounded-lg mb-4">
+            <h1 class="text-lg sm:text-xl md:text-4xl font-bold text-white mb-2 text-center px-1">Konversi Cepat Markdown ke HTML dengan Converter VIN NESIA</h1>
+            <img src="https://images.pexels.com/photos/5380642/pexels-photo-5380642.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Ilustrasi Artikel Blog: Layar desktop dengan data abstrak" class="w-full h-auto object-cover mb-2">
 
-            <div class="text-gray-300 leading-relaxed text-justify blog-content px-2">
-                <p class="mb-3">
+            <div class="text-gray-300 leading-relaxed text-justify blog-content px-1">
+                <p class="mb-2">
                     Jika Anda seorang penulis konten, blogger, atau pengembang yang sering menulis dokumentasi, Anda mungkin sudah akrab dengan Markdown. Markdown adalah bahasa markup ringan yang memungkinkan Anda menulis menggunakan format teks biasa yang mudah dibaca dan kemudian mengonversinya ke HTML. Meskipun Markdown sangat bagus untuk menulis, mengubahnya ke HTML untuk publikasi web bisa menjadi langkah tambahan. Di sinilah **Markdown to HTML Converter VIN NESIA** datang membantu.
                 </p>
 
-                <h2 class="text-xl md:text-3xl font-semibold text-purple-accent mt-6 mb-3">Apa Itu Markdown?</h2>
-                <p class="mb-3">
+                <h2 class="text-lg md:text-3xl font-semibold text-purple-accent mt-4 mb-2">Apa Itu Markdown?</h2>
+                <p class="mb-2">
                     Markdown adalah sintaks penulisan yang dirancang untuk menjadi semudah mungkin untuk dibaca dan ditulis. Ia menggunakan simbol-simbol sederhana (seperti `*`, `#`, `>`, `-`) untuk memformat teks, yang kemudian dapat diubah menjadi HTML. Ini sangat populer di kalangan penulis teknis, blogger, dan pengembang karena kemudahan penggunaannya.
                 </p>
 
-                <h3 class="text-lg md:text-2xl font-semibold text-white mt-5 mb-2">Contoh Sintaks Markdown:</h3>
-                <pre class="bg-gray-800 text-gray-200 p-2 rounded-md text-sm my-3">
+                <h3 class="text-base md:text-2xl font-semibold text-white mt-3 mb-1">Contoh Sintaks Markdown:</h3>
+                <pre class="bg-gray-800 text-gray-200 p-1 rounded-md text-sm my-2">
 <code># Judul Besar</code>
 <code>## Sub Judul</code>
 
@@ -280,58 +282,58 @@
 
 <code>`Kode inline`</code></pre>
 
-                <h2 class="text-xl md:text-3xl font-semibold text-purple-accent mt-6 mb-3">Mengapa Menggunakan Markdown ke HTML Converter?</h2>
-                <ol class="list-decimal list-inside mb-3 pl-4">
-                    <li class="mb-2"><strong>Efisiensi Penulisan:</strong> Tulis konten dengan cepat tanpa gangguan sintaks HTML yang rumit.</li>
-                    <li class="mb-2"><strong>Konsistensi Format:</strong> Memastikan output HTML yang bersih dan konsisten, terlepas dari bagaimana Anda menulis Markdown.</li>
-                    <li class="mb-2"><strong>Integrasi Mudah:</strong> Cepat mengubah konten Markdown menjadi format yang siap untuk publikasi di situs web, blog, atau aplikasi yang membutuhkan HTML.</li>
-                    <li class="mb-2"><strong>Menghemat Waktu:</strong> Tidak perlu mengonversi secara manual atau mencari-cari pustaka konversi.</li>
+                <h2 class="text-lg md:text-3xl font-semibold text-purple-accent mt-4 mb-2">Mengapa Menggunakan Markdown ke HTML Converter?</h2>
+                <ol class="list-decimal list-inside mb-2 pl-3">
+                    <li class="mb-1"><strong>Efisiensi Penulisan:</strong> Tulis konten dengan cepat tanpa gangguan sintaks HTML yang rumit.</li>
+                    <li class="mb-1"><strong>Konsistensi Format:</strong> Memastikan output HTML yang bersih dan konsisten, terlepas dari bagaimana Anda menulis Markdown.</li>
+                    <li class="mb-1"><strong>Integrasi Mudah:</strong> Cepat mengubah konten Markdown menjadi format yang siap untuk publikasi di situs web, blog, atau aplikasi yang membutuhkan HTML.</li>
+                    <li class="mb-1"><strong>Menghemat Waktu:</strong> Tidak perlu mengonversi secara manual atau mencari-cari pustaka konversi.</li>
                 </ol>
 
-                <h2 class="text-xl md:text-3xl font-semibold text-purple-accent mt-6 mb-3">Memperkenalkan Markdown to HTML Converter VIN NESIA</h2>
-                <p class="mb-3">
+                <h2 class="text-lg md:text-3xl font-semibold text-purple-accent mt-4 mb-2">Memperkenalkan Markdown to HTML Converter VIN NESIA</h2>
+                <p class="mb-2">
                     **Markdown to HTML Converter VIN NESIA** adalah tool online yang dirancang untuk melakukan konversi ini dengan cepat dan akurat. Ini adalah solusi sempurna bagi siapa saja yang ingin menerbitkan konten yang ditulis dalam Markdown ke platform berbasis HTML.
                 </p>
 
-                <h3 class="text-lg md:text-2xl font-semibold text-white mt-5 mb-2">Bagaimana Cara Kerjanya?</h3>
-                <p class="mb-3">
+                <h3 class="text-base md:text-2xl font-semibold text-white mt-3 mb-1">Bagaimana Cara Kerjanya?</h3>
+                <p class="mb-2">
                     Menggunakan tool kami sangat sederhana:
                 </p>
-                <ul class="list-disc list-inside mb-3 pl-4">
-                    <li class="mb-2">Tempelkan teks Markdown Anda ke dalam kotak input.</li>
-                    <li class="mb-2">Klik tombol "Convert".</li>
+                <ul class="list-disc list-inside mb-2 pl-3">
+                    <li class="mb-1">Tempelkan teks Markdown Anda ke dalam kotak input.</li>
+                    <li class="mb-1">Klik tombol "Convert".</li>
                 </ul>
-                <p class="mb-3">
+                <p class="mb-2">
                     Tool akan segera menampilkan output yang sudah diformat dengan benar di kotak output. Anda dapat menyalin hasil tersebut dan langsung menempelkannya ke editor HTML atau sistem manajemen konten (CMS) Anda.
                 </p>
 
-                <h3 class="text-lg md:text-2xl font-semibold text-white mt-5 mb-2">Keuntungan Menggunakan Markdown to HTML Converter VIN NESIA:</h3>
-                <ul class="list-disc list-inside mb-3 pl-4">
-                    <li class="mb-2"><strong>Konversi Instan:</strong> Dapatkan kode HTML dalam hitungan detik.</li>
-                    <li class="mb-2"><strong>Output Bersih:</strong> Menghasilkan HTML yang valid dan terstruktur dengan baik.</li>
-                    <li class="mb-2"><strong>Kemudahan Penggunaan:</strong> Antarmuka yang intuitif dan tidak memerlukan instalasi apa pun.</li>
-                    <li class="mb-2"><strong>Gratis & Aman:</strong> Sepenuhnya gratis dan memproses data di browser Anda, menjaga privasi.</li>
+                <h3 class="text-base md:text-2xl font-semibold text-white mt-3 mb-1">Keuntungan Menggunakan Markdown to HTML Converter VIN NESIA:</h3>
+                <ul class="list-disc list-inside mb-2 pl-3">
+                    <li class="mb-1"><strong>Konversi Instan:</strong> Dapatkan kode HTML dalam hitungan detik.</li>
+                    <li class="mb-1"><strong>Output Bersih:</strong> Menghasilkan HTML yang valid dan terstruktur dengan baik.</li>
+                    <li class="mb-1"><strong>Kemudahan Penggunaan:</strong> Antarmuka yang intuitif dan tidak memerlukan instalasi apa pun.</li>
+                    <li class="mb-1"><strong>Gratis & Aman:</strong> Sepenuhnya gratis dan memproses data di browser Anda, menjaga privasi.</li>
                 </ul>
 
-                <p class="mb-3">
+                <p class="mb-2">
                     Sederhanakan alur kerja penulisan konten Anda dengan Markdown to HTML Converter VIN NESIA. Fokus pada pesan Anda, biarkan tool kami yang mengurus formatnya. Mulailah mengonversi Markdown Anda ke HTML hari ini!
                 </p>
                 <!-- Informasi waktu dan tanggal -->
-                <p class="text-sm text-gray-500 mt-6">Terakhir diperbarui: 08:20 AM WIB, Kamis, 24 Juli 2025</p>
+                <p class="text-sm text-gray-500 mt-4">Terakhir diperbarui: 08:23 AM WIB, Kamis, 24 Juli 2025</p>
             </div>
         </article>
     </main>
 
     <!-- Footer Section -->
-    <footer class="bg-footer-black py-6 px-4 md:px-8 text-center text-gray-400 rounded-t-xl mt-auto w-full">
+    <footer class="bg-footer-black py-4 px-2 md:px-4 text-center text-gray-400 rounded-t-xl w-full">
         <div class="container mx-auto">
-            <p class="mb-3">© 2025 VIN NESIA. All rights reserved.</p>
-            <div class="flex justify-center space-x-4 mb-3">
+            <p class="mb-2">© 2025 VIN NESIA. All rights reserved.</p>
+            <div class="flex justify-center space-x-3 mb-2">
                 <a href="https://www.instagram.com/Vin.nesia.id" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-purple-accent transition duration-300">
-                    <i class="fab fa-instagram text-xl"></i>
+                    <i class="fab fa-instagram text-lg"></i>
                 </a>
             </div>
-            <div class="flex flex-wrap justify-center space-x-3 md:space-x-6 text-sm">
+            <div class="flex flex-wrap justify-center space-x-2 md:space-x-4 text-sm">
                 <a href="about.html" class="hover:text-purple-accent transition duration-300">About</a>
                 <a href="terms.html" class="hover:text-purple-accent transition duration-300">Terms of Service</a>
                 <a href="privacy.html" class="hover:text-purple-accent transition duration-300">Privacy Policy</a>
