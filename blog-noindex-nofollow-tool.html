@@ -71,6 +71,81 @@
         .bg-gradient-layer { background: linear-gradient(to bottom, #1a001a, #3f003f); }
         .bg-code-abstract-layer { background-image: url('https://images.pexels.com/photos/5380642/pexels-photo-5380642.jpeg?auto=compress&cs=tinysrgb&w=1920'); background-size: cover; background-position: center center; filter: blur(5px); opacity: 0.1; mix-blend-mode: overlay; }
         .bg-pattern-layer { background-image: url('data:image/svg+xml;utf8,<svg width="10" height="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg"><circle cx="1" cy="1" r="1" fill="%23ffffff" opacity="0.05"/></svg>'); background-size: 10px 10px; background-repeat: repeat; opacity: 0.1; }
+
+        /* Mobile-friendly adjustments */
+        main {
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+        }
+
+        article {
+            padding: 1rem;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+        }
+
+        .blog-content {
+            font-size: 1rem;
+            line-height: 1.75;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Ensure text contrast */
+        .text-gray-300 {
+            color: #e0e0e0;
+        }
+
+        /* Adjust heading sizes for mobile */
+        h1 {
+            font-size: 1.5rem;
+        }
+
+        /* Media queries for larger screens */
+        @media (min-width: 640px) { /* sm: */
+            main {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            article {
+                padding: 1.5rem;
+            }
+            .blog-content {
+                font-size: 1.1rem;
+            }
+            h1 {
+                font-size: 1.875rem;
+            }
+        }
+
+        @media (min-width: 768px) { /* md: */
+            main {
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+            article {
+                padding: 2rem;
+                max-width: 64rem; /* max-w-4xl */
+            }
+            .blog-content {
+                font-size: 1.125rem;
+            }
+            h1 {
+                font-size: 2.25rem;
+            }
+        }
+
+        @media (min-width: 1024px) { /* lg: */
+            main {
+                padding-left: 4rem;
+                padding-right: 4rem;
+            }
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -159,16 +234,16 @@
     </header>
 
     <!-- Main Content -->
-    <main class="pt-24 pb-12 px-4 md:px-8 lg:px-16 flex-grow">
-        <article class="bg-dark-purple-section rounded-xl shadow-xl p-8 md:p-12 mb-12 max-w-4xl mx-auto">
+    <main class="pt-24 pb-12 px-2 sm:px-4 flex-grow">
+        <article class="bg-dark-purple-section rounded-xl shadow-xl py-6 px-4 sm:px-6 w-full mx-auto">
             <div class="mb-8 text-left">
-                <a href="blog.html" class="text-purple-accent hover:underline flex items-center">
+                <a href="blog.html" class="text-purple-accent hover:underline flex items-center" aria-label="Kembali ke halaman blog">
                     <i class="fas fa-arrow-left mr-2"></i> Kembali ke Blog
                 </a>
             </div>
 
-            <h1 class="text-3xl md:text-4xl font-bold text-white mb-6 text-center">Kontrol Indeksasi Mesin Pencari dengan Noindex/Nofollow Meta Tag Tool VIN NESIA</h1>
-            <img src="https://images.pexels.com/photos/5380608/pexels-photo-5380608.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Ilustrasi Artikel Blog: Gembok digital di layar, melambangkan kontrol indeksasi." class="w-full h-80 object-cover rounded-lg mb-8 shadow-md">
+            <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6 text-center">Kontrol Indeksasi Mesin Pencari dengan Noindex/Nofollow Meta Tag Tool VIN NESIA</h1>
+            <img src="https://images.pexels.com/photos/5380608/pexels-photo-5380608.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Ilustrasi Artikel Blog: Gembok digital di layar, melambangkan kontrol indeksasi." class="w-full h-auto object-cover rounded-lg mb-8 shadow-md">
 
             <div class="text-gray-300 leading-relaxed text-justify blog-content">
                 <p class="mb-4">
@@ -182,7 +257,7 @@
                     Meta tag `noindex` memberi tahu mesin pencari untuk tidak mengindeks halaman tertentu. Artinya, halaman tersebut tidak akan muncul di hasil pencarian.
                 </p>
                 <pre class="bg-gray-800 text-gray-200 p-3 rounded-md text-sm my-2">
-<code>&lt;meta name="robots" content="noindex"&gt;</code></pre>
+<code><meta name="robots" content="noindex"></code></pre>
                 <p class="mb-4">
                     <strong>Kapan Menggunakan `Noindex`?</strong>
                 </p>
@@ -199,7 +274,7 @@
                     Meta tag `nofollow` memberi tahu mesin pencari untuk tidak mengikuti tautan apa pun di halaman tersebut. Ini berarti "link equity" tidak akan diteruskan melalui tautan-tautan di halaman yang diberi `nofollow`.
                 </p>
                 <pre class="bg-gray-800 text-gray-200 p-3 rounded-md text-sm my-2">
-<code>&lt;meta name="robots" content="nofollow"&gt;</code></pre>
+<code><meta name="robots" content="nofollow"></code></pre>
                 <p class="mb-4">
                     <strong>Kapan Menggunakan `Nofollow` (untuk seluruh halaman)?</strong>
                 </p>
@@ -208,7 +283,7 @@
                     <li class="mb-2">Halaman yang Anda ingin pengunjungnya melihat, tetapi tidak ingin mesin pencari menggunakannya untuk menelusuri situs Anda lebih jauh.</li>
                 </ul>
                 <p class="mb-4">
-                    Perlu diingat bahwa atribut `nofollow` juga bisa diterapkan pada tautan individual (`&lt;a href="..." rel="nofollow"&gt;`).
+                    Perlu diingat bahwa atribut `nofollow` juga bisa diterapkan pada tautan individual (`<a href="..." rel="nofollow">`).
                 </p>
 
                 <h3 class="text-xl md:text-2xl font-semibold text-white mt-6 mb-3">Kombinasi Noindex, Nofollow, Index, Follow:</h3>
@@ -216,8 +291,8 @@
                     Anda juga bisa mengombinasikannya:
                 </p>
                 <ul class="list-disc list-inside mb-4 pl-5">
-                    <li class="mb-2">`&lt;meta name="robots" content="noindex, nofollow"&gt;` (Jangan indeks halaman ini dan jangan ikuti tautan apa pun di dalamnya)</li>
-                    <li class="mb-2">`&lt;meta name="robots" content="index, follow"&gt;` (Standar, seringkali tidak perlu karena ini adalah default)</li>
+                    <li class="mb-2">`<meta name="robots" content="noindex, nofollow">` (Jangan indeks halaman ini dan jangan ikuti tautan apa pun di dalamnya)</li>
+                    <li class="mb-2">`<meta name="robots" content="index, follow">` (Standar, seringkali tidak perlu karena ini adalah default)</li>
                 </ul>
 
                 <h2 class="text-2xl md:text-3xl font-semibold text-purple-accent mt-8 mb-4">Memperkenalkan Noindex/Nofollow Meta Tag Tool VIN NESIA</h2>
@@ -234,7 +309,7 @@
                     <li class="mb-2">Apakah Anda ingin mesin pencari mengikuti tautan di halaman ini? (Ya / Tidak)</li>
                 </ul>
                 <p class="mb-4">
-                    Berdasarkan pilihan Anda, tool akan secara instan menghasilkan kode meta tag yang tepat yang siap Anda salin dan tempel ke bagian `&lt;head&gt;` halaman web Anda.
+                    Berdasarkan pilihan Anda, tool akan secara instan menghasilkan kode meta tag yang tepat yang siap Anda salin dan tempel ke bagian `<head>` halaman web Anda.
                 </p>
 
                 <h3 class="text-xl md:text-2xl font-semibold text-white mt-6 mb-3">Keuntungan Menggunakan Noindex/Nofollow Tool VIN NESIA:</h3>
@@ -256,7 +331,7 @@
     <!-- Footer Section -->
     <footer class="bg-footer-black py-8 px-6 md:px-12 text-center text-gray-400 rounded-t-xl mt-auto">
         <div class="container mx-auto">
-            <p class="mb-4">&copy; 2025 VIN NESIA. All rights reserved.</p>
+            <p class="mb-4">© 2025 VIN NESIA. All rights reserved.</p>
             <div class="flex justify-center space-x-6 mb-4">
                 <a href="https://www.instagram.com/Vin.nesia.id" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-purple-accent transition duration-300">
                     <i class="fab fa-instagram text-2xl"></i>
@@ -294,14 +369,14 @@
 
             // Toggle desktop tools dropdown
             toolsMenuBtn.addEventListener('click', (event) => {
-                event.stopPropagation(); // Prevent click from bubbling to document
+                event.stopPropagation();
                 const dropdown = toolsMenuBtn.nextElementSibling;
                 dropdown.classList.toggle('active');
             });
 
             // Toggle mobile tools dropdown
             mobileToolsMenuBtn.addEventListener('click', (event) => {
-                event.stopPropagation(); // Prevent click from bubbling to document
+                event.stopPropagation();
                 mobileToolsDropdown.classList.toggle('active');
             });
 
