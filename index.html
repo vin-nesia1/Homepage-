@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VIN NESIA - Pusat Tools Online Gratis untuk Programmer & Umum</title>
+    <title>VIN NESIA | Tools SEO & Pengembangan Web Gratis Terbaik</title>
 
     <!-- Meta Tags SEO -->
-    <meta name="description" content="VIN NESIA menyediakan berbagai tools online gratis yang inovatif untuk programmer, pengembang web, dan pengguna umum. Optimalkan SEO, kembangkan web, dan tingkatkan efisiensi kerja Anda.">
-    <meta name="keywords" content="VIN NESIA, tools online, gratis, programmer, web developer, SEO tools, meta tag generator, open graph, twitter card, canonical URL, noindex nofollow, favicon generator, HTML beautifier, CSS beautifier, JSON beautifier, HTML minifier, CSS minifier, JSON minifier, Markdown to HTML, HTML entity encoder, HTML entity decoder">
+    <meta name="description" content="VIN NESIA menyediakan berbagai tools SEO dan pengembangan web gratis terbaik untuk membantu Anda mengoptimalkan situs web, meningkatkan peringkat di mesin pencari, dan mempercepat alur kerja Anda.">
+    <meta name="keywords" content="tools SEO gratis, alat SEO online, web development tools, generator meta tag, optimasi website, VIN NESIA, SEO terbaik, pengembangan web">
     <meta name="author" content="VIN NESIA">
 
     <!-- Open Graph Meta Tags for Social Sharing -->
-    <meta property="og:title" content="VIN NESIA - Pusat Tools Online Gratis untuk Programmer & Umum">
-    <meta property="og:description" content="VIN NESIA menyediakan berbagai tools online gratis yang inovatif untuk programmer, pengembang web, dan pengguna umum. Optimalkan SEO, kembangkan web, dan tingkatkan efisiensi kerja Anda.">
+    <meta property="og:title" content="VIN NESIA | Tools SEO & Pengembangan Web Gratis Terbaik">
+    <meta property="og:description" content="VIN NESIA menyediakan berbagai tools SEO dan pengembangan web gratis terbaik untuk membantu Anda mengoptimalkan situs web, meningkatkan peringkat di mesin pencari, dan mempercepat alur kerja Anda.">
     <meta property="og:image" content="https://www.vinnesia.my.id/images/logo.png">
-    <meta property="og:url" content="https://www.vinnesia.my.id">
+    <meta property="og:url" content="https://www.vinnesia.my.id/index.html">
     <meta property="og:type" content="website">
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="VIN NESIA - Pusat Tools Online Gratis untuk Programmer & Umum">
-    <meta name="twitter:description" content="VIN NESIA menyediakan berbagai tools online gratis yang inovatif untuk programmer, pengembang web, dan pengguna umum. Optimalkan SEO, kembangkan web, dan tingkatkan efisiensi kerja Anda.">
+    <meta name="twitter:title" content="VIN NESIA | Tools SEO & Pengembangan Web Gratis Terbaik">
+    <meta name="twitter:description" content="VIN NESIA menyediakan berbagai tools SEO dan pengembangan web gratis terbaik untuk membantu Anda mengoptimalkan situs web, meningkatkan peringkat di mesin pencari, dan mempercepat alur kerja Anda.">
     <meta name="twitter:image" content="https://www.vinnesia.my.id/images/logo.png">
 
     <!-- Favicon -->
@@ -45,185 +45,37 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <style>
-        /* Custom CSS to override/enhance Tailwind for specific elements */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #1a001a; /* Fallback for browsers not supporting advanced backgrounds */
-            color: #e0e0e0; /* Light grey text for contrast */
-            position: relative; /* Needed for fixed background layers */
-            min-height: 100vh; /* Ensure body takes full height for background to cover */
-        }
-
-        /* Custom scrollbar for a sleek look */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #2d002d; /* Darker track */
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #b366ff; /* Purple thumb */
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #cc99ff; /* Lighter purple on hover */
-        }
-
-        .text-purple-accent {
-            color: #b366ff; /* Custom purple accent color */
-        }
-
-        /* Custom background colors for different sections */
-        .bg-dark-purple-section {
-            background-color: #2d002d; /* Existing dark purple */
-        }
-        .bg-medium-purple-section {
-            background-color: #3f003f; /* A slightly lighter, richer purple */
-        }
-        .bg-footer-black {
-            background-color: #0a0a0a; /* Very dark grey/black */
-        }
-
-        /* Specific styling for the tools dropdown */
-        .tools-dropdown {
-            display: none;
-            position: absolute;
-            background-color: #2d002d;
-            min-width: 200px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
-            z-index: 100;
-            border-radius: 0.5rem;
-            padding: 0.5rem 0;
-            top: 100%; /* Position below the parent nav item */
-            left: 0;
-        }
-
-        .tools-dropdown a {
+            background-color: #1a001a;
             color: #e0e0e0;
-            padding: 0.75rem 1.25rem;
-            text-decoration: none;
-            display: block;
-            white-space: nowrap;
-            transition: background-color 0.2s ease;
-        }
-
-        .tools-dropdown a:hover {
-            background-color: #3f003f;
-            color: #cc99ff;
-        }
-
-        .tools-dropdown.active {
-            display: block;
-        }
-
-        /* Responsive adjustments for the tools grid */
-        @media (min-width: 640px) {
-            .tool-grid {
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .tool-grid {
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            }
-        }
-
-        /* Styles for testimonial card */
-        .testimonial-card {
-            background-color: #2d002d; /* Darker purple */
-            border-radius: 0.75rem; /* Rounded corners */
-            padding: 1.5rem; /* Padding inside the card */
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Subtle shadow */
-            transition: transform 0.2s ease-in-out;
-        }
-        .testimonial-card:hover {
-            transform: translateY(-5px); /* Slight lift on hover */
-        }
-        .testimonial-card p {
-            font-style: italic;
-            color: #ccc;
-            margin-bottom: 1rem;
-        }
-        .testimonial-card .author {
-            font-weight: 600;
-            color: #b366ff; /* Accent color */
-        }
-        .testimonial-card .role {
-            font-size: 0.875rem; /* Smaller text */
-            color: #888;
-        }
-
-        /* Custom styles for tool cards to ensure pointer cursor and interactive text */
-        .tool-card {
-            cursor: pointer; /* Ensure pointer cursor on hover */
-            display: flex; /* Use flexbox for layout */
-            flex-direction: column; /* Stack items vertically */
-            justify-content: space-between; /* Push 'Coba Sekarang' to bottom */
-        }
-        .tool-card .action-text {
+            position: relative;
+            min-height: 100vh;
             display: flex;
-            align-items: center;
-            justify-content: flex-end; /* Align to the right */
-            margin-top: auto; /* Push to the bottom of the flex container */
-            color: #b366ff; /* Accent color */
-            font-weight: 600;
-            transition: color 0.2s ease;
+            flex-direction: column;
         }
-        .tool-card:hover .action-text {
-            color: #cc99ff; /* Lighter accent on hover */
-        }
-        .tool-card .action-text i {
-            margin-left: 0.5rem;
-            transition: transform 0.2s ease;
-        }
-        .tool-card:hover .action-text i {
-            transform: translateX(5px); /* Slight movement on hover */
-        }
-
-        /* Background Layers for Parallax Effect */
-        #background-layers {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1; /* Send behind content */
-            overflow: hidden; /* Hide overflow from blur */
-        }
-
-        #background-layers > div {
-            position: absolute;
-            inset: 0; /* Cover the entire parent */
-        }
-
-        /* Layer 1: Gradient */
-        .bg-gradient-layer {
-            background: linear-gradient(to bottom, #1a001a, #3f003f); /* Dark purple to slightly richer purple */
-        }
-
-        /* Layer 2: Blurred Abstract Code Image */
-        .bg-code-abstract-layer {
-            background-image: url('https://images.pexels.com/photos/5380642/pexels-photo-5380642.jpeg?auto=compress&cs=tinysrgb&w=1920'); /* Using the user's example style image */
-            background-size: cover;
-            background-position: center center;
-            filter: blur(5px); /* Apply blur */
-            opacity: 0.1; /* Low opacity */
-            mix-blend-mode: overlay; /* Blend mode */
-        }
-
-        /* Layer 3: Subtle Pattern (dots) */
-        .bg-pattern-layer {
-            background-image: url('data:image/svg+xml;utf8,<svg width="10" height="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg"><circle cx="1" cy="1" r="1" fill="%23ffffff" opacity="0.05"/></svg>');
-            background-size: 10px 10px; /* Size of the pattern unit */
-            background-repeat: repeat;
-            opacity: 0.1; /* Low opacity */
-        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #2d002d; }
+        ::-webkit-scrollbar-thumb { background: #b366ff; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #cc99ff; }
+        .text-purple-accent { color: #b366ff; }
+        .bg-dark-purple-section { background-color: #2d002d; }
+        .bg-medium-purple-section { background-color: #3f003f; }
+        .bg-footer-black { background-color: #0a0a0a; }
+        .tools-dropdown { display: none; position: absolute; background-color: #2d002d; min-width: 200px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4); z-index: 100; border-radius: 0.5rem; padding: 0.5rem 0; top: 100%; left: 0; }
+        .tools-dropdown a { color: #e0e0e0; padding: 0.75rem 1.25rem; text-decoration: none; display: block; white-space: nowrap; transition: background-color 0.2s ease; }
+        .tools-dropdown a:hover { background-color: #3f003f; color: #cc99ff; }
+        .tools-dropdown.active { display: block; }
+        #background-layers { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; }
+        #background-layers > div { position: absolute; inset: 0; }
+        .bg-gradient-layer { background: linear-gradient(to bottom, #1a001a, #3f003f); }
+        .bg-code-abstract-layer { background-image: url('https://images.pexels.com/photos/5380642/pexels-photo-5380642.jpeg?auto=compress&cs=tinysrgb&w=1920'); background-size: cover; background-position: center center; filter: blur(5px); opacity: 0.1; mix-blend-mode: overlay; }
+        .bg-pattern-layer { background-image: url('data:image/svg+xml;utf8,<svg width="10" height="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg"><circle cx="1" cy="1" r="1" fill="%23ffffff" opacity="0.05"/></svg>'); background-size: 10px 10px; background-repeat: repeat; opacity: 0.1; }
     </style>
 </head>
-<body class="antialiased flex flex-col">
+<body class="antialiased">
 
-    <!-- Background Layers for Parallax Effect -->
+    <!-- Background Layers -->
     <div id="background-layers">
         <div class="bg-gradient-layer"></div>
         <div class="bg-code-abstract-layer"></div>
@@ -233,13 +85,10 @@
     <!-- Header Section -->
     <header class="bg-dark-purple-section shadow-lg py-4 px-6 md:px-12 fixed top-0 left-0 w-full z-50 rounded-b-xl">
         <div class="container mx-auto flex justify-between items-center">
-            <!-- Logo and Site Name -->
             <div class="flex items-center space-x-3">
                 <img src="/images/logo.png" alt="VIN NESIA Logo" class="w-10 h-10 rounded-full shadow-md">
                 <span class="text-2xl font-bold text-white tracking-wide">VIN NESIA</span>
             </div>
-
-            <!-- Navigation Menu (Desktop) -->
             <nav class="hidden md:flex space-x-8">
                 <a href="index.html" class="text-white hover:text-purple-accent transition duration-300 font-medium">Home</a>
                 <div class="relative group">
@@ -268,21 +117,18 @@
                 <a href="panduan.html" class="text-white hover:text-purple-accent transition duration-300 font-medium">Panduan Pengguna</a>
                 <a href="blog.html" class="text-white hover:text-purple-accent transition duration-300 font-medium">Blog</a>
             </nav>
-
-            <!-- Hamburger Menu (Mobile) -->
             <button id="hamburgerBtn" class="md:hidden text-white text-2xl focus:outline-none">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
-
-        <!-- Mobile Navigation Overlay -->
-        <div id="mobileMenu" class="md:hidden fixed inset-0 bg-darker-purple bg-opacity-95 z-40 transform -translate-x-full transition-transform duration-300 ease-in-out">
-            <div class="flex justify-end p-6">
+        <!-- Mobile Menu Overlay - Perbaikan Utama di sini -->
+        <div id="mobileMenu" class="md:hidden fixed inset-0 bg-black/90 z-40 transform -translate-x-full transition-transform duration-300 ease-in-out flex flex-col items-center justify-center">
+            <div class="absolute top-6 right-6">
                 <button id="closeMenuBtn" class="text-white text-3xl focus:outline-none">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
-            <nav class="flex flex-col items-center space-y-6 text-xl mt-8">
+            <nav class="flex flex-col items-center space-y-6 text-xl">
                 <a href="index.html" class="text-white hover:text-purple-accent transition duration-300">Home</a>
                 <div class="relative w-full text-center">
                     <button class="text-white hover:text-purple-accent transition duration-300 focus:outline-none flex items-center justify-center w-full" id="mobileToolsMenuBtn">
@@ -313,262 +159,72 @@
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="pt-24 pb-12 px-4 md:px-8 lg:px-16">
-        <!-- Hero Section -->
+    <!-- Hero Section -->
+    <main class="pt-24 pb-12 px-4 md:px-8 lg:px-16 flex-grow">
         <section class="text-center py-16 md:py-24 bg-dark-purple-section rounded-xl shadow-xl mb-12">
             <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-4 leading-tight">
-                VIN NESIA: <span class="text-purple-accent">Pusat Tools Online Gratis</span>
+                Tools <span class="text-purple-accent">SEO</span> & Pengembangan Web Gratis Terbaik
             </h1>
             <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
-                Solusi komprehensif untuk optimasi SEO, pengembangan web, dan efisiensi kerja Anda.
+                VIN NESIA menyediakan berbagai alat canggih untuk mengoptimalkan situs web Anda, meningkatkan peringkat di mesin pencari, dan mempercepat alur kerja Anda.
             </p>
+            <div class="mt-8 flex justify-center space-x-4">
+                <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer" class="bg-purple-accent text-white font-bold py-3 px-6 rounded-full text-lg hover:bg-white hover:text-purple-accent transition duration-300 shadow-lg">
+                    Coba Tools SEO <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+                <a href="https://toolsvin.vinnesia.my.id" target="_blank" rel="noopener noreferrer" class="bg-transparent border-2 border-purple-accent text-purple-accent font-bold py-3 px-6 rounded-full text-lg hover:bg-purple-accent hover:text-white transition duration-300 shadow-lg">
+                    Coba Tools Web Dev <i class="fas fa-code ml-2"></i>
+                </a>
+            </div>
         </section>
 
-        <!-- Section: Mulai Sekarang -->
-        <section class="bg-purple-accent text-darker-purple p-8 md:p-12 rounded-xl shadow-xl text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">Mulai Sekarang & Tingkatkan Produktivitas Anda!</h2>
-            <p class="text-lg md:text-xl text-white mb-8 max-w-2xl mx-auto">
-                Temukan berbagai tools SEO dan pengembangan web gratis yang akan memudahkan pekerjaan Anda.
+        <!-- Features/Benefits Section -->
+        <section class="bg-dark-purple-section rounded-xl shadow-xl p-8 md:p-12 mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-8 text-center">Mengapa Memilih VIN NESIA?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-medium-purple-section p-6 rounded-lg shadow-md text-center">
+                    <i class="fas fa-cogs text-5xl text-purple-accent mb-4"></i>
+                    <h3 class="text-xl font-semibold text-white mb-2">Tools Lengkap</h3>
+                    <p class="text-gray-300 text-sm">Dari meta tag hingga beautifier kode, kami punya semua yang Anda butuhkan.</p>
+                </div>
+                <div class="bg-medium-purple-section p-6 rounded-lg shadow-md text-center">
+                    <i class="fas fa-rocket text-5xl text-purple-accent mb-4"></i>
+                    <h3 class="text-xl font-semibold text-white mb-2">Optimasi SEO</h3>
+                    <p class="text-gray-300 text-sm">Tingkatkan peringkat situs Anda dengan alat SEO kami yang efektif.</p>
+                </div>
+                <div class="bg-medium-purple-section p-6 rounded-lg shadow-md text-center">
+                    <i class="fas fa-code text-5xl text-purple-accent mb-4"></i>
+                    <h3 class="text-xl font-semibold text-white mb-2">Pengembangan Cepat</h3>
+                    <p class="text-gray-300 text-sm">Sederhanakan alur kerja pengembangan web Anda dengan alat praktis.</p>
+                </div>
+                <div class="bg-medium-purple-section p-6 rounded-lg shadow-md text-center">
+                    <i class="fas fa-mobile-alt text-5xl text-purple-accent mb-4"></i>
+                    <h3 class="text-xl font-semibold text-white mb-2">Responsif & Mobile-Friendly</h3>
+                    <p class="text-gray-300 text-sm">Desain kami memastikan pengalaman terbaik di semua perangkat.</p>
+                </div>
+                <div class="bg-medium-purple-section p-6 rounded-lg shadow-md text-center">
+                    <i class="fas fa-dollar-sign text-5xl text-purple-accent mb-4"></i>
+                    <h3 class="text-xl font-semibold text-white mb-2">Gratis Selamanya</h3>
+                    <p class="text-gray-300 text-sm">Akses semua tools premium kami tanpa biaya tersembunyi.</p>
+                </div>
+                <div class="bg-medium-purple-section p-6 rounded-lg shadow-md text-center">
+                    <i class="fas fa-shield-alt text-5xl text-purple-accent mb-4"></i>
+                    <h3 class="text-xl font-semibold text-white mb-2">Aman & Terpercaya</h3>
+                    <p class="text-gray-300 text-sm">Privasi data Anda adalah prioritas kami. Semua pemrosesan di sisi klien.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="bg-medium-purple-section rounded-xl shadow-xl p-8 md:p-12 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Siap Mengoptimalkan Situs Anda?</h2>
+            <p class="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
+                Mulai gunakan tools SEO dan pengembangan web gratis kami hari ini dan lihat perbedaannya!
             </p>
-            <a href="#tools-section" class="inline-block bg-white text-purple-accent font-bold py-3 px-8 rounded-full text-lg hover:bg-gray-100 hover:scale-105 transition-all duration-300 shadow-lg">
-                Jelajahi Semua Tools <i class="fas fa-arrow-right ml-2"></i>
+            <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer" class="bg-purple-accent text-white font-bold py-3 px-8 rounded-full text-xl hover:bg-white hover:text-purple-accent transition duration-300 shadow-lg">
+                Mulai Sekarang <i class="fas fa-play-circle ml-2"></i>
             </a>
         </section>
-
-        <!-- Introductory Section (existing content) -->
-        <section class="bg-dark-purple-section rounded-xl shadow-xl p-8 md:p-12 mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 text-center">Selamat Datang di VIN NESIA</h2>
-            <div class="intro-text text-gray-300 leading-relaxed text-justify">
-                <p class="mb-4">
-                    Selamat datang di VIN NESIA, platform daring yang didedikasikan untuk menyediakan beragam **tools online gratis** yang inovatif dan mudah digunakan, dirancang khusus untuk memenuhi kebutuhan para **programmer, pengembang web, dan pengguna umum**. Di era digital yang terus berkembang pesat, efisiensi dan akurasi adalah kunci. VIN NESIA hadir sebagai solusi komprehensif untuk membantu Anda mengoptimalkan alur kerja, meningkatkan kualitas proyek, dan menyederhanakan tugas-tugas kompleks.
-                </p>
-                <p class="mb-4">
-                    Filosofi di balik VIN NESIA adalah **demokratisasi alat digital**. Kami percaya bahwa setiap individu, terlepas dari tingkat keahlian teknisnya, berhak memiliki akses ke alat-alat canggih yang dapat memberdayakan mereka dalam menciptakan, mengelola, dan mengoptimalkan kehadiran digitalnya. Dengan antarmuka yang intuitif dan fungsionalitas yang kuat, VIN NESIA dirancang untuk menjadi teman setia Anda dalam setiap langkah perjalanan digital. Kami memahami bahwa waktu adalah aset berharga, dan itulah mengapa setiap tool di platform kami dibangun dengan fokus pada kecepatan dan kemudahan penggunaan. Anda tidak perlu mengunduh atau menginstal perangkat lunak apa pun; cukup buka browser Anda, kunjungi VIN NESIA, dan mulai bekerja.
-                </p>
-            </div>
-        </section>
-
-        <!-- Section: Mengapa Memilih VIN NESIA? -->
-        <section class="bg-medium-purple-section rounded-xl shadow-xl p-8 md:p-12 mb-12" id="why-choose-us">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-8 text-center">Mengapa Memilih VIN NESIA?</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="text-center p-6 bg-darker-purple rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                    <i class="fas fa-dollar-sign text-5xl text-purple-accent mb-4"></i>
-                    <h3 class="text-xl font-semibold text-white mb-2">Gratis Sepenuhnya</h3>
-                    <p class="text-gray-400 text-sm">Akses semua tools tanpa biaya tersembunyi atau langganan.</p>
-                </div>
-                <div class="text-center p-6 bg-darker-purple rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                    <i class="fas fa-lock text-5xl text-purple-accent mb-4"></i>
-                    <h3 class="text-xl font-semibold text-white mb-2">Aman & Privasi Terjaga</h3>
-                    <p class="text-gray-400 text-sm">Pemrosesan data 100% di browser Anda, tanpa dikirim ke server kami.</p>
-                </div>
-                <div class="text-center p-6 bg-darker-purple rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                    <i class="fas fa-magic text-5xl text-purple-accent mb-4"></i>
-                    <h3 class="text-xl font-semibold text-white mb-2">Mudah Digunakan</h3>
-                    <p class="text-gray-400 text-sm">Antarmuka intuitif untuk efisiensi maksimal, bahkan bagi pemula.</p>
-                </div>
-                <div class="text-center p-6 bg-darker-purple rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                    <i class="fas fa-tools text-5xl text-purple-accent mb-4"></i>
-                    <h3 class="text-xl font-semibold text-white mb-2">Beragam Tools Inovatif</h3>
-                    <p class="text-gray-400 text-sm">Koleksi tools SEO dan pengembangan web yang terus bertambah.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Tools Section (existing content, added id) -->
-        <section id="tools-section" class="tools-section mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-8 text-center">Daftar Tools Kami</h2>
-
-            <!-- SEO Tools Category -->
-            <div class="tool-category bg-dark-purple-section rounded-xl shadow-xl p-8 md:p-10 mb-8">
-                <h3 class="text-2xl md:text-3xl font-semibold text-purple-accent mb-6 text-center">Tools SEO</h3>
-                <div class="tool-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Meta Tag Generator -->
-                    <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer" class="tool-card bg-darker-purple p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 block border border-transparent hover:border-purple-accent">
-                        <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Ilustrasi Meta Tag Generator: Grafik SEO di layar komputer" class="w-full h-36 object-cover rounded-md mb-4">
-                        <h4 class="text-xl font-bold text-white mb-2">Meta Tag Generator</h4>
-                        <p class="text-gray-400 text-sm">Ciptakan meta tag yang optimal untuk meningkatkan visibilitas situs Anda di hasil pencarian. Alat ini membantu Anda membuat judul, deskripsi, dan kata kunci yang relevan secara instan.</p>
-                        <span class="action-text">Coba Sekarang <i class="fas fa-arrow-right"></i></span>
-                    </a>
-                    <!-- OG (Open Graph) Tag Generator -->
-                    <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer" class="tool-card bg-darker-purple p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 block border border-transparent hover:border-purple-accent">
-                        <img src="https://images.pexels.com/photos/3183183/pexels-photo-3183183.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Ilustrasi OG (Open Graph) Tag Generator: Tampilan media sosial di layar laptop" class="w-full h-36 object-cover rounded-md mb-4">
-                        <h4 class="text-xl font-bold text-white mb-2">OG (Open Graph) Tag Generator</h4>
-                        <p class="text-gray-400 text-sm">Pastikan konten Anda tampil menarik saat dibagikan di media sosial seperti Facebook dan LinkedIn. Generator ini membantu Anda membuat tag Open Graph yang mengontrol pratinjau konten.</p>
-                        <span class="action-text">Coba Sekarang <i class="fas fa-arrow-right"></i></span>
-                    </a>
-                    <!-- Twitter Card Tag Generator -->
-                    <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer" class="tool-card bg-darker-purple p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 block border border-transparent hover:border-purple-accent">
-                        <img src="https://images.pexels.com/photos/5380642/pexels-photo-5380642.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Ilustrasi Twitter Card Tag Generator: Layar desktop dengan data abstrak" class="w-full h-36 object-cover rounded-md mb-4">
-                        <h4 class="text-xl font-bold text-white mb-2">Twitter Card Tag Generator</h4>
-                        <p class="text-gray-400 text-sm">Optimalkan tampilan tautan Anda di Twitter dengan Twitter Card. Hasilkan tag yang tepat untuk menampilkan gambar, judul, dan deskripsi yang kaya saat tweet Anda dibagikan.</p>
-                        <span class="action-text">Coba Sekarang <i class="fas fa-arrow-right"></i></span>
-                    </a>
-                    <!-- Canonical URL Tag Generator -->
-                    <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer" class="tool-card bg-darker-purple p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 block border border-transparent hover:border-purple-accent">
-                        <img src="https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Ilustrasi Canonical URL Tag Generator: Visualisasi jaringan atau tautan" class="w-full h-36 object-cover rounded-md mb-4">
-                        <h4 class="text-xl font-bold text-white mb-2">Canonical URL Tag Generator</h4>
-                        <p class="text-gray-400 text-sm">Hindari masalah konten duplikat yang dapat merugikan SEO Anda. Gunakan alat ini untuk menghasilkan tag URL kanonik yang tepat, mengarahkan mesin pencari ke sumber asli konten Anda.</p>
-                        <span class="action-text">Coba Sekarang <i class="fas fa-arrow-right"></i></span>
-                    </a>
-                    <!-- Noindex/Nofollow Meta Tag Tool -->
-                    <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer" class="tool-card bg-darker-purple p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 block border border-transparent hover:border-purple-accent">
-                        <img src="https://images.pexels.com/photos/5380608/pexels-photo-5380608.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Ilustrasi Noindex/Nofollow Meta Tag Tool: Gembok digital di layar" class="w-full h-36 object-cover rounded-md mb-4">
-                        <h4 class="text-xl font-bold text-white mb-2">Noindex/Nofollow Meta Tag Tool</h4>
-                        <p class="text-gray-400 text-sm">Kontrol bagaimana mesin pencari mengindeks atau mengikuti tautan di situs Anda. Alat ini memudahkan Anda membuat tag `noindex` dan `nofollow` untuk halaman atau tautan tertentu.</p>
-                        <span class="action-text">Coba Sekarang <i class="fas fa-arrow-right"></i></span>
-                    </a>
-                    <!-- Favicon Tag Generator -->
-                    <a href="https://seo.vinnesia.my.id" target="_blank" rel="noopener noreferrer" class="tool-card bg-darker-purple p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 block border border-transparent hover:border-purple-accent">
-                        <img src="https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Ilustrasi Favicon Tag Generator: Tampilan desain grafis abstrak" class="w-full h-36 object-cover rounded-md mb-4">
-                        <h4 class="text-xl font-bold text-white mb-2">Favicon Tag Generator</h4>
-                        <p class="text-gray-400 text-sm">Buat ikon favorit (favicon) yang menarik untuk situs Anda. Generator ini membantu Anda membuat tag yang benar agar favicon tampil di tab browser pengguna.</p>
-                        <span class="action-text">Coba Sekarang <i class="fas fa-arrow-right"></i></span>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Development Tools Category -->
-            <div class="tool-category bg-dark-purple-section rounded-xl shadow-xl p-8 md:p-10">
-                <h3 class="text-2xl md:text-3xl font-semibold text-purple-accent mb-6 text-center">Tools Pengembangan Web</h3>
-                <div class="tool-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- HTML, CSS, JSON Beautifier/Minifier -->
-                    <a href="https://toolsvin.vinnesia.my.id" target="_blank" rel="noopener noreferrer" class="tool-card bg-darker-purple p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 block border border-transparent hover:border-purple-accent">
-                        <img src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Ilustrasi HTML, CSS, JSON Beautifier/Minifier: Kode di layar komputer" class="w-full h-36 object-cover rounded-md mb-4">
-                        <h4 class="text-xl font-bold text-white mb-2">HTML, CSS, JSON Beautifier/Minifier</h4>
-                        <p class="text-gray-400 text-sm">Rapikan kode HTML, CSS, dan JSON Anda agar mudah dibaca atau kompres menjadi ukuran minimal untuk mempercepat waktu muat halaman. Alat multifungsi ini adalah sahabat para pengembang.</p>
-                        <span class="action-text">Coba Sekarang <i class="fas fa-arrow-right"></i></span>
-                    </a>
-                    <!-- Markdown to HTML Converter -->
-                    <a href="https://toolsvin.vinnesia.my.id" target="_blank" rel="noopener noreferrer" class="tool-card bg-darker-purple p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 block border border-transparent hover:border-purple-accent">
-                        <img src="https://images.pexels.com/photos/5380642/pexels-photo-5380642.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Ilustrasi Markdown to HTML Converter: Layar desktop dengan data abstrak" class="w-full h-36 object-cover rounded-md mb-4">
-                        <h4 class="text-xl font-bold text-white mb-2">Markdown to HTML Converter</h4>
-                        <p class="text-gray-400 text-sm">Konversi teks format Markdown Anda ke dalam kode HTML yang siap digunakan. Cocok untuk blogger dan penulis konten yang ingin mempublikasikan tulisan dengan cepat.</p>
-                        <span class="action-text">Coba Sekarang <i class="fas fa-arrow-right"></i></span>
-                    </a>
-                    <!-- HTML Entity Encoder/Decoder -->
-                    <a href="https://toolsvin.vinnesia.my.id" target="_blank" rel="noopener noreferrer" class="tool-card bg-darker-purple p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 block border border-transparent hover:border-purple-accent">
-                        <img src="https://images.pexels.com/photos/5380589/pexels-photo-5380589.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Ilustrasi HTML Entity Encoder/Decoder: Layar desktop dengan simbol digital" class="w-full h-36 object-cover rounded-md mb-4">
-                        <h4 class="text-xl font-bold text-white mb-2">HTML Entity Encoder/Decoder</h4>
-                        <p class="text-gray-400 text-sm">Amankan karakter khusus dalam HTML atau kembalikan ke bentuk aslinya. Alat ini sangat berguna untuk mengelola dan memecahkan masalah tampilan teks di web.</p>
-                        <span class="action-text">Coba Sekarang <i class="fas fa-arrow-right"></i></span>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section: Apa Kata Pengguna Kami -->
-        <section class="bg-dark-purple-section rounded-xl shadow-xl p-8 md:p-12 mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-8 text-center">Apa Kata Pengguna Kami</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Testimonial 1 -->
-                <div class="testimonial-card">
-                    <p>"VIN NESIA adalah penyelamat! Tools SEO-nya sangat membantu untuk mengoptimalkan website saya tanpa perlu pengetahuan teknis mendalam. Sangat direkomendasikan!"</p>
-                    <div class="author-info text-right">
-                        <div class="author">Budi Santoso</div>
-                        <div class="role">Blogger & Content Creator</div>
-                    </div>
-                </div>
-                <!-- Testimonial 2 -->
-                <div class="testimonial-card">
-                    <p>"Saya sering menggunakan Beautifier HTML, CSS, JSON. Kode jadi rapi dan debugging lebih mudah. VIN NESIA sangat membantu pekerjaan saya sebagai developer."</p>
-                    <div class="author-info text-right">
-                        <div class="author">Citra Dewi</div>
-                        <div class="role">Web Developer</div>
-                    </div>
-                </div>
-                <!-- Testimonial 3 -->
-                <div class="testimonial-card">
-                    <p>"Awalnya ragu, tapi ternyata tools favicon generator sangat praktis. Situs saya sekarang terlihat lebih profesional di browser. Terima kasih VIN NESIA!"</p>
-                    <div class="author-info text-right">
-                        <div class="author">Denny Pratama</div>
-                        <div class="role">Pemilik Usaha Online</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section: Artikel Terbaru dari Blog -->
-        <section class="bg-dark-purple-section rounded-xl shadow-xl p-8 md:p-12 mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-8 text-center">Artikel Terbaru dari Blog</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Blog Post 1: 5 Tips SEO Penting untuk Pemula -->
-                <a href="blog-meta-tag-generator.html" class="block bg-darker-purple p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                    <img src="https://images.pexels.com/photos/57690/pexels-photo-57690.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Ilustrasi Artikel Blog SEO: Tampilan laptop dengan grafik SEO" class="w-full h-36 object-cover rounded-md mb-4">
-                    <h3 class="text-xl font-bold text-white mb-2">5 Tips SEO Penting untuk Pemula</h3>
-                    <p class="text-gray-400 text-sm mb-4">Pelajari dasar-dasar SEO yang harus diketahui setiap pemilik website atau blogger untuk meningkatkan peringkat di mesin pencari.</p>
-                    <span class="action-text">Baca Selengkapnya <i class="fas fa-arrow-right ml-1 text-sm"></i></span>
-                </a>
-                <!-- Blog Post 2: Mengoptimalkan Performa Website dengan Kode Bersih -->
-                <a href="blog-html-css-json-beautifier-minifier.html" class="block bg-darker-purple p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                    <img src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Ilustrasi Artikel Blog Web Dev: Kode di layar komputer" class="w-full h-36 object-cover rounded-md mb-4">
-                    <h3 class="text-xl font-bold text-white mb-2">Mengoptimalkan Performa Website dengan Kode Bersih</h3>
-                    <p class="text-gray-400 text-sm mb-4">Temukan bagaimana penggunaan Beautifier kami dapat membantu Anda menjaga kode tetap rapi dan cepat.</p>
-                    <span class="action-text">Baca Selengkapnya <i class="fas fa-arrow-right ml-1 text-sm"></i></span>
-                </a>
-                <!-- Blog Post 3: Pentingnya Open Graph Tag untuk Media Sosial -->
-                <a href="blog-og-tag-generator.html" class="block bg-darker-purple p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                    <img src="https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Ilustrasi Artikel Blog Digital Marketing: Ikon media sosial di layar ponsel" class="w-full h-36 object-cover rounded-md mb-4">
-                    <h3 class="text-xl font-bold text-white mb-2">Pentingnya Open Graph Tag untuk Media Sosial</h3>
-                    <p class="text-gray-400 text-sm mb-4">Pelajari mengapa Open Graph tag sangat krusial untuk sharing konten yang efektif di platform sosial.</p>
-                    <span class="action-text">Baca Selengkapnya <i class="fas fa-arrow-right ml-1 text-sm"></i></span>
-                </a>
-            </div>
-            <div class="text-center mt-10">
-                <a href="blog.html" class="inline-block bg-purple-accent text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-white hover:text-purple-accent transition-all duration-300 shadow-lg">
-                    Lihat Semua Artikel <i class="fas fa-chevron-right ml-2"></i>
-                </a>
-            </div>
-        </section>
-
-        <!-- FAQ Section (existing content) -->
-        <section class="faq-section bg-dark-purple-section rounded-xl shadow-xl p-8 md:p-12 mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-8 text-center">Pertanyaan Umum (FAQ)</h2>
-            <div class="space-y-6">
-                <div class="faq-item">
-                    <h3 class="text-xl font-semibold text-purple-accent mb-2">Apakah semua tools di VIN NESIA gratis?</h3>
-                    <p class="text-gray-300">Ya, semua tools yang tersedia di VIN NESIA sepenuhnya gratis untuk digunakan oleh siapa saja, kapan saja. Kami berkomitmen untuk menyediakan sumber daya yang dapat diakses tanpa biaya.</p>
-                </div>
-                <div class="faq-item">
-                    <h3 class="text-xl font-semibold text-purple-accent mb-2">Apakah saya perlu mendaftar untuk menggunakan tools ini?</h3>
-                    <p class="text-gray-300">Tidak, Anda tidak perlu mendaftar atau membuat akun untuk menggunakan tools kami. Cukup kunjungi situs, pilih tool yang Anda butuhkan, dan langsung gunakan.</p>
-                </div>
-                <div class="faq-item">
-                    <h3 class="text-xl font-semibold text-purple-accent mb-2">Apakah data yang saya masukkan aman?</h3>
-                    <p class="text-gray-300">Semua tools di VIN NESIA bersifat client-side, yang berarti pemrosesan data terjadi langsung di browser Anda. Data yang Anda masukkan tidak dikirimkan ke server kami, sehingga privasi dan keamanan Anda terjaga.</p>
-                </div>
-                <div class="faq-item">
-                    <h3 class="text-xl font-semibold text-purple-accent mb-2">Bagaimana cara menggunakan tools di VIN NESIA?</h3>
-                    <p class="text-gray-300">Setiap tool dirancang agar intuitif. Umumnya, Anda hanya perlu memasukkan teks atau data yang relevan ke dalam kolom input, lalu klik tombol "Generate", "Beautify", "Minify", atau "Convert" untuk mendapatkan hasilnya. Jika Anda membutuhkan panduan lebih detail, silakan kunjungi halaman <a href="panduan.html" class="text-purple-accent hover:underline">Panduan Pengguna</a> kami.</p>
-                </div>
-                <div class="faq-item">
-                    <h3 class="text-xl font-semibold text-purple-accent mb-2">Apa jenis output yang dihasilkan oleh tools ini?</h3>
-                    <p class="text-gray-300">Output dari tools kami bervariasi tergantung fungsinya. Misalnya, generator tag akan menghasilkan kode HTML yang siap Anda salin dan tempel ke situs Anda, sementara beautifier/minifier akan mengembalikan versi kode yang sudah diformat atau dikompres. Semua output disajikan dalam format teks yang mudah disalin.</p>
-                </div>
-                <div class="faq-item">
-                    <h3 class="text-xl font-semibold text-purple-accent mb-2">Apakah tools ini akurat dan dapat diandalkan?</h3>
-                    <p class="text-gray-300">Kami berupaya keras untuk memastikan setiap tool di VIN NESIA memberikan hasil yang akurat dan dapat diandalkan. Tools ini dibangun dengan logika yang telah teruji dan sesuai dengan standar web terkini. Namun, kami selalu menyarankan untuk melakukan verifikasi hasil, terutama untuk penggunaan kritis.</p>
-                </div>
-                <div class="faq-item">
-                    <h3 class="text-xl font-semibold text-purple-accent mb-2">Bisakah saya menggunakan tools ini secara offline?</h3>
-                    <p class="text-gray-300">Karena tools ini berbasis web (client-side), Anda memerlukan koneksi internet untuk mengakses situs VIN NESIA. Namun, setelah halaman tool dimuat, sebagian besar fungsionalitas pemrosesan dapat berjalan tanpa koneksi internet aktif, selama Anda tidak menutup tab browser.</p>
-                </div>
-                <div class="faq-item">
-                    <h3 class="text-xl font-semibold text-purple-accent mb-2">Apakah VIN NESIA mendukung berbagai bahasa?</h3>
-                    <p class="text-gray-300">Saat ini, antarmuka utama VIN NESIA tersedia dalam Bahasa Indonesia. Namun, karena tools kami berfokus pada fungsionalitas universal (seperti kode HTML/CSS), mereka dapat digunakan oleh pengguna dari berbagai latar belakang bahasa secara global.</p>
-                </div>
-                <div class="faq-item">
-                    <h3 class="text-xl font-semibold text-purple-accent mb-2">Seberapa sering tools diperbarui?</h3>
-                    <p class="text-gray-300">Kami berkomitmen untuk terus meningkatkan dan memperbarui tools kami secara berkala untuk memastikan kompatibilitas dengan standar web terbaru dan menambahkan fitur-fitur baru berdasarkan umpan balik pengguna.</p>
-                </div>
-                <div class="faq-item">
-                    <h3 class="text-xl font-semibold text-purple-accent mb-2">Apakah ada batasan penggunaan tools?</h3>
-                    <p class="text-gray-300">Tidak ada batasan frekuensi penggunaan atau jumlah data yang dapat Anda proses dengan tools kami. VIN NESIA dirancang untuk penggunaan tanpa batas.</p>
-                </div>
-            </div>
-        </section>
-
     </main>
 
     <!-- Footer Section -->
@@ -612,18 +268,18 @@
 
             // Toggle desktop tools dropdown
             toolsMenuBtn.addEventListener('click', (event) => {
-                event.stopPropagation(); // Prevent click from bubbling to document
+                event.stopPropagation(); // Mencegah klik menyebar ke dokumen
                 const dropdown = toolsMenuBtn.nextElementSibling;
                 dropdown.classList.toggle('active');
             });
 
             // Toggle mobile tools dropdown
             mobileToolsMenuBtn.addEventListener('click', (event) => {
-                event.stopPropagation(); // Prevent click from bubbling to document
+                event.stopPropagation(); // Mencegah klik menyebar ke dokumen
                 mobileToolsDropdown.classList.toggle('active');
             });
 
-            // Close dropdowns when clicking outside
+            // Tutup dropdown saat mengklik di luar area dropdown
             document.addEventListener('click', (event) => {
                 const desktopDropdown = toolsMenuBtn.nextElementSibling;
                 if (desktopDropdown.classList.contains('active') && !toolsMenuBtn.contains(event.target) && !desktopDropdown.contains(event.target)) {
