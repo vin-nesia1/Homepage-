@@ -97,8 +97,22 @@
         .tools-dropdown a:hover { background-color: #3f003f; color: #cc99ff; }
         .tools-dropdown.active { display: block; }
 
-        /* Mobile Menu Dropdown */
+        /* Mobile Menu Specific Styles */
         @media (max-width: 767px) {
+            #mobileMenu {
+                /* Existing transform and transition classes handle slide-in/out */
+                justify-content: flex-start; /* Align content to top */
+                padding-top: 5rem; /* Space for close button */
+            }
+
+            #mobileMenu nav {
+                max-height: 60vh; /* Batasi tinggi menu mobile */
+                overflow-y: auto; /* Aktifkan scroll jika konten melebihi max-height */
+                width: 100%; /* Pastikan nav mengambil lebar penuh */
+                padding-bottom: 2rem; /* Ruang di bagian bawah scroll */
+                -webkit-overflow-scrolling: touch; /* Untuk scroll yang lebih halus di iOS */
+            }
+
             #mobileMenu .tools-dropdown {
                 position: static; /* Override absolute positioning for mobile */
                 width: 100%;
@@ -110,6 +124,14 @@
             #mobileMenu .tools-dropdown a {
                 padding-left: 2.5rem; /* Indent mobile dropdown items */
                 font-size: 0.9rem;
+            }
+            /* Hide scrollbar for mobile menu */
+            #mobileMenu nav::-webkit-scrollbar {
+                display: none;
+            }
+            #mobileMenu nav {
+                -ms-overflow-style: none;  /* IE and Edge */
+                scrollbar-width: none;  /* Firefox */
             }
         }
 
@@ -128,23 +150,23 @@
         .carousel-container {
             overflow-x: auto;
             scroll-snap-type: x mandatory;
-            -webkit-overflow-scrolling: touch; /* For smoother scrolling on iOS */
-            scrollbar-width: none; /* Hide scrollbar for Firefox */
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
         }
         .carousel-container::-webkit-scrollbar {
-            display: none; /* Hide scrollbar for Chrome, Safari, Opera */
+            display: none;
         }
         .carousel-item {
-            flex: 0 0 100%; /* Each item takes full width of the container */
+            flex: 0 0 100%;
             scroll-snap-align: start;
         }
-        @media (min-width: 768px) { /* Desktop styles for carousel sections */
+        @media (min-width: 768px) {
             .carousel-container {
                 overflow-x: visible;
                 scroll-snap-type: none;
             }
             .carousel-item {
-                flex: 1; /* Items take equal width in grid */
+                flex: 1;
                 scroll-snap-align: none;
             }
         }
@@ -192,13 +214,14 @@
             </button>
         </div>
         <!-- Mobile Menu Overlay -->
-        <div id="mobileMenu" class="md:hidden fixed inset-0 bg-black/90 z-40 transform -translate-x-full transition-transform duration-300 ease-in-out flex flex-col items-center justify-center">
-            <div class="absolute top-6 right-6">
+        <div id="mobileMenu" class="md:hidden fixed inset-0 bg-black/90 z-40 transform -translate-x-full transition-transform duration-300 ease-in-out flex flex-col items-center">
+            <div class="absolute top-6 right-6 z-50"> <!-- Increased z-index to ensure it's always on top -->
                 <button id="closeMenuBtn" class="text-white text-3xl focus:outline-none" aria-label="Close mobile menu">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
-            <nav class="flex flex-col items-center space-y-6 text-xl w-full px-4">
+            <!-- Apply max-height and overflow to this nav element -->
+            <nav class="flex flex-col items-center space-y-6 text-xl w-full px-4 pt-20 pb-8 max-h-[80vh] overflow-y-auto"> <!-- Adjusted pt for close button, max-h and overflow-y-auto -->
                 <a href="index.html" class="nav-link text-white hover:text-purple-accent transition duration-300" data-path="index.html">Home</a>
                 <div class="relative w-full text-center">
                     <button class="text-white hover:text-purple-accent transition duration-300 focus:outline-none flex items-center justify-center w-full" id="mobileToolsMenuBtn" aria-label="Toggle tools submenu">
@@ -987,7 +1010,7 @@
             // Carousel / Slider Functionality (Mobile Only)
             const setupCarousel = (carouselId) => {
                 const carousel = document.getElementById(carouselId);
-                if (!carousel || !isMobile.matches) return; // Only run on mobile
+                if (!carousel || !isMobile.matches) return;
 
                 const prevBtn = carousel.nextElementSibling.querySelector('.carousel-prev-btn');
                 const nextBtn = carousel.nextElementSibling.querySelector('.carousel-next-btn');
@@ -1016,7 +1039,7 @@
                 // Optional: Update current index on manual scroll (snap-scroll helps, but this adds robustness)
                 carousel.addEventListener('scroll', () => {
                     const scrollLeft = carousel.scrollLeft;
-                    const itemWidth = items[0].offsetWidth + (parseFloat(getComputedStyle(carousel).gap) || 0); // Include gap
+                    const itemWidth = items[0].offsetWidth + (parseFloat(getComputedStyle(carousel).gap) || 0);
                     currentIndex = Math.round(scrollLeft / itemWidth);
                 });
             };
@@ -1027,7 +1050,7 @@
             // Initial check for accordion state on page load for mobile
             if (isMobile.matches) {
                 document.querySelectorAll('.collapsible-content').forEach(content => {
-                    content.classList.add('hidden'); // Ensure hidden by default on mobile
+                    content.classList.add('hidden');
                     content.previousElementSibling.setAttribute('aria-expanded', 'false');
                     content.previousElementSibling.querySelector('i').classList.add('fa-chevron-down');
                     content.previousElementSibling.querySelector('i').classList.remove('fa-chevron-up');
