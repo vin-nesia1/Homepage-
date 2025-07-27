@@ -45,6 +45,9 @@
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
+    <!-- AOS (Animate On Scroll) CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <!-- Schema.org Structured Data for WebSite -->
     <script type="application/ld+json">
     {
@@ -168,6 +171,39 @@
                 scroll-snap-align: none;
             }
         }
+
+        /* Hero Section initial state for animation */
+        .hero-content {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .hero-content.fade-in-up {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Sticky Header Animation */
+        .header-hidden {
+            transform: translateY(-100%);
+        }
+        .header-visible {
+            transform: translateY(0);
+        }
+        header {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Back to Top Button Animation */
+        #backToTopBtn.hidden {
+            opacity: 0;
+            transform: translateX(100px);
+        }
+        #backToTopBtn {
+            transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+            opacity: 1;
+            transform: translateX(0);
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -180,9 +216,9 @@
                 <span class="text-2xl font-bold text-white tracking-wide">VIN NESIA</span>
             </div>
             <nav class="hidden md:flex space-x-8">
-                <a href="index.html" class="nav-link text-white hover:text-purple-accent transition duration-300 font-medium" data-path="index.html">Home</a>
+                <a href="index.html" class="nav-link text-white hover:text-purple-accent hover:scale-105 transition duration-300 font-medium" data-path="index.html">Home</a>
                 <div class="relative group">
-                    <button class="text-white hover:text-purple-accent transition duration-300 font-medium focus:outline-none flex items-center" id="toolsMenuBtn" aria-label="Toggle tools menu">
+                    <button class="text-white hover:text-purple-accent hover:scale-105 transition duration-300 font-medium focus:outline-none flex items-center" id="toolsMenuBtn" aria-label="Toggle tools menu">
                         Tools <i class="fas fa-chevron-down ml-2 text-xs"></i>
                     </button>
                     <div class="tools-dropdown group-hover:block transition-all duration-300 ease-in-out">
@@ -204,12 +240,12 @@
                         <a href="https://word.vinnesia.my.id/" target="_blank" rel="noopener noreferrer">Word Counter <i class="fas fa-external-link-alt text-xs ml-1"></i></a>
                     </div>
                 </div>
-                <a href="about.html" class="nav-link text-white hover:text-purple-accent transition duration-300 font-medium" data-path="about.html">About</a>
-                <a href="terms.html" class="nav-link text-white hover:text-purple-accent transition duration-300 font-medium" data-path="terms.html">Terms of Service</a>
-                <a href="privacy.html" class="nav-link text-white hover:text-purple-accent transition duration-300 font-medium" data-path="privacy.html">Privacy Policy</a>
-                <a href="contact.html" class="nav-link text-white hover:text-purple-accent transition duration-300 font-medium" data-path="contact.html">Contact</a>
-                <a href="panduan.html" class="nav-link text-white hover:text-purple-accent transition duration-300 font-medium" data-path="panduan.html">Panduan Pengguna</a>
-                <a href="blog.html" class="nav-link text-white hover:text-purple-accent transition duration-300 font-medium" data-path="blog.html">Blog</a>
+                <a href="about.html" class="nav-link text-white hover:text-purple-accent hover:scale-105 transition duration-300 font-medium" data-path="about.html">About</a>
+                <a href="terms.html" class="nav-link text-white hover:text-purple-accent hover:scale-105 transition duration-300 font-medium" data-path="terms.html">Terms of Service</a>
+                <a href="privacy.html" class="nav-link text-white hover:text-purple-accent hover:scale-105 transition duration-300 font-medium" data-path="privacy.html">Privacy Policy</a>
+                <a href="contact.html" class="nav-link text-white hover:text-purple-accent hover:scale-105 transition duration-300 font-medium" data-path="contact.html">Contact</a>
+                <a href="panduan.html" class="nav-link text-white hover:text-purple-accent hover:scale-105 transition duration-300 font-medium" data-path="panduan.html">Panduan Pengguna</a>
+                <a href="blog.html" class="nav-link text-white hover:text-purple-accent hover:scale-105 transition duration-300 font-medium" data-path="blog.html">Blog</a>
             </nav>
             <button id="hamburgerBtn" class="md:hidden text-white text-2xl focus:outline-none" aria-label="Open mobile menu">
                 <i class="fas fa-bars"></i>
@@ -295,7 +331,7 @@
                 </svg>
             </div>
 
-            <div class="relative z-10">
+            <div class="relative z-10 hero-content">
                 <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-4 leading-tight">
                     Tools <span class="text-purple-accent">SEO</span> & Pengembangan Web Gratis Terbaik
                 </h1>
@@ -311,11 +347,11 @@
         </section>
 
         <!-- All Tools Section -->
-        <section id="tools-section" class="bg-dark-purple-section rounded-xl shadow-xl p-6 md:p-12 mb-6 md:mb-12">
+        <section id="tools-section" class="bg-dark-purple-section rounded-xl shadow-xl p-6 md:p-12 mb-6 md:mb-12" data-aos="fade-up">
             <h2 class="text-2xl md:text-4xl font-bold text-white mb-6 md:mb-8 text-center">Semua Tools Kami</h2>
 
             <!-- Category Navigation -->
-            <div class="flex flex-wrap justify-center gap-3 md:gap-4 mb-8">
+            <div class="flex flex-wrap justify-center gap-3 md:gap-4 mb-8" data-aos="fade-up" data-aos-delay="100">
                 <button class="category-btn bg-purple-accent text-white font-bold py-2 px-4 rounded-full text-sm hover:bg-white hover:text-purple-accent transition duration-300 active-category" data-category="All">Semua Tools</button>
                 <button class="category-btn bg-medium-purple-section text-white font-bold py-2 px-4 rounded-full text-sm hover:bg-purple-accent transition duration-300" data-category="SEO Tools">SEO Tools</button>
                 <button class="category-btn bg-medium-purple-section text-white font-bold py-2 px-4 rounded-full text-sm hover:bg-purple-accent transition duration-300" data-category="Web Dev Tools">Web Dev Tools</button>
@@ -328,7 +364,7 @@
             </div>
 
             <!-- Pagination Controls -->
-            <div class="flex justify-center items-center space-x-4 mt-8">
+            <div class="flex justify-center items-center space-x-4 mt-8" data-aos="fade-up" data-aos-delay="200">
                 <button id="prevPageBtn" class="bg-purple-accent text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:bg-white hover:text-purple-accent focus:outline-none focus:ring-2 focus:ring-purple-accent focus:ring-opacity-75 disabled:opacity-50 disabled:cursor-not-allowed" disabled>
                     <i class="fas fa-chevron-left"></i> Sebelumnya
                 </button>
@@ -340,12 +376,12 @@
         </section>
 
         <!-- Recent Blog Articles Section -->
-        <section class="bg-dark-purple-section rounded-xl shadow-xl p-6 md:p-12 mb-6 md:mb-12">
+        <section class="bg-dark-purple-section rounded-xl shadow-xl p-6 md:p-12 mb-6 md:mb-12" data-aos="fade-up">
             <h2 class="text-2xl md:text-4xl font-bold text-white mb-6 md:mb-8 text-center">Artikel Blog Terbaru</h2>
             <!-- Desktop Grid -->
             <div class="hidden md:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Blog Article Card 1: Meta Tag Generator -->
-                <a href="blog-meta-tag-generator.html" class="block bg-medium-purple-section rounded-lg shadow-md hover:bg-purple-accent transition duration-300 group transform hover:-translate-y-1 hover:shadow-xl">
+                <a href="blog-meta-tag-generator.html" class="block bg-medium-purple-section p-4 rounded-lg shadow-md hover:bg-purple-accent transition duration-300 group transform hover:-translate-y-1 hover:shadow-xl" data-aos="fade-up" data-aos-delay="100">
                     <img src="https://images.pexels.com/photos/5380600/pexels-photo-5380600.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Ilustrasi Meta Tag Generator" class="w-full h-48 object-cover rounded-t-lg" loading="lazy">
                     <div class="p-4">
                         <h3 class="text-xl font-semibold text-white mb-2 group-hover:text-white">Optimalkan SEO dengan Meta Tag Generator VIN NESIA</h3>
@@ -353,7 +389,7 @@
                     </div>
                 </a>
                 <!-- Blog Article Card 2: Twitter Card Generator -->
-                <a href="blog-twitter-card-generator.html" class="block bg-medium-purple-section rounded-lg shadow-md hover:bg-purple-accent transition duration-300 group transform hover:-translate-y-1 hover:shadow-xl">
+                <a href="blog-twitter-card-generator.html" class="block bg-medium-purple-section p-4 rounded-lg shadow-md hover:bg-purple-accent transition duration-300 group transform hover:-translate-y-1 hover:shadow-xl" data-aos="fade-up" data-aos-delay="200">
                     <img src="https://images.pexels.com/photos/262508/pexels-photo-262508.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Ilustrasi Twitter Card Generator" class="w-full h-48 object-cover rounded-t-lg" loading="lazy">
                     <div class="p-4">
                         <h3 class="text-xl font-semibold text-white mb-2 group-hover:text-white">Maksimalkan Sharing di Twitter dengan Twitter Card Tag Generator</h3>
@@ -361,7 +397,7 @@
                     </div>
                 </a>
                 <!-- Blog Article Card 3: Favicon Generator -->
-                <a href="blog-favicon-generator.html" class="block bg-medium-purple-section rounded-lg shadow-md hover:bg-purple-accent transition duration-300 group transform hover:-translate-y-1 hover:shadow-xl">
+                <a href="blog-favicon-generator.html" class="block bg-medium-purple-section p-4 rounded-lg shadow-md hover:bg-purple-accent transition duration-300 group transform hover:-translate-y-1 hover:shadow-xl" data-aos="fade-up" data-aos-delay="300">
                     <img src="https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Ilustrasi Favicon Generator" class="w-full h-48 object-cover rounded-t-lg" loading="lazy">
                     <div class="p-4">
                         <h3 class="text-xl font-semibold text-white mb-2 group-hover:text-white">Perkuat Branding Situs Anda dengan Favicon Tag Generator</h3>
@@ -369,7 +405,7 @@
                     </div>
                 </a>
                 <!-- Blog Article Card 4: Noindex/Nofollow Tool -->
-                <a href="blog-noindex-nofollow-tool.html" class="block bg-medium-purple-section rounded-lg shadow-md hover:bg-purple-accent transition duration-300 group transform hover:-translate-y-1 hover:shadow-xl">
+                <a href="blog-noindex-nofollow-tool.html" class="block bg-medium-purple-section p-4 rounded-lg shadow-md hover:bg-purple-accent transition duration-300 group transform hover:-translate-y-1 hover:shadow-xl" data-aos="fade-up" data-aos-delay="400">
                     <img src="https://images.pexels.com/photos/5380608/pexels-photo-5380608.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Ilustrasi Noindex Nofollow" class="w-full h-48 object-cover rounded-t-lg" loading="lazy">
                     <div class="p-4">
                         <h3 class="text-xl font-semibold text-white mb-2 group-hover:text-white">Kontrol Indeksasi Mesin Pencari dengan Noindex/Nofollow Meta Tag Tool</h3>
@@ -377,7 +413,7 @@
                     </div>
                 </a>
                 <!-- Blog Article Card 5: Markdown to HTML Converter -->
-                <a href="blog-markdown-to-html-converter.html" class="block bg-medium-purple-section rounded-lg shadow-md hover:bg-purple-accent transition duration-300 group transform hover:-translate-y-1 hover:shadow-xl">
+                <a href="blog-markdown-to-html-converter.html" class="block bg-medium-purple-section p-4 rounded-lg shadow-md hover:bg-purple-accent transition duration-300 group transform hover:-translate-y-1 hover:shadow-xl" data-aos="fade-up" data-aos-delay="500">
                     <img src="https://images.pexels.com/photos/5380642/pexels-photo-5380642.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Ilustrasi Markdown to HTML" class="w-full h-48 object-cover rounded-t-lg" loading="lazy">
                     <div class="p-4">
                         <h3 class="text-xl font-semibold text-white mb-2 group-hover:text-white">Konversi Cepat Markdown ke HTML dengan Converter VIN NESIA</h3>
@@ -385,7 +421,7 @@
                     </div>
                 </a>
                 <!-- Blog Article Card 6: HTML Entity Encoder/Decoder -->
-                <a href="blog-html-entity-encoder-decoder.html" class="block bg-medium-purple-section rounded-lg shadow-md hover:bg-purple-accent transition duration-300 group transform hover:-translate-y-1 hover:shadow-xl">
+                <a href="blog-html-entity-encoder-decoder.html" class="block bg-medium-purple-section p-4 rounded-lg shadow-md hover:bg-purple-accent transition duration-300 group transform hover:-translate-y-1 hover:shadow-xl" data-aos="fade-up" data-aos-delay="600">
                     <img src="https://images.pexels.com/photos/5380589/pexels-photo-5380589.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Ilustrasi HTML Entity Encoder Decoder" class="w-full h-48 object-cover rounded-t-lg" loading="lazy">
                     <div class="p-4">
                         <h3 class="text-xl font-semibold text-white mb-2 group-hover:text-white">Amankan & Dekode Karakter Khusus dengan HTML Entity Encoder/Decoder</h3>
@@ -397,7 +433,7 @@
             <div class="md:hidden relative">
                 <div id="blogCarousel" class="carousel-container flex snap-x snap-mandatory space-x-4 pb-4">
                     <!-- Blog Article Card 1 -->
-                    <a href="blog-meta-tag-generator.html" class="carousel-item block bg-medium-purple-section rounded-lg shadow-md flex-none w-full">
+                    <a href="blog-meta-tag-generator.html" class="carousel-item block bg-medium-purple-section rounded-lg shadow-md flex-none w-full" data-aos="fade-up" data-aos-delay="100">
                         <img src="https://images.pexels.com/photos/5380600/pexels-photo-5380600.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Ilustrasi Meta Tag Generator" class="w-full h-40 object-cover rounded-t-lg" loading="lazy">
                         <div class="p-4">
                             <h3 class="text-lg font-semibold text-white mb-1">Optimalkan SEO dengan Meta Tag Generator VIN NESIA</h3>
@@ -405,7 +441,7 @@
                         </div>
                     </a>
                     <!-- Blog Article Card 2 -->
-                    <a href="blog-twitter-card-generator.html" class="carousel-item block bg-medium-purple-section rounded-lg shadow-md flex-none w-full">
+                    <a href="blog-twitter-card-generator.html" class="carousel-item block bg-medium-purple-section rounded-lg shadow-md flex-none w-full" data-aos="fade-up" data-aos-delay="200">
                         <img src="https://images.pexels.com/photos/262508/pexels-photo-262508.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Ilustrasi Twitter Card Generator" class="w-full h-40 object-cover rounded-t-lg" loading="lazy">
                         <div class="p-4">
                             <h3 class="text-lg font-semibold text-white mb-1">Maksimalkan Sharing di Twitter dengan Twitter Card Tag Generator</h3>
@@ -413,7 +449,7 @@
                         </div>
                     </a>
                     <!-- Blog Article Card 3 -->
-                    <a href="blog-favicon-generator.html" class="carousel-item block bg-medium-purple-section rounded-lg shadow-md flex-none w-full">
+                    <a href="blog-favicon-generator.html" class="carousel-item block bg-medium-purple-section rounded-lg shadow-md flex-none w-full" data-aos="fade-up" data-aos-delay="300">
                         <img src="https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Ilustrasi Favicon Generator" class="w-full h-40 object-cover rounded-t-lg" loading="lazy">
                         <div class="p-4">
                             <h3 class="text-lg font-semibold text-white mb-1">Perkuat Branding Situs Anda dengan Favicon Tag Generator</h3>
@@ -421,7 +457,7 @@
                         </div>
                     </a>
                     <!-- Blog Article Card 4 -->
-                    <a href="blog-noindex-nofollow-tool.html" class="carousel-item block bg-medium-purple-section rounded-lg shadow-md flex-none w-full">
+                    <a href="blog-noindex-nofollow-tool.html" class="carousel-item block bg-medium-purple-section rounded-lg shadow-md flex-none w-full" data-aos="fade-up" data-aos-delay="400">
                         <img src="https://images.pexels.com/photos/5380608/pexels-photo-5380608.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Ilustrasi Noindex Nofollow" class="w-full h-40 object-cover rounded-t-lg" loading="lazy">
                         <div class="p-4">
                             <h3 class="text-lg font-semibold text-white mb-1">Kontrol Indeksasi Mesin Pencari dengan Noindex/Nofollow Meta Tag Tool</h3>
@@ -429,7 +465,7 @@
                         </div>
                     </a>
                     <!-- Blog Article Card 5 -->
-                    <a href="blog-markdown-to-html-converter.html" class="carousel-item block bg-medium-purple-section rounded-lg shadow-md flex-none w-full">
+                    <a href="blog-markdown-to-html-converter.html" class="carousel-item block bg-medium-purple-section rounded-lg shadow-md flex-none w-full" data-aos="fade-up" data-aos-delay="500">
                         <img src="https://images.pexels.com/photos/5380642/pexels-photo-5380642.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Ilustrasi Markdown to HTML" class="w-full h-40 object-cover rounded-t-lg" loading="lazy">
                         <div class="p-4">
                             <h3 class="text-lg font-semibold text-white mb-1">Konversi Cepat Markdown ke HTML dengan Converter VIN NESIA</h3>
@@ -437,7 +473,7 @@
                         </div>
                     </a>
                     <!-- Blog Article Card 6 -->
-                    <a href="blog-html-entity-encoder-decoder.html" class="carousel-item block bg-medium-purple-section rounded-lg shadow-md flex-none w-full">
+                    <a href="blog-html-entity-encoder-decoder.html" class="carousel-item block bg-medium-purple-section rounded-lg shadow-md flex-none w-full" data-aos="fade-up" data-aos-delay="600">
                         <img src="https://images.pexels.com/photos/5380589/pexels-photo-5380589.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Ilustrasi HTML Entity Encoder Decoder" class="w-full h-40 object-cover rounded-t-lg" loading="lazy">
                         <div class="p-4">
                             <h3 class="text-lg font-semibold text-white mb-1">Amankan & Dekode Karakter Khusus dengan HTML Entity Encoder/Decoder</h3>
@@ -462,35 +498,35 @@
         </section>
 
         <!-- Features/Benefits Section -->
-        <section class="bg-dark-purple-section rounded-xl shadow-xl p-6 md:p-12 mb-6 md:mb-12">
+        <section class="bg-dark-purple-section rounded-xl shadow-xl p-6 md:p-12 mb-6 md:mb-12" data-aos="fade-up">
             <h2 class="text-2xl md:text-4xl font-bold text-white mb-6 md:mb-8 text-center">Mengapa Memilih VIN NESIA?</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
-                <div class="bg-medium-purple-section p-4 md:p-6 rounded-lg shadow-md text-center">
+                <div class="bg-medium-purple-section p-4 md:p-6 rounded-lg shadow-md text-center" data-aos="fade-up" data-aos-delay="100">
                     <i class="fas fa-cogs text-4xl md:text-5xl text-purple-accent mb-2 md:mb-4"></i>
                     <h3 class="text-base md:text-xl font-semibold text-white mb-1 md:mb-2">Tools Lengkap</h3>
                     <p class="text-gray-300 text-sm">Dari meta tag hingga beautifier kode, kami punya semua yang Anda butuhkan.</p>
                 </div>
-                <div class="bg-medium-purple-section p-4 md:p-6 rounded-lg shadow-md text-center">
+                <div class="bg-medium-purple-section p-4 md:p-6 rounded-lg shadow-md text-center" data-aos="fade-up" data-aos-delay="200">
                     <i class="fas fa-rocket text-4xl md:text-5xl text-purple-accent mb-2 md:mb-4"></i>
                     <h3 class="text-base md:text-xl font-semibold text-white mb-1 md:mb-2">Optimasi SEO</h3>
                     <p class="text-gray-300 text-sm">Tingkatkan peringkat situs Anda dengan alat SEO kami yang efektif.</p>
                 </div>
-                <div class="bg-medium-purple-section p-4 md:p-6 rounded-lg shadow-md text-center">
+                <div class="bg-medium-purple-section p-4 md:p-6 rounded-lg shadow-md text-center" data-aos="fade-up" data-aos-delay="300">
                     <i class="fas fa-code text-4xl md:text-5xl text-purple-accent mb-2 md:mb-4"></i>
                     <h3 class="text-base md:text-xl font-semibold text-white mb-1 md:mb-2">Pengembangan Cepat</h3>
                     <p class="text-gray-300 text-sm">Sederhanakan alur kerja pengembangan web Anda dengan alat praktis.</p>
                 </div>
-                <div class="bg-medium-purple-section p-4 md:p-6 rounded-lg shadow-md text-center">
+                <div class="bg-medium-purple-section p-4 md:p-6 rounded-lg shadow-md text-center" data-aos="fade-up" data-aos-delay="400">
                     <i class="fas fa-mobile-alt text-4xl md:text-5xl text-purple-accent mb-2 md:mb-4"></i>
                     <h3 class="text-base md:text-xl font-semibold text-white mb-1 md:mb-2">Responsif & Mobile-Friendly</h3>
                     <p class="text-gray-300 text-sm">Desain kami memastikan pengalaman terbaik di semua perangkat.</p>
                 </div>
-                <div class="bg-medium-purple-section p-4 md:p-6 rounded-lg shadow-md text-center">
+                <div class="bg-medium-purple-section p-4 md:p-6 rounded-lg shadow-md text-center" data-aos="fade-up" data-aos-delay="500">
                     <i class="fas fa-dollar-sign text-4xl md:text-5xl text-purple-accent mb-2 md:mb-4"></i>
                     <h3 class="text-base md:text-xl font-semibold text-white mb-1 md:mb-2">Gratis Selamanya</h3>
                     <p class="text-gray-300 text-sm">Akses semua tools premium kami tanpa biaya tersembunyi.</p>
                 </div>
-                <div class="bg-medium-purple-section p-4 md:p-6 rounded-lg shadow-md text-center">
+                <div class="bg-medium-purple-section p-4 md:p-6 rounded-lg shadow-md text-center" data-aos="fade-up" data-aos-delay="600">
                     <i class="fas fa-shield-alt text-4xl md:text-5xl text-purple-accent mb-2 md:mb-4"></i>
                     <h3 class="text-base md:text-xl font-semibold text-white mb-1 md:mb-2">Aman & Terpercaya</h3>
                     <p class="text-gray-300 text-sm">Privasi data Anda adalah prioritas kami. Semua pemrosesan di sisi klien.</p>
@@ -499,40 +535,40 @@
         </section>
 
         <!-- Testimonials Section -->
-        <section class="bg-dark-purple-section rounded-xl shadow-xl p-6 md:p-12 mb-6 md:mb-12">
+        <section class="bg-dark-purple-section rounded-xl shadow-xl p-6 md:p-12 mb-6 md:mb-12" data-aos="fade-up">
             <h2 class="text-2xl md:text-4xl font-bold text-white mb-6 md:mb-8 text-center">Apa Kata Pengguna Kami?</h2>
             <!-- Desktop Grid -->
             <div class="hidden md:grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                 <!-- Testimonial 1 -->
-                <div class="bg-medium-purple-section p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+                <div class="bg-medium-purple-section p-6 rounded-lg shadow-md flex flex-col items-center text-center group" data-aos="fade-up" data-aos-delay="100">
                     <svg class="avatar-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="50" cy="40" r="25" fill="#b366ff"/>
                         <path d="M0 85 Q50 110, 100 85 L100 100 L0 100 Z" fill="#3f003f"/>
                     </svg>
-                    <p class="text-gray-200 text-lg italic mb-4 leading-relaxed">"VIN NESIA adalah penyelamat! Tools SEO-nya sangat membantu saya meningkatkan peringkat situs dengan cepat dan gratis. Sangat direkomendasikan!"</p>
-                    <p class="font-semibold text-white">- Budi Santoso, Blogger Profesional</p>
+                    <p class="text-gray-200 text-lg italic mb-4 leading-relaxed group-hover:text-gray-100 transition duration-300">"VIN NESIA adalah penyelamat! Tools SEO-nya sangat membantu saya meningkatkan peringkat situs dengan cepat dan gratis. Sangat direkomendasikan!"</p>
+                    <p class="font-semibold text-white group-hover:text-purple-accent transition duration-300">- Budi Santoso, Blogger Profesional</p>
                 </div>
                 <!-- Testimonial 2 -->
-                <div class="bg-medium-purple-section p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+                <div class="bg-medium-purple-section p-6 rounded-lg shadow-md flex flex-col items-center text-center group" data-aos="fade-up" data-aos-delay="200">
                     <svg class="avatar-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                         <rect x="25" y="15" width="50" height="50" rx="10" ry="10" fill="#00FF7F"/>
                         <path d="M0 85 Q50 110, 100 85 L100 100 L0 100 Z" fill="#2d002d"/>
                     </svg>
-                    <p class="text-gray-200 text-lg italic mb-4 leading-relaxed">"Sebagai developer, saya sering butuh tool cepat untuk format kode. Code Formatter VIN NESIA sangat efisien dan mudah digunakan. Top!"</p>
-                    <p class="font-semibold text-white">- Siti Aminah, Web Developer</p>
+                    <p class="text-gray-200 text-lg italic mb-4 leading-relaxed group-hover:text-gray-100 transition duration-300">"Sebagai developer, saya sering butuh tool cepat untuk format kode. Code Formatter VIN NESIA sangat efisien dan mudah digunakan. Top!"</p>
+                    <p class="font-semibold text-white group-hover:text-purple-accent transition duration-300">- Siti Aminah, Web Developer</p>
                 </div>
                 <!-- Testimonial 3 -->
-                <div class="bg-medium-purple-section p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+                <div class="bg-medium-purple-section p-6 rounded-lg shadow-md flex flex-col items-center text-center group" data-aos="fade-up" data-aos-delay="300">
                     <svg class="avatar-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="50" cy="40" r="25" fill="#cc99ff"/>
                         <path d="M0 85 Q50 110, 100 85 L100 100 L0 100 Z" fill="#3f003f"/>
                         <path d="M40 30 L60 30 L50 50 Z" fill="#2d002d"/>
                     </svg>
-                    <p class="text-gray-200 text-lg italic mb-4 leading-relaxed">"Saya suka bagaimana VIN NESIA menyediakan semua tools penting dalam satu tempat. Favicon Generator-nya sangat membantu branding situs saya."</p>
-                    <p class="font-semibold text-white">- Joko Susilo, Pemilik UMKM Online</p>
+                    <p class="text-gray-200 text-lg italic mb-4 leading-relaxed group-hover:text-gray-100 transition duration-300">"Saya suka bagaimana VIN NESIA menyediakan semua tools penting dalam satu tempat. Favicon Generator-nya sangat membantu branding situs saya."</p>
+                    <p class="font-semibold text-white group-hover:text-purple-accent transition duration-300">- Joko Susilo, Pemilik UMKM Online</p>
                 </div>
                 <!-- Testimonial 4 -->
-                <div class="bg-medium-purple-section p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+                <div class="bg-medium-purple-section p-6 rounded-lg shadow-md flex flex-col items-center text-center group" data-aos="fade-up" data-aos-delay="400">
                     <svg class="avatar-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="50" cy="40" r="25" fill="#8A2BE2"/>
                         <path d="M0 85 Q50 110, 100 85 L100 100 L0 100 Z" fill="#00FF7F"/>
@@ -540,25 +576,25 @@
                         <circle cx="45" cy="45" r="3" fill="#e0e0e0"/>
                         <circle cx="55" cy="45" r="3" fill="#e0e0e0"/>
                     </svg>
-                    <p class="text-gray-200 text-lg italic mb-4 leading-relaxed">"Antarmuka yang bersih dan mudah dipahami. Bahkan untuk pemula SEO seperti saya, tools ini sangat membantu untuk memulai optimasi."</p>
-                    <p class="font-semibold text-white">- Maria Dewi, Content Creator</p>
+                    <p class="text-gray-200 text-lg italic mb-4 leading-relaxed group-hover:text-gray-100 transition duration-300">"Antarmuka yang bersih dan mudah dipahami. Bahkan untuk pemula SEO seperti saya, tools ini sangat membantu untuk memulai optimasi."</p>
+                    <p class="font-semibold text-white group-hover:text-purple-accent transition duration-300">- Maria Dewi, Content Creator</p>
                 </div>
                 <!-- Testimonial 5 -->
-                <div class="bg-medium-purple-section p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+                <div class="bg-medium-purple-section p-6 rounded-lg shadow-md flex flex-col items-center text-center group" data-aos="fade-up" data-aos-delay="500">
                     <svg class="avatar-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="50" cy="40" r="25" fill="#00FF7F"/>
                         <path d="M0 85 Q50 110, 100 85 L100 100 L0 100 Z" fill="#8A2BE2"/>
                         <path d="M30 35 L70 35 L50 60 Z" fill="#2d002d"/>
                     </svg>
-                    <p class="text-gray-200 text-lg italic mb-4 leading-relaxed">"Saya terkesan dengan kecepatan Markdown to HTML Converter. Ini menghemat banyak waktu saya dalam menerbitkan artikel."</p>
-                    <p class="font-semibold text-white">- David Wijaya, Penulis Teknis</p>
+                    <p class="text-gray-200 text-lg italic mb-4 leading-relaxed group-hover:text-gray-100 transition duration-300">"Saya terkesan dengan kecepatan Markdown to HTML Converter. Ini menghemat banyak waktu saya dalam menerbitkan artikel."</p>
+                    <p class="font-semibold text-white group-hover:text-purple-accent transition duration-300">- David Wijaya, Penulis Teknis</p>
                 </div>
             </div>
             <!-- Mobile Slider -->
             <div class="md:hidden relative">
                 <div id="testimonialCarousel" class="carousel-container flex snap-x snap-mandatory space-x-4 pb-4">
                     <!-- Testimonial 1 -->
-                    <div class="carousel-item bg-medium-purple-section p-4 rounded-lg shadow-md flex-none w-full flex flex-col items-center text-center">
+                    <div class="carousel-item bg-medium-purple-section p-4 rounded-lg shadow-md flex-none w-full" data-aos="fade-up" data-aos-delay="100">
                         <svg class="avatar-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="50" cy="40" r="25" fill="#b366ff"/>
                             <path d="M0 85 Q50 110, 100 85 L100 100 L0 100 Z" fill="#3f003f"/>
@@ -567,7 +603,7 @@
                         <p class="font-semibold text-white text-sm">- Budi Santoso</p>
                     </div>
                     <!-- Testimonial 2 -->
-                    <div class="carousel-item bg-medium-purple-section p-4 rounded-lg shadow-md flex-none w-full flex flex-col items-center text-center">
+                    <div class="carousel-item bg-medium-purple-section p-4 rounded-lg shadow-md flex-none w-full" data-aos="fade-up" data-aos-delay="200">
                         <svg class="avatar-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                             <rect x="25" y="15" width="50" height="50" rx="10" ry="10" fill="#00FF7F"/>
                             <path d="M0 85 Q50 110, 100 85 L100 100 L0 100 Z" fill="#2d002d"/>
@@ -576,7 +612,7 @@
                         <p class="font-semibold text-white text-sm">- Siti Aminah</p>
                     </div>
                     <!-- Testimonial 3 -->
-                    <div class="carousel-item bg-medium-purple-section p-4 rounded-lg shadow-md flex-none w-full flex flex-col items-center text-center">
+                    <div class="carousel-item bg-medium-purple-section p-4 rounded-lg shadow-md flex-none w-full" data-aos="fade-up" data-aos-delay="300">
                         <svg class="avatar-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="50" cy="40" r="25" fill="#cc99ff"/>
                             <path d="M0 85 Q50 110, 100 85 L100 100 L0 100 Z" fill="#3f003f"/>
@@ -586,7 +622,7 @@
                         <p class="font-semibold text-white text-sm">- Joko Susilo</p>
                     </div>
                     <!-- Testimonial 4 -->
-                    <div class="carousel-item bg-medium-purple-section p-4 rounded-lg shadow-md flex-none w-full flex flex-col items-center text-center">
+                    <div class="carousel-item bg-medium-purple-section p-4 rounded-lg shadow-md flex-none w-full" data-aos="fade-up" data-aos-delay="400">
                         <svg class="avatar-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="50" cy="40" r="25" fill="#8A2BE2"/>
                             <path d="M0 85 Q50 110, 100 85 L100 100 L0 100 Z" fill="#00FF7F"/>
@@ -598,7 +634,7 @@
                         <p class="font-semibold text-white text-sm">- Maria Dewi</p>
                     </div>
                     <!-- Testimonial 5 -->
-                    <div class="carousel-item bg-medium-purple-section p-4 rounded-lg shadow-md flex-none w-full flex flex-col items-center text-center">
+                    <div class="carousel-item bg-medium-purple-section p-4 rounded-lg shadow-md flex-none w-full" data-aos="fade-up" data-aos-delay="500">
                         <svg class="avatar-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="50" cy="40" r="25" fill="#00FF7F"/>
                             <path d="M0 85 Q50 110, 100 85 L100 100 L0 100 Z" fill="#8A2BE2"/>
@@ -625,7 +661,7 @@
         </section>
         
         <!-- Call to Action Section -->
-        <section class="bg-medium-purple-section rounded-xl shadow-xl p-6 md:p-12 text-center">
+        <section class="bg-medium-purple-section rounded-xl shadow-xl p-6 md:p-12 text-center" data-aos="fade-up">
             <h2 class="text-2xl md:text-4xl font-bold text-white mb-6 md:mb-8">Siap Mengoptimalkan Situs Anda?</h2>
             <p class="text-base md:text-lg text-gray-300 mb-6 md:mb-8 max-w-2xl mx-auto">
                 Mulai gunakan tools SEO dan pengembangan web gratis kami hari ini dan lihat perbedaannya!
@@ -653,7 +689,7 @@
     </div>
 
     <!-- Footer Section -->
-    <footer class="bg-footer-black py-6 md:py-8 px-4 md:px-12 text-center text-gray-400 rounded-t-xl mt-auto">
+    <footer class="bg-footer-black py-6 md:py-8 px-4 md:px-12 text-center text-gray-400 rounded-t-xl mt-auto" data-aos="fade-up" data-aos-offset="0">
         <div class="container mx-auto">
             <p class="mb-3 md:mb-4">&copy; 2025 VIN NESIA. All rights reserved.</p>
             <!-- Email and Location -->
@@ -685,10 +721,19 @@
         </div>
     </footer>
 
-    <!-- JavaScript for Mobile Menu, Tools Dropdown, FAQ, Back to Top, and Cookie Consent -->
+    <!-- AOS (Animate On Scroll) JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         // Created by Vin | License: MIT | vinnesia.my.id
         document.addEventListener('DOMContentLoaded', () => {
+            // Initialize AOS
+            AOS.init({
+                duration: 800, // Durasi animasi dalam ms
+                once: true,    // Animasi hanya berjalan sekali saat elemen di-scroll ke view
+                mirror: false, // Apakah elemen harus menganimasi keluar saat di-scroll ke atas
+                offset: 120,   // Offset (dalam px) dari bagian bawah jendela untuk memicu animasi
+            });
+
             const hamburgerBtn = document.getElementById('hamburgerBtn');
             const mobileMenu = document.getElementById('mobileMenu');
             const closeMenuBtn = document.getElementById('closeMenuBtn');
@@ -699,6 +744,8 @@
             const navLinks = document.querySelectorAll('.nav-link');
             const cookieConsentBanner = document.getElementById('cookieConsentBanner');
             const acceptCookiesBtn = document.getElementById('acceptCookiesBtn');
+            const heroContent = document.querySelector('.hero-content');
+            const header = document.querySelector('header');
 
             // Media query for mobile detection
             const isMobile = window.matchMedia('(max-width: 767px)');
@@ -771,9 +818,11 @@
                 }
 
 
-                toolsToDisplay.forEach(tool => {
+                toolsToDisplay.forEach((tool, index) => {
+                    // Calculate delay for staggered animation
+                    const delay = (index % itemsPerPage) * 100 + 100; // Stagger by 100ms, starting from 100ms
                     const toolCard = `
-                        <a href="${tool.link}" target="_blank" rel="noopener noreferrer" class="block bg-medium-purple-section p-4 md:p-6 rounded-lg shadow-md text-center hover:bg-purple-accent transition duration-300 group transform hover:-translate-y-1 hover:shadow-xl">
+                        <a href="${tool.link}" target="_blank" rel="noopener noreferrer" class="block bg-medium-purple-section p-4 md:p-6 rounded-lg shadow-md text-center hover:bg-purple-accent transition duration-300 group transform hover:-translate-y-1 hover:shadow-xl" data-aos="fade-up" data-aos-delay="${delay}">
                             <i class="${tool.icon} text-4xl md:text-5xl text-purple-accent mb-2 md:mb-4 group-hover:text-white transition duration-300"></i>
                             <h3 class="text-sm md:text-xl font-semibold text-white mb-0 md:mb-2 group-hover:text-white">${tool.title}</h3>
                             <p class="hidden md:block text-gray-300 text-sm group-hover:text-gray-100">${tool.description}</p>
@@ -783,8 +832,8 @@
                 });
 
                 // Update pagination controls
-                pageInfoSpan.textContent = `Halaman ${currentPage} dari ${totalPages}`;
-                prevPageBtn.disabled = currentPage === 1;
+                pageInfoSpan.textContent = `Halaman ${currentPage} dari ${totalPages === 0 ? 1 : totalPages}`; // Show 1 of 1 if no tools
+                prevPageBtn.disabled = currentPage === 1 || totalPages === 0;
                 nextPageBtn.disabled = currentPage === totalPages || totalPages === 0;
 
                 // Update active category button styling
@@ -798,6 +847,9 @@
                     }
                 });
 
+                // Re-initialize AOS to detect newly added elements
+                AOS.refresh();
+
                 // Scroll to tools section if a mobile category link was clicked
                 if (window.location.hash === '#tools-section') {
                     document.getElementById('tools-section').scrollIntoView({ behavior: 'smooth' });
@@ -807,6 +859,27 @@
             };
 
             // --- Event Listeners ---
+
+            // Hero Section fade-in on load
+            setTimeout(() => {
+                heroContent.classList.add('fade-in-up');
+            }, 100); // Small delay to ensure CSS is applied
+
+            // Sticky Header Animation
+            let lastScrollY = window.scrollY;
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > lastScrollY && window.scrollY > header.offsetHeight) {
+                    // Scrolling down and past header height
+                    header.classList.add('header-hidden');
+                    header.classList.remove('header-visible');
+                } else {
+                    // Scrolling up or at the top
+                    header.classList.remove('header-hidden');
+                    header.classList.add('header-visible');
+                }
+                lastScrollY = window.scrollY;
+            });
+
 
             // Toggle mobile menu
             hamburgerBtn.addEventListener('click', () => {
