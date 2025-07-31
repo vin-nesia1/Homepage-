@@ -10,7 +10,13 @@
       "destination": "/:path.html"
     }
   ],
-  "redirects": [],
+  "redirects": [
+    {
+      "source": "/ads.txt",
+      "destination": "https://srv.adstxtmanager.com/19390/vinnesia.my.id",
+      "permanent": true
+    }
+  ],
   "headers": [],
   "trailingSlash": false
 }
